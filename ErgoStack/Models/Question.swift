@@ -43,7 +43,7 @@
 
 import Foundation
 
-struct Question {
+struct Question: Decodable {
     let questionId: Int
     let title: String
     let owner: User

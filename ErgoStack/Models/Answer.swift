@@ -32,7 +32,7 @@
  */
 import Foundation
 
-struct Answer {
+struct Answer: Decodable {
     let answerId: Int
     let questionId: Int
     let creationDate: Date

@@ -52,7 +52,7 @@
  */
 import Foundation
 
-struct User {
+struct User: Decodable {
     // summary fields
     let userId: Int
     let displayName: String
