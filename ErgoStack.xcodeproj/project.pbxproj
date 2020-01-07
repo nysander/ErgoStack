@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19945D8F23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */; };
+		19945D9223C51FB300BE9134 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D9123C51FB300BE9134 /* R.generated.swift */; };
+		19945D9623C522AF00BE9134 /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D9523C522AF00BE9134 /* EmptyBackgroundView.swift */; };
 		19B707AE23C4CDD300B32BBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707AD23C4CDD300B32BBA /* AppDelegate.swift */; };
 		19B707B023C4CDD300B32BBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */; };
-		19B707B223C4CDD300B32BBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707B123C4CDD300B32BBA /* ViewController.swift */; };
+		19B707B223C4CDD300B32BBA /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707B123C4CDD300B32BBA /* QuestionsViewController.swift */; };
 		19B707B523C4CDD300B32BBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B707B323C4CDD300B32BBA /* Main.storyboard */; };
 		19B707B723C4CDD400B32BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B707B623C4CDD400B32BBA /* Assets.xcassets */; };
 		19B707BA23C4CDD400B32BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B707B823C4CDD400B32BBA /* LaunchScreen.storyboard */; };
@@ -23,6 +26,7 @@
 		19B707F123C4F3E600B32BBA /* SODataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F023C4F3E600B32BBA /* SODataProvider.swift */; };
 		19B707F323C4F42500B32BBA /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F223C4F42500B32BBA /* Networking.swift */; };
 		19B707F523C4F64400B32BBA /* SODataModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F423C4F64400B32BBA /* SODataModelProvider.swift */; };
+		19B707F723C5053E00B32BBA /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F623C5053E00B32BBA /* QuestionCell.swift */; };
 		19B707FB23C5088800B32BBA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 19B707FA23C5088800B32BBA /* Podfile */; };
 		527DC0DA4FBEBF4B2BB9C661 /* Pods_ErgoStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F079D5F57FB358CA578AFAA /* Pods_ErgoStack.framework */; };
 /* End PBXBuildFile section */
@@ -45,10 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewDataProvider.swift; sourceTree = "<group>"; };
+		19945D9123C51FB300BE9134 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		19945D9523C522AF00BE9134 /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
 		19B707AA23C4CDD300B32BBA /* ErgoStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErgoStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B707AD23C4CDD300B32BBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		19B707B123C4CDD300B32BBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		19B707B123C4CDD300B32BBA /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		19B707B423C4CDD300B32BBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19B707B623C4CDD400B32BBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19B707B923C4CDD400B32BBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 		19B707F023C4F3E600B32BBA /* SODataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataProvider.swift; sourceTree = "<group>"; };
 		19B707F223C4F42500B32BBA /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		19B707F423C4F64400B32BBA /* SODataModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataModelProvider.swift; sourceTree = "<group>"; };
+		19B707F623C5053E00B32BBA /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		19B707FA23C5088800B32BBA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		809AFE596EC6758EA15CA3AE /* Pods-ErgoStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErgoStack.release.xcconfig"; path = "Target Support Files/Pods-ErgoStack/Pods-ErgoStack.release.xcconfig"; sourceTree = "<group>"; };
 		8F079D5F57FB358CA578AFAA /* Pods_ErgoStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ErgoStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +135,8 @@
 		19B707AC23C4CDD300B32BBA /* ErgoStack */ = {
 			isa = PBXGroup;
 			children = (
+				19945D9523C522AF00BE9134 /* EmptyBackgroundView.swift */,
+				19945D9123C51FB300BE9134 /* R.generated.swift */,
 				19B707EB23C4E90700B32BBA /* Networking */,
 				19B707E223C4E0E500B32BBA /* Extensions */,
 				19B707E123C4E0D000B32BBA /* Coordinators */,
@@ -135,10 +145,7 @@
 				19B707DE23C4E09B00B32BBA /* Models */,
 				19B707AD23C4CDD300B32BBA /* AppDelegate.swift */,
 				19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */,
-				19B707B123C4CDD300B32BBA /* ViewController.swift */,
-				19B707B323C4CDD300B32BBA /* Main.storyboard */,
 				19B707B623C4CDD400B32BBA /* Assets.xcassets */,
-				19B707B823C4CDD400B32BBA /* LaunchScreen.storyboard */,
 				19B707BB23C4CDD400B32BBA /* Info.plist */,
 			);
 			path = ErgoStack;
@@ -175,6 +182,8 @@
 		19B707DF23C4E0B100B32BBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				19B707B323C4CDD300B32BBA /* Main.storyboard */,
+				19B707B823C4CDD400B32BBA /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +191,9 @@
 		19B707E023C4E0BF00B32BBA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				19B707B123C4CDD300B32BBA /* QuestionsViewController.swift */,
+				19B707F623C5053E00B32BBA /* QuestionCell.swift */,
+				19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -237,6 +249,7 @@
 			buildConfigurationList = 19B707D423C4CDD500B32BBA /* Build configuration list for PBXNativeTarget "ErgoStack" */;
 			buildPhases = (
 				5A574148AE5CC70F02A005D3 /* [CP] Check Pods Manifest.lock */,
+				19945D9023C51F0B00BE9134 /* R.Swift */,
 				19B707A623C4CDD300B32BBA /* Sources */,
 				19B707A723C4CDD300B32BBA /* Frameworks */,
 				19B707A823C4CDD300B32BBA /* Resources */,
@@ -359,6 +372,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		19945D9023C51F0B00BE9134 /* R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.Swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/ErgoStack/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/ErgoStack/R.generated.swift\"\nswiftlint\n";
+		};
 		22476F00FD086C04734EFEF0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,7 +438,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19B707B223C4CDD300B32BBA /* ViewController.swift in Sources */,
+				19B707B223C4CDD300B32BBA /* QuestionsViewController.swift in Sources */,
+				19945D9223C51FB300BE9134 /* R.generated.swift in Sources */,
 				19B707F323C4F42500B32BBA /* Networking.swift in Sources */,
 				19B707E423C4E0FB00B32BBA /* Question.swift in Sources */,
 				19B707E823C4E10F00B32BBA /* User.swift in Sources */,
@@ -414,6 +448,9 @@
 				19B707E623C4E10800B32BBA /* Answer.swift in Sources */,
 				19B707AE23C4CDD300B32BBA /* AppDelegate.swift in Sources */,
 				19B707B023C4CDD300B32BBA /* SceneDelegate.swift in Sources */,
+				19B707F723C5053E00B32BBA /* QuestionCell.swift in Sources */,
+				19945D9623C522AF00BE9134 /* EmptyBackgroundView.swift in Sources */,
+				19945D8F23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift in Sources */,
 				19B707F123C4F3E600B32BBA /* SODataProvider.swift in Sources */,
 				19B707F523C4F64400B32BBA /* SODataModelProvider.swift in Sources */,
 			);

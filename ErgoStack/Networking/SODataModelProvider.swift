@@ -17,6 +17,7 @@ class SODataModelProvider: ObservableObject {
     @Published var questions = [Question]() {
         didSet {
             didChange.send(self)
+            NotificationCenter.default.post(name: NSNotification.Name("QuestionsLoaded"), object: self, userInfo: [:])
         }
     }
 
