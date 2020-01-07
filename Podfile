@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'ErgoStack' do
     pod 'R.swift',   '~> 5.0.0'
+    pod 'PureLayout', '~> 3.1'
 end
