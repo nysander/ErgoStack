@@ -30,7 +30,7 @@ extension SODataProvider {
         network.execute(SOEndpoint.getQuestions, completion: completion)
     }
 
-    func getQuestion(questionID: Int,_ completion: @escaping (Result<Question, Error>) -> Void) {
+    func getQuestion(questionID: Int, _ completion: @escaping (Result<Question, Error>) -> Void) {
         network.execute(SOEndpoint.getQuestion(questionID: questionID), completion: completion)
     }
 

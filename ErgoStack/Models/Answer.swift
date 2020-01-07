@@ -6,8 +6,7 @@
 //  Copyright © 2020 Pawel Madej. All rights reserved.
 //
 
-
-/*
+/* EXAMPLE ANSWERS
  "answers": [
    {
      "owner": {

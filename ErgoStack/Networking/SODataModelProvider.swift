@@ -9,7 +9,7 @@
 import Combine
 import Foundation
 
-class SODataModelProvider: ObservableObject{
+class SODataModelProvider: ObservableObject {
     var didChange = PassthroughSubject<SODataModelProvider, Never>()
 
     let service: SODataProvider

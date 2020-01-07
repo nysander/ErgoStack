@@ -39,7 +39,6 @@ extension SOEndpoint: RequestProviding {
             }
             let request = prepareURLRequest(for: url)
             return request
-
         }
     }
 }
