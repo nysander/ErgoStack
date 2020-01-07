@@ -23,6 +23,8 @@
 		19B707F123C4F3E600B32BBA /* SODataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F023C4F3E600B32BBA /* SODataProvider.swift */; };
 		19B707F323C4F42500B32BBA /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F223C4F42500B32BBA /* Networking.swift */; };
 		19B707F523C4F64400B32BBA /* SODataModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F423C4F64400B32BBA /* SODataModelProvider.swift */; };
+		19B707FB23C5088800B32BBA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 19B707FA23C5088800B32BBA /* Podfile */; };
+		527DC0DA4FBEBF4B2BB9C661 /* Pods_ErgoStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F079D5F57FB358CA578AFAA /* Pods_ErgoStack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		19B707F023C4F3E600B32BBA /* SODataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataProvider.swift; sourceTree = "<group>"; };
 		19B707F223C4F42500B32BBA /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		19B707F423C4F64400B32BBA /* SODataModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataModelProvider.swift; sourceTree = "<group>"; };
+		19B707FA23C5088800B32BBA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		809AFE596EC6758EA15CA3AE /* Pods-ErgoStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErgoStack.release.xcconfig"; path = "Target Support Files/Pods-ErgoStack/Pods-ErgoStack.release.xcconfig"; sourceTree = "<group>"; };
+		8F079D5F57FB358CA578AFAA /* Pods_ErgoStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ErgoStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE808E9C143A4D4118053B4B /* Pods-ErgoStack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErgoStack.debug.xcconfig"; path = "Target Support Files/Pods-ErgoStack/Pods-ErgoStack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				527DC0DA4FBEBF4B2BB9C661 /* Pods_ErgoStack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,11 +103,14 @@
 		19B707A123C4CDD300B32BBA = {
 			isa = PBXGroup;
 			children = (
+				19B707FA23C5088800B32BBA /* Podfile */,
 				19B707DD23C4D20500B32BBA /* README.md */,
 				19B707AC23C4CDD300B32BBA /* ErgoStack */,
 				19B707C323C4CDD500B32BBA /* ErgoStackTests */,
 				19B707CE23C4CDD500B32BBA /* ErgoStackUITests */,
 				19B707AB23C4CDD300B32BBA /* Products */,
+				6BD4C7366E47592B01918283 /* Pods */,
+				B89317C927F37F58B11B0376 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +212,24 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		6BD4C7366E47592B01918283 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE808E9C143A4D4118053B4B /* Pods-ErgoStack.debug.xcconfig */,
+				809AFE596EC6758EA15CA3AE /* Pods-ErgoStack.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B89317C927F37F58B11B0376 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F079D5F57FB358CA578AFAA /* Pods_ErgoStack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19B707D423C4CDD500B32BBA /* Build configuration list for PBXNativeTarget "ErgoStack" */;
 			buildPhases = (
+				5A574148AE5CC70F02A005D3 /* [CP] Check Pods Manifest.lock */,
 				19B707A623C4CDD300B32BBA /* Sources */,
 				19B707A723C4CDD300B32BBA /* Frameworks */,
 				19B707A823C4CDD300B32BBA /* Resources */,
+				22476F00FD086C04734EFEF0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B707FB23C5088800B32BBA /* Podfile in Resources */,
 				19B707BA23C4CDD400B32BBA /* LaunchScreen.storyboard in Resources */,
 				19B707B723C4CDD400B32BBA /* Assets.xcassets in Resources */,
 				19B707B523C4CDD300B32BBA /* Main.storyboard in Resources */,
@@ -327,6 +358,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22476F00FD086C04734EFEF0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ErgoStack/Pods-ErgoStack-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ErgoStack/Pods-ErgoStack-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ErgoStack/Pods-ErgoStack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A574148AE5CC70F02A005D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ErgoStack-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		19B707A623C4CDD300B32BBA /* Sources */ = {
@@ -514,6 +587,7 @@
 		};
 		19B707D523C4CDD500B32BBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE808E9C143A4D4118053B4B /* Pods-ErgoStack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +606,7 @@
 		};
 		19B707D623C4CDD500B32BBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 809AFE596EC6758EA15CA3AE /* Pods-ErgoStack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
