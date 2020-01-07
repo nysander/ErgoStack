@@ -52,10 +52,14 @@ struct Question: Decodable {
     let viewCount: Int
     let answerCount: Int
     let score: Int
-    let lastActivityDate: Date
+    let lastActivityDate: Date?
     let creationDate: Date
-    let lastEditDate: Date
+    let lastEditDate: Date?
     let link: String
-    let body: String
-    let answers: [Answer]
+    let body: String?
+    var answers: [Answer]?
+}
+
+struct QuestionsResponse: Decodable {
+    let items: [Question]
 }

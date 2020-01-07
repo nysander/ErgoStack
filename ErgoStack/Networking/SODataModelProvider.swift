@@ -32,7 +32,7 @@ class SODataModelProvider: ObservableObject{
         }
     }
 
-    @Published var imageData: Data? {
+    @Published var imageData = Data() {
         didSet {
             didChange.send(self)
         }
@@ -46,7 +46,9 @@ class SODataModelProvider: ObservableObject{
         service.getQuestions { result in
             DispatchQueue.main.async {
                 do {
-                    self.questions = try result.get()
+                    let results = try result.get()
+                    self.questions = results.items
+                    print(self.questions)
                 } catch {
                     print(error)
                 }

@@ -45,7 +45,7 @@ extension Networking {
                 }
 
                 let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
+                decoder.dateDecodingStrategy = .secondsSince1970
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
 
                 let decodedObject = try decoder.decode(T.self, from: data)
