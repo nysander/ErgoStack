@@ -15,6 +15,9 @@
 		19B707BA23C4CDD400B32BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B707B823C4CDD400B32BBA /* LaunchScreen.storyboard */; };
 		19B707C523C4CDD500B32BBA /* ErgoStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707C423C4CDD500B32BBA /* ErgoStackTests.swift */; };
 		19B707D023C4CDD500B32BBA /* ErgoStackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707CF23C4CDD500B32BBA /* ErgoStackUITests.swift */; };
+		19B707E423C4E0FB00B32BBA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707E323C4E0FB00B32BBA /* Question.swift */; };
+		19B707E623C4E10800B32BBA /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707E523C4E10800B32BBA /* Answer.swift */; };
+		19B707E823C4E10F00B32BBA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707E723C4E10F00B32BBA /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		19B707CF23C4CDD500B32BBA /* ErgoStackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErgoStackUITests.swift; sourceTree = "<group>"; };
 		19B707D123C4CDD500B32BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19B707DD23C4D20500B32BBA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		19B707E323C4E0FB00B32BBA /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		19B707E523C4E10800B32BBA /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		19B707E723C4E10F00B32BBA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,12 @@
 		19B707AC23C4CDD300B32BBA /* ErgoStack */ = {
 			isa = PBXGroup;
 			children = (
+				19B707EB23C4E90700B32BBA /* Networking */,
+				19B707E223C4E0E500B32BBA /* Extensions */,
+				19B707E123C4E0D000B32BBA /* Coordinators */,
+				19B707E023C4E0BF00B32BBA /* Controllers */,
+				19B707DF23C4E0B100B32BBA /* Views */,
+				19B707DE23C4E09B00B32BBA /* Models */,
 				19B707AD23C4CDD300B32BBA /* AppDelegate.swift */,
 				19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */,
 				19B707B123C4CDD300B32BBA /* ViewController.swift */,
@@ -128,6 +140,51 @@
 				19B707D123C4CDD500B32BBA /* Info.plist */,
 			);
 			path = ErgoStackUITests;
+			sourceTree = "<group>";
+		};
+		19B707DE23C4E09B00B32BBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				19B707E323C4E0FB00B32BBA /* Question.swift */,
+				19B707E523C4E10800B32BBA /* Answer.swift */,
+				19B707E723C4E10F00B32BBA /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		19B707DF23C4E0B100B32BBA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		19B707E023C4E0BF00B32BBA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		19B707E123C4E0D000B32BBA /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		19B707E223C4E0E500B32BBA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		19B707EB23C4E90700B32BBA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +319,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B707B223C4CDD300B32BBA /* ViewController.swift in Sources */,
+				19B707E423C4E0FB00B32BBA /* Question.swift in Sources */,
+				19B707E823C4E10F00B32BBA /* User.swift in Sources */,
+				19B707E623C4E10800B32BBA /* Answer.swift in Sources */,
 				19B707AE23C4CDD300B32BBA /* AppDelegate.swift in Sources */,
 				19B707B023C4CDD300B32BBA /* SceneDelegate.swift in Sources */,
 			);
