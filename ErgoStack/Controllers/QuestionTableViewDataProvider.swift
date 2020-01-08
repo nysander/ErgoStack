@@ -10,7 +10,7 @@ import UIKit
 
 final class QuestionTableViewDataProvider: NSObject {
     var dataSource = AppDelegate.dataSource
-    var rootVC: QuestionsViewController?
+    var rootVC: QuestionListViewController?
     var emptyViewData: (UIImage, String, String)?
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,7 +47,9 @@ final class QuestionTableViewDataProvider: NSObject {
 
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
-        //
+        let questionID = dataSource.questions[indexPath.item].questionId
+
+        rootVC?.coordinator?.showQuestionDetails(questionID: questionID)
     }
 
     private func setupEmptyBackgroundView() -> EmptyBackgroundView? {

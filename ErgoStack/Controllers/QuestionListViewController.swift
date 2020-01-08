@@ -9,7 +9,9 @@
 import Combine
 import UIKit
 
-class QuestionsViewController: UIViewController {
+class QuestionListViewController: UIViewController {
+    weak var coordinator: MainCoordinator?
+
     @IBOutlet var tableView: UITableView!
     @IBOutlet var dataProvider: QuestionTableViewDataProvider!
 
@@ -22,8 +24,6 @@ class QuestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataSource.getQuestions()
-
         tableView.dataSource = dataProvider
         tableView.delegate = dataProvider
         tableView.rowHeight = UITableView.automaticDimension
@@ -32,13 +32,14 @@ class QuestionsViewController: UIViewController {
 
         dataProvider.emptyViewData = (image, topMessage, bottomMessage)
 
+        #warning("TODO: set navigation title etc")
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name("QuestionsLoaded"), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        tableView.reloadData()
+        dataSource.getQuestions()
     }
 
     @objc
