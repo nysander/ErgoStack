@@ -18,10 +18,10 @@ final class QuestionCell: UITableViewCell {
 
     func configCell(with question: Question) {
         titleLabel.text = question.title
-        scoreLabel.text = "\(question.score)"
+        scoreLabel.text = "Question score: \(question.score)"
         userDisplayName.text = question.owner.displayName
         answerCount.text = "\(question.answerCount)"
-        userReputation.text = "\(question.owner.reputation)"
+        userReputation.text = "User reputation: \(question.owner.reputation)"
 
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

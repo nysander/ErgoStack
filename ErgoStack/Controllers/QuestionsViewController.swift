@@ -26,6 +26,8 @@ class QuestionsViewController: UIViewController {
 
         tableView.dataSource = dataProvider
         tableView.delegate = dataProvider
+        tableView.rowHeight = UITableView.automaticDimension
+
         dataProvider.rootVC = self
 
         dataProvider.emptyViewData = (image, topMessage, bottomMessage)

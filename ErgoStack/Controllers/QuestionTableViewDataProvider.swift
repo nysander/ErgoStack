@@ -9,7 +9,6 @@
 import UIKit
 
 final class QuestionTableViewDataProvider: NSObject {
-
     var dataSource = AppDelegate.dataSource
     var rootVC: QuestionsViewController?
     var emptyViewData: (UIImage, String, String)?

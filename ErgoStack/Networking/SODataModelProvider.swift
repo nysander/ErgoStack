@@ -49,7 +49,6 @@ class SODataModelProvider: ObservableObject {
                 do {
                     let results = try result.get()
                     self.questions = results.items
-                    print(self.questions)
                 } catch {
                     print(error)
                 }
