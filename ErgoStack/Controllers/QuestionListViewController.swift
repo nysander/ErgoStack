@@ -34,6 +34,12 @@ class QuestionListViewController: UIViewController {
 
         #warning("TODO: set navigation title etc")
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name("QuestionListLoaded"), object: nil)
+
+        if UserDefaultsConfig.demo {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Disable demo", style: .plain, target: self, action: #selector(toggleDemo))
+        } else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Enable demo", style: .plain, target: self, action: #selector(toggleDemo))
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,4 +52,20 @@ class QuestionListViewController: UIViewController {
     func refresh() {
         tableView.reloadData()
     }
+
+    @objc
+    func toggleDemo() {
+        if UserDefaultsConfig.demo {
+            UserDefaultsConfig.demo = false
+            self.navigationItem.rightBarButtonItem?.title = "Enable demo"
+            dataSource.questions.removeAll()
+            dataSource.getQuestions()
+        } else {
+            UserDefaultsConfig.demo = true
+            self.navigationItem.rightBarButtonItem?.title = "Disable demo"
+            dataSource.questions.removeAll()
+            dataSource.getQuestions()
+        }
+    }
+}
 }

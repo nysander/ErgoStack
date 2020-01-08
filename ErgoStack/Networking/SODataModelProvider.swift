@@ -6,65 +6,94 @@
 //  Copyright © 2020 Pawel Madej. All rights reserved.
 //
 
-import Combine
 import Foundation
 
-class SODataModelProvider: ObservableObject {
-    var didChange = PassthroughSubject<SODataModelProvider, Never>()
-
+class SODataModelProvider {
     let service: SODataProvider
+    let demoService: DemoDataProvider
 
-    @Published var questions = [Question]() {
+    var questions = [Question]() {
         didSet {
-            didChange.send(self)
-            NotificationCenter.default.post(name: NSNotification.Name("QuestionListLoaded"), object: self, userInfo: [:])
+            self.notify(notificationName: "QuestionListLoaded")
         }
     }
 
-    @Published var question: Question? {
+    var question: Question? {
         didSet {
-            didChange.send(self)
-            NotificationCenter.default.post(name: NSNotification.Name("QuestionDetailsLoaded"), object: self, userInfo: [:])
+            self.notify(notificationName: "QuestionDetailsLoaded")
         }
     }
 
-    @Published var user: User? {
+    var user: User? {
         didSet {
-            didChange.send(self)
+            self.notify(notificationName: "UserProfileLoaded")
         }
     }
 
-    @Published var imageData = Data() {
+    var userQuestions = [Question]() {
         didSet {
-            didChange.send(self)
+            self.notify(notificationName: "UserQuestionListLoaded")
+        }
+    }
+
+    var imageData = Data() {
+        didSet {
+            self.notify(notificationName: "ImageLoaded")
         }
     }
 
     init() {
         self.service = SOService()
+        self.demoService = DemoService()
     }
 
     func getQuestions() {
-        service.getQuestions { result in
-            DispatchQueue.main.async {
-                do {
-                    let results = try result.get()
-                    self.questions = results.items
-                } catch {
-                    print(error)
+        if UserDefaultsConfig.demo {
+            demoService.getQuestions { result in
+                DispatchQueue.main.async {
+                    do {
+                        let results = try result.get()
+                        self.questions = results.items
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+        } else {
+            service.getQuestions { result in
+                DispatchQueue.main.async {
+                    do {
+                        let results = try result.get()
+                        self.questions = results.items
+                    } catch {
+                        print(error)
+                    }
                 }
             }
         }
     }
 
     func getQuestion(questionID: Int) {
-        service.getQuestion(questionID: questionID) { result in
-            DispatchQueue.main.async {
-                do {
-                    let results = try result.get()
-                    self.question = results.items.first
-                } catch {
-                    print(error)
+        if UserDefaultsConfig.demo {
+            demoService.getQuestion { result in
+                DispatchQueue.main.async {
+                    do {
+                        let results = try result.get()
+                        self.question = results.items.first
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+        } else {
+            service.getQuestion(questionID: questionID) { result in
+                DispatchQueue.main.async {
+                    do {
+                        let results = try result.get()
+                        self.question = results.items.first
+                    } catch {
+                        print(error)
+                    }
                 }
             }
         }
@@ -82,6 +111,19 @@ class SODataModelProvider: ObservableObject {
         }
     }
 
+    func getUserQuestions(userID: Int) {
+        service.getUserQuestions(userID: userID) { result in
+            DispatchQueue.main.async {
+                do {
+                    let results = try result.get()
+                    self.questions = results.items
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    }
+
     func getImage(url: String) {
         service.getImage(url: url) { result in
             DispatchQueue.main.async {
@@ -90,6 +132,63 @@ class SODataModelProvider: ObservableObject {
                 } catch {
                     print(error)
                 }
+            }
+        }
+    }
+
+    func notify(notificationName: String) {
+        NotificationCenter.default.post(name: NSNotification.Name(notificationName),
+                                        object: self,
+                                        userInfo: [:])
+    }
+}
+
+
+// FIXME: --- MOVE TO OTHER FILES ---
+class DemoService: DemoDataProvider {
+    var demoData = DemoData()
+
+}
+
+protocol DemoDataProvider {
+    var demoData: DemoData { get }
+
+    func getQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
+    func getQuestion(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
+
+}
+
+extension DemoDataProvider {
+    func getQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
+        demoData.loadDemoData(from: "questions", completion: completion)
+    }
+
+    func getQuestion(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
+        demoData.loadDemoData(from: "questionDetails", completion: completion)
+    }
+}
+
+class DemoData: DemoDataSource { }
+
+
+protocol DemoDataSource {
+    func loadDemoData<T: Decodable>(from fileName: String, completion: @escaping (Result<T,Error>) -> Void)
+}
+
+extension DemoDataSource {
+    func loadDemoData<T: Decodable>(from fileName: String, completion: @escaping (Result<T,Error>) -> Void) {
+        if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .secondsSince1970
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+                let decodedObject = try decoder.decode(T.self, from: data)
+                return completion(.success(decodedObject))
+            } catch {
+                return completion(.failure(error))
             }
         }
     }

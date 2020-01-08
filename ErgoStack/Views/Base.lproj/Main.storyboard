@@ -410,16 +410,18 @@
                         <outlet property="answerCountLabel" destination="Ewx-Rb-cJm" id="FnU-D3-FeT"/>
                         <outlet property="badgesStackView" destination="hNt-aD-KdT" id="NMv-co-9HH"/>
                         <outlet property="creationDate" destination="0d4-i6-LRZ" id="Z6s-37-KbD"/>
+                        <outlet property="dataProvider" destination="5jK-31-zUk" id="XHM-as-OEn"/>
                         <outlet property="displayName" destination="Yta-Gz-uIO" id="qKQ-lf-s23"/>
                         <outlet property="location" destination="sVr-eH-X7J" id="48O-JL-2Yd"/>
                         <outlet property="mainStackView" destination="418-Ke-Mk9" id="gQW-JP-Gko"/>
                         <outlet property="profileImage" destination="OgD-BB-K82" id="4zV-Oo-PIB"/>
                         <outlet property="questionCountLabel" destination="Keb-jy-Lxt" id="Dy9-Ft-JZm"/>
-                        <outlet property="userQuestionsTableView" destination="O9P-9O-nP4" id="n5u-Hk-3qx"/>
+                        <outlet property="tableView" destination="O9P-9O-nP4" id="n5u-Hk-3qx"/>
                         <outlet property="websiteButton" destination="JWA-1e-EsY" id="AQe-tT-bDr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7u-NP-1ur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="5jK-31-zUk" customClass="QuestionTableViewDataProvider" customModule="ErgoStack" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="2466.666666666667" y="138.61607142857142"/>
         </scene>

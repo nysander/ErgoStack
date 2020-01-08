@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "tags": [
+        "apache-spark",
+        "apache-kafka"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 374,
+      "answer_count": 2,
+      "score": 6,
+      "last_activity_date": 1578512774,
+      "creation_date": 1496149488,
+      "last_edit_date": 1543415505,
+      "question_id": 44263095,
+      "link": "https://stackoverflow.com/questions/44263095/message-getting-lost-in-kafka-spark-streaming",
+      "title": "Message getting lost in Kafka + Spark Streaming",
+      "body": "<p>I am facing an issue related to spark streaming with kafka, my use case is as follow: </p>\n\n<ul>\n<li>Spark streaming(DirectStream) application reading messages from\nKafka topic and processing it. </li>\n<li>On the basis of the processed message, an app will write the\nprocessed message to different Kafka topics for e.g. if the message\nis harmonized then write to the harmonized topic else unharmonized\ntopic.</li>\n</ul>\n\n<p>Now, the problem is that during the streaming somehow we are losing some messaged i.e all the incoming messages are not written to harmonized or unharmonized topics. \nfor e.g., if app received 30 messages in one batch then sometimes it writes all the messages to output topics(this is expected behaviour) but sometimes it writes only 27 (3 messages are lost, this number can change). </p>\n\n<p>Versions as follow:</p>\n\n<ul>\n<li>Spark 1.6.0</li>\n<li>Kafka 0.9</li>\n</ul>\n\n<p>Kafka topics configuration is as follow: </p>\n\n<ul>\n<li>num of brokers: 3 </li>\n<li>num replication factor: 3</li>\n<li>num of partitions: 3</li>\n</ul>\n\n<p>Following are the properties we are using for kafka: </p>\n\n<pre><code>      val props = new Properties() \n      props.put(\"metadata.broker.list\", properties.getProperty(\"metadataBrokerList\")) \n      props.put(\"auto.offset.reset\", properties.getProperty(\"autoOffsetReset\")) \n      props.put(\"group.id\", properties.getProperty(\"group.id\")) \n      props.put(\"serializer.class\", \"kafka.serializer.StringEncoder\") \n      props.put(\"outTopicHarmonized\", properties.getProperty(\"outletKafkaTopicHarmonized\")) \n      props.put(\"outTopicUnharmonized\", properties.getProperty(\"outletKafkaTopicUnharmonized\")) \n      props.put(\"acks\", \"all\"); \n      props.put(\"retries\", \"5\"); \n      props.put(\"request.required.acks\", \"-1\") \n</code></pre>\n\n<p>Following is the piece of code where we are writing processed messages to kafka: \n          val schemaRdd2 = finalHarmonizedDF.toJSON </p>\n\n<pre><code>      schemaRdd2.foreachPartition { partition =&gt; \n        val producerConfig = new ProducerConfig(props) \n        val producer = new Producer[String, String](producerConfig) \n\n        partition.foreach { row =&gt; \n          if (debug) println(row.mkString) \n          val keyedMessage = new KeyedMessage[String, String](props.getProperty(\"outTopicHarmonized\"), \n            null, row.toString()) \n          producer.send(keyedMessage) \n\n        } \n        //hack, should be done with the flush \n        Thread.sleep(1000) \n        producer.close() \n      } \n</code></pre>\n\n<p>We explicitly added sleep(1000) for testing purpose. \nBut this is also not solving the problem :( </p>\n\n<p>Any suggestion would be appreciated.</p>\n"
+    }
+  ],
+  "has_more": false,
+  "quota_max": 10000,
+  "quota_remaining": 9675
+}

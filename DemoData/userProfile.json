@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "badge_counts": {
+        "bronze": 19,
+        "silver": 5,
+        "gold": 0
+      },
+      "view_count": 72,
+      "answer_count": 5,
+      "question_count": 19,
+      "account_id": 1955250,
+      "is_employee": false,
+      "last_modified_date": 1573681968,
+      "last_access_date": 1578512783,
+      "reputation_change_year": 0,
+      "reputation_change_quarter": 0,
+      "reputation_change_month": 0,
+      "reputation_change_week": 0,
+      "reputation_change_day": 0,
+      "reputation": 426,
+      "creation_date": 1350626747,
+      "user_type": "registered",
+      "user_id": 1758378,
+      "accept_rate": 60,
+      "about_me": "<p>A dynamic professional with experience in IoT, M2M and predictive analytics domain with big data analytics for real time &amp; batch data processing.</p>\n\n<p>✔ Expertise in development with SparkSQL, Spark Streaming, Hive, Sqoop, Impala, Hbase, MapReduce, Kafka</p>\n\n<p>✔ Expertise in debugging &amp; resolving spark &amp; hive issues for large datasets</p>\n\n<p>✔ Expertise in optimisation of spark jobs (sql &amp; streaming) and hive queries</p>\n\n<p>✔ Expertise in scala, python and java development for spark and aws use cases along with unit testing</p>\n\n<p>✔ Expertise in hadoop, hive security in cloudera distribution</p>\n\n<p>✔ Capable of designing end to end big data pipeline according to business needs</p>\n\n<p>✔ Capable of designing architecture and deploying solution on AWS (CloudFormation, S3, ECS, ELB, VPC)</p>\n\n<p>✔ Expertise in NoSQL(habse, cassandra), RDBMS(postgres, mysql) and In-memory DB (redis) </p>\n\n<p>✔ Expertise in data visualisation tools like PowerBI, Datameer</p>\n\n<p>✔ Capable of managing deliverable and leading team</p>\n\n<p>✔ Capable of transforming business requirement into technical problem and designing a solution</p>\n\n<p>✔ Experience in agile methodology projects and able to work in strict timelines </p>\n\n<p>✔ Capable of performing R&amp;D among various big data tools in different areas (data processing, data storage, data visualisation)</p>\n\n<p>✔ Ability to handle multiple projects in parallel</p>\n\n<p>✔ Experience of working with multiple clients listed in Fortune 500.</p>\n",
+      "location": "India",
+      "website_url": "https://www.linkedin.com/in/pvikash/",
+      "link": "https://stackoverflow.com/users/1758378/vikash-pareek",
+      "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+      "display_name": "Vikash Pareek"
+    }
+  ],
+  "has_more": false,
+  "quota_max": 10000,
+  "quota_remaining": 9669
+}

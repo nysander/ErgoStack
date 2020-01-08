@@ -12,6 +12,12 @@
 		193A9C3D23C5EA4C00850DBC /* QuestionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9C3C23C5EA4C00850DBC /* QuestionDetailsViewController.swift */; };
 		193A9C3F23C63DD700850DBC /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9C3E23C63DD600850DBC /* UserProfileViewController.swift */; };
 		193A9C4123C643CA00850DBC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9C4023C643CA00850DBC /* R.generated.swift */; };
+		193A9C4323C659D400850DBC /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9C4223C659D400850DBC /* UserDefault.swift */; };
+		193A9C4523C659F100850DBC /* UserDefaultConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A9C4423C659F100850DBC /* UserDefaultConfig.swift */; };
+		193A9C4823C65D9800850DBC /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 193A9C4723C65D9800850DBC /* questions.json */; };
+		193A9C4A23C65DAC00850DBC /* questionDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = 193A9C4923C65DAC00850DBC /* questionDetails.json */; };
+		193A9C4C23C6628900850DBC /* userProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = 193A9C4B23C6628900850DBC /* userProfile.json */; };
+		193A9C4E23C662A600850DBC /* userQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = 193A9C4D23C662A600850DBC /* userQuestions.json */; };
 		19945D8F23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */; };
 		19945D9623C522AF00BE9134 /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D9523C522AF00BE9134 /* EmptyBackgroundView.swift */; };
 		19B707AE23C4CDD300B32BBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707AD23C4CDD300B32BBA /* AppDelegate.swift */; };
@@ -58,6 +64,12 @@
 		193A9C3C23C5EA4C00850DBC /* QuestionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailsViewController.swift; sourceTree = "<group>"; };
 		193A9C3E23C63DD600850DBC /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		193A9C4023C643CA00850DBC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		193A9C4223C659D400850DBC /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		193A9C4423C659F100850DBC /* UserDefaultConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultConfig.swift; sourceTree = "<group>"; };
+		193A9C4723C65D9800850DBC /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		193A9C4923C65DAC00850DBC /* questionDetails.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questionDetails.json; sourceTree = "<group>"; };
+		193A9C4B23C6628900850DBC /* userProfile.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userProfile.json; sourceTree = "<group>"; };
+		193A9C4D23C662A600850DBC /* userQuestions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userQuestions.json; sourceTree = "<group>"; };
 		19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewDataProvider.swift; sourceTree = "<group>"; };
 		19945D9323C5220100BE9134 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		19945D9523C522AF00BE9134 /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
@@ -118,9 +130,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		193A9C4623C65D6500850DBC /* DemoData */ = {
+			isa = PBXGroup;
+			children = (
+				193A9C4723C65D9800850DBC /* questions.json */,
+				193A9C4923C65DAC00850DBC /* questionDetails.json */,
+				193A9C4B23C6628900850DBC /* userProfile.json */,
+				193A9C4D23C662A600850DBC /* userQuestions.json */,
+			);
+			path = DemoData;
+			sourceTree = "<group>";
+		};
 		19B707A123C4CDD300B32BBA = {
 			isa = PBXGroup;
 			children = (
+				193A9C4623C65D6500850DBC /* DemoData */,
 				19B707FA23C5088800B32BBA /* Podfile */,
 				19B707DD23C4D20500B32BBA /* README.md */,
 				19B707AC23C4CDD300B32BBA /* ErgoStack */,
@@ -156,6 +180,8 @@
 				19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */,
 				19B707B623C4CDD400B32BBA /* Assets.xcassets */,
 				19B707BB23C4CDD400B32BBA /* Info.plist */,
+				193A9C4223C659D400850DBC /* UserDefault.swift */,
+				193A9C4423C659F100850DBC /* UserDefaultConfig.swift */,
 			);
 			path = ErgoStack;
 			sourceTree = "<group>";
@@ -363,9 +389,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B707FB23C5088800B32BBA /* Podfile in Resources */,
+				193A9C4A23C65DAC00850DBC /* questionDetails.json in Resources */,
 				19B707BA23C4CDD400B32BBA /* LaunchScreen.storyboard in Resources */,
 				19B707B723C4CDD400B32BBA /* Assets.xcassets in Resources */,
 				19B707B523C4CDD300B32BBA /* Main.storyboard in Resources */,
+				193A9C4C23C6628900850DBC /* userProfile.json in Resources */,
+				193A9C4E23C662A600850DBC /* userQuestions.json in Resources */,
+				193A9C4823C65D9800850DBC /* questions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +485,7 @@
 				19B707B223C4CDD300B32BBA /* QuestionListViewController.swift in Sources */,
 				193A9C3F23C63DD700850DBC /* UserProfileViewController.swift in Sources */,
 				19B707F323C4F42500B32BBA /* Networking.swift in Sources */,
+				193A9C4523C659F100850DBC /* UserDefaultConfig.swift in Sources */,
 				19B707E423C4E0FB00B32BBA /* Question.swift in Sources */,
 				19B707E823C4E10F00B32BBA /* User.swift in Sources */,
 				19B707ED23C4F01300B32BBA /* SOEndpoint.swift in Sources */,
@@ -464,6 +495,7 @@
 				19B707AE23C4CDD300B32BBA /* AppDelegate.swift in Sources */,
 				193A9C3923C5E90400850DBC /* MainCoordinator.swift in Sources */,
 				193A9C3B23C5E95500850DBC /* Coordinator.swift in Sources */,
+				193A9C4323C659D400850DBC /* UserDefault.swift in Sources */,
 				19B707B023C4CDD300B32BBA /* SceneDelegate.swift in Sources */,
 				19B707F723C5053E00B32BBA /* QuestionCell.swift in Sources */,
 				19945D9623C522AF00BE9134 /* EmptyBackgroundView.swift in Sources */,

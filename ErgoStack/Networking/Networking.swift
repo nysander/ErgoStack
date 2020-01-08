@@ -26,7 +26,6 @@ protocol Networking {
     var session: URLSession { get set }
 
     func execute<T: Decodable>(_ requestProvider: RequestProviding, completion: @escaping (Result<T, Error>) -> Void)
-//    func execute(_ requestProvider: RequestProviding, completion: @escaping (Result<HTTPURLResponse, Error>) -> Void)
 }
 
 extension Networking {
@@ -56,30 +55,4 @@ extension Networking {
             }
         }.resume()
     }
-
-//    func execute(_ requestProvider: RequestProviding, completion: @escaping (Result<HTTPURLResponse, Error>) -> Void) {
-//        let urlRequest = requestProvider.urlRequest
-//
-//        session.dataTask(with: urlRequest) { _, response, error in
-//            do {
-//                if let error = error {
-//                    completion(.failure(error))
-//                    return
-//                }
-//
-//                guard let response = response as? HTTPURLResponse else {
-//                    preconditionFailure("Invalid HTTPURLResponse")
-//                }
-//
-//                switch response.statusCode {
-//                case 200, 201, 204:
-//                    completion(.success(response))
-//                default:
-//                    throw NetworkingError.invalidResponseStatusCode(statusCode: response.statusCode)
-//                }
-//            } catch {
-//                completion(.failure(error))
-//            }
-//        }.resume()
-//    }
 }

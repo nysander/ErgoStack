@@ -1,0 +1,500 @@
+{
+  "items": [
+    {
+      "tags": [
+        "apache-spark",
+        "apache-kafka"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 374,
+      "answer_count": 2,
+      "score": 6,
+      "last_activity_date": 1578512774,
+      "creation_date": 1496149488,
+      "last_edit_date": 1543415505,
+      "question_id": 44263095,
+      "link": "https://stackoverflow.com/questions/44263095/message-getting-lost-in-kafka-spark-streaming",
+      "title": "Message getting lost in Kafka + Spark Streaming"
+    },
+    {
+      "tags": [
+        "yarn",
+        "capacity-planning"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": true,
+      "view_count": 138,
+      "answer_count": 1,
+      "score": 6,
+      "last_activity_date": 1574175807,
+      "creation_date": 1559901056,
+      "question_id": 56492002,
+      "link": "https://stackoverflow.com/questions/56492002/yarn-how-does-yarn-scheduler-capacity-root-queue-name-maximum-capacity-works",
+      "title": "Yarn - How does yarn.scheduler.capacity.root.queue-name.maximum-capacity works?"
+    },
+    {
+      "tags": [
+        "apache-spark",
+        "encryption",
+        "amazon-s3"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": true,
+      "view_count": 3480,
+      "answer_count": 1,
+      "score": 3,
+      "last_activity_date": 1572278904,
+      "creation_date": 1504862986,
+      "last_edit_date": 1505193632,
+      "question_id": 46113160,
+      "link": "https://stackoverflow.com/questions/46113160/how-to-write-a-spark-rdd-to-s3-using-server-side-encryption",
+      "title": "How to write a spark rdd to S3 using server side encryption"
+    },
+    {
+      "tags": [
+        "encryption",
+        "amazon-s3",
+        "aws-kms"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": true,
+      "view_count": 479,
+      "accepted_answer_id": 47451902,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1557709594,
+      "creation_date": 1510832736,
+      "last_edit_date": 1510832845,
+      "question_id": 47328843,
+      "link": "https://stackoverflow.com/questions/47328843/s3-multipart-upload-with-sse-kms",
+      "title": "S3 Multipart Upload with SSE-KMS"
+    },
+    {
+      "tags": [
+        "hbase",
+        "downtime"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 60,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1528098552,
+      "creation_date": 1527684484,
+      "last_edit_date": 1527685245,
+      "question_id": 50605117,
+      "link": "https://stackoverflow.com/questions/50605117/how-hbase-compactions-affect-clients",
+      "title": "How HBase compactions affect clients?"
+    },
+    {
+      "tags": [
+        "csv",
+        "apache-spark",
+        "apache-spark-sql",
+        "databricks"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 406,
+      "answer_count": 0,
+      "score": 2,
+      "last_activity_date": 1522060517,
+      "creation_date": 1517553593,
+      "last_edit_date": 1522060517,
+      "question_id": 48577040,
+      "link": "https://stackoverflow.com/questions/48577040/escape-option-is-not-working-while-writing-dataframe",
+      "title": "Escape option is not working while writing dataframe"
+    },
+    {
+      "tags": [
+        "hadoop",
+        "hdfs",
+        "block"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 601,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1517390792,
+      "creation_date": 1517390217,
+      "question_id": 48538474,
+      "link": "https://stackoverflow.com/questions/48538474/how-to-delete-specific-block-from-hdfs",
+      "title": "how to delete specific block from HDFS"
+    },
+    {
+      "tags": [
+        "apache-spark",
+        "window",
+        "spark-streaming"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 53,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1517380623,
+      "creation_date": 1517380623,
+      "question_id": 48535928,
+      "link": "https://stackoverflow.com/questions/48535928/spark-streaming-stackoverflow-with-updatestatebykey",
+      "title": "Spark Streaming StackOverflow with updateStateByKey"
+    },
+    {
+      "tags": [
+        "apache-spark",
+        "rdd",
+        "partitioning"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": true,
+      "view_count": 417,
+      "accepted_answer_id": 48314999,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1516256525,
+      "creation_date": 1516252558,
+      "question_id": 48314277,
+      "link": "https://stackoverflow.com/questions/48314277/why-spark-creates-empty-partitions-and-how-default-partitioning-work",
+      "title": "Why spark creates empty partitions and how default partitioning work?"
+    },
+    {
+      "tags": [
+        "amazon-web-services",
+        "amazon-s3",
+        "aws-java-sdk"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 275,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1513246309,
+      "creation_date": 1513246309,
+      "question_id": 47810761,
+      "link": "https://stackoverflow.com/questions/47810761/s3-upload-working-from-aws-cli-but-accessdenied-from-aws-s3api",
+      "title": "S3 upload working from aws cli but AccessDenied from aws s3api"
+    },
+    {
+      "tags": [
+        "amazon-web-services",
+        "jar",
+        "aws-java-sdk"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": true,
+      "view_count": 1058,
+      "accepted_answer_id": 47631480,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1512387442,
+      "creation_date": 1512382769,
+      "question_id": 47631090,
+      "link": "https://stackoverflow.com/questions/47631090/where-to-find-specific-version-of-aws-java-sdk",
+      "title": "where to find specific version of aws-java-sdk?"
+    },
+    {
+      "tags": [
+        "hadoop",
+        "apache-spark",
+        "crc"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 2136,
+      "answer_count": 0,
+      "score": 4,
+      "last_activity_date": 1507633555,
+      "creation_date": 1507551141,
+      "last_edit_date": 1507632849,
+      "question_id": 46646172,
+      "link": "https://stackoverflow.com/questions/46646172/how-to-avoid-generation-meta-files-crc-files-in-spark-for-text-files",
+      "title": "How to avoid generation meta files (.crc files) in Spark for text files?"
+    },
+    {
+      "tags": [
+        "amazon-web-services",
+        "hadoop",
+        "apache-spark",
+        "encryption",
+        "amazon-s3"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": true,
+      "view_count": 1714,
+      "accepted_answer_id": 46335909,
+      "answer_count": 1,
+      "score": 2,
+      "last_activity_date": 1505970710,
+      "creation_date": 1505194832,
+      "last_edit_date": 1505196777,
+      "question_id": 46168680,
+      "link": "https://stackoverflow.com/questions/46168680/doesnt-spark-hadoop-support-sse-kms-encryption-on-aws-s3",
+      "title": "Doesn&#39;t Spark/Hadoop support SSE-KMS encryption on AWS S3"
+    },
+    {
+      "tags": [
+        "amazon-web-services",
+        "hadoop",
+        "apache-spark",
+        "properties"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": true,
+      "view_count": 436,
+      "accepted_answer_id": 46116479,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1504873371,
+      "creation_date": 1504869240,
+      "question_id": 46115199,
+      "link": "https://stackoverflow.com/questions/46115199/hadoopconfiguration-properties",
+      "title": "HadoopConfiguration Properties"
+    },
+    {
+      "tags": [
+        "hadoop",
+        "hive",
+        "metastore"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 161,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1504703513,
+      "creation_date": 1467920951,
+      "last_edit_date": 1468419378,
+      "question_id": 38254117,
+      "link": "https://stackoverflow.com/questions/38254117/impact-of-repeatedly-creating-and-deleting-hive-table",
+      "title": "Impact of Repeatedly Creating and Deleting Hive Table"
+    },
+    {
+      "tags": [
+        "apache-spark",
+        "rdd",
+        "partitioning"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 36,
+      "closed_date": 1498213236,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1498205207,
+      "creation_date": 1498205207,
+      "question_id": 44716236,
+      "link": "https://stackoverflow.com/questions/44716236/how-does-hashpartitioner-distribute-data-in-spark",
+      "closed_reason": "Duplicate of…",
+      "title": "How does HashPartitioner distribute data in Spark?"
+    },
+    {
+      "tags": [
+        "hadoop",
+        "hdfs",
+        "hue"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 756,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1466458313,
+      "creation_date": 1466190401,
+      "last_edit_date": 1466458313,
+      "question_id": 37888722,
+      "link": "https://stackoverflow.com/questions/37888722/upload-file-from-out-of-haddop-clusterremote-windows-machine-to-hdfs-just-like",
+      "title": "Upload file from out of haddop cluster(remote windows machine) to hdfs just like hue upload"
+    },
+    {
+      "tags": [
+        "apache-spark",
+        "parallel-processing",
+        "executors"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 148,
+      "answer_count": 0,
+      "score": 1,
+      "last_activity_date": 1460366156,
+      "creation_date": 1460366156,
+      "question_id": 36544517,
+      "link": "https://stackoverflow.com/questions/36544517/number-of-executors-in-spark-1-6-and-spark-1-5",
+      "title": "Number of executors in spark-1.6 and spark-1.5"
+    },
+    {
+      "tags": [
+        "apache-spark",
+        "rdd"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": true,
+      "view_count": 4650,
+      "accepted_answer_id": 32520254,
+      "answer_count": 1,
+      "score": 6,
+      "last_activity_date": 1441966980,
+      "creation_date": 1441956722,
+      "last_edit_date": 1441963598,
+      "question_id": 32517976,
+      "link": "https://stackoverflow.com/questions/32517976/how-to-get-data-from-a-specific-partition-in-spark-rdd",
+      "title": "How to get data from a specific partition in Spark RDD?"
+    }
+  ],
+  "has_more": false,
+  "quota_max": 10000,
+  "quota_remaining": 9658
+}
