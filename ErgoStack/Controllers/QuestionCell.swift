@@ -6,6 +6,23 @@
 //  Copyright © 2020 Pawel Madej. All rights reserved.
 //
 
+enum FontType {
+    case headline
+    case body
+    case caption
+
+    var suffix: String {
+        switch self {
+        case .headline:
+            return "-headline"
+        case .caption:
+            return "-caption1"
+        default:
+            return "-body"
+        }
+    }
+}
+
 import UIKit
 
 final class QuestionCell: UITableViewCell {
@@ -17,9 +34,10 @@ final class QuestionCell: UITableViewCell {
     @IBOutlet var userReputation: UILabel!
 
     func configCell(with question: Question) {
-        titleLabel.text = question.title
+        titleLabel.attributedText = decodeHTML(string: question.title, fontStyle: .headline)
+
         scoreLabel.text = "Question score: \(question.score)"
-        userDisplayName.text = question.owner.displayName
+        userDisplayName.attributedText = decodeHTML(string: question.owner.displayName, fontStyle: .caption)
         answerCount.text = "\(question.answerCount)"
         userReputation.text = "User reputation: \(question.owner.reputation)"
 
@@ -27,5 +45,23 @@ final class QuestionCell: UITableViewCell {
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
         creationDateLabel.text = formatter.string(from: question.creationDate)
+    }
+
+    func decodeHTML(string: String, fontStyle: FontType = .body) -> NSAttributedString {
+        let modifiedFont = NSString(format:"<span style=\"font: -apple-system\(fontStyle.suffix); font-size: \(UIFont.systemFontSize)\">%@</span>" as NSString, string)
+
+        guard let data = modifiedFont.data(using: String.Encoding.unicode.rawValue, allowLossyConversion: true) else {
+            return NSAttributedString(string: "")
+        }
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+
+        do {
+            let attributedString = try NSAttributedString(data: data,
+                                                       options: options,
+                                                       documentAttributes: nil)
+            return attributedString
+        } catch {
+            return NSAttributedString(string: "")
+        }
     }
 }
