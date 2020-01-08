@@ -12,6 +12,7 @@ enum SOEndpoint {
     case getQuestions
     case getQuestion(questionID: Int)
     case getUser(userID: Int)
+    case getUserQuestions(userID: Int)
     case getImage(url: String)
 }
 
@@ -30,6 +31,11 @@ extension SOEndpoint: RequestProviding {
 
         case let .getUser(userID):
             let url = prepareURL(endpoint: "/users/\(userID)")
+            let request = prepareURLRequest(for: url)
+            return request
+
+        case let .getUserQuestions(userID):
+            let url = prepareURL(endpoint: "/users/\(userID)/questions")
             let request = prepareURLRequest(for: url)
             return request
 

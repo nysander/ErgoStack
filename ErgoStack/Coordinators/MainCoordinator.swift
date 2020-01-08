@@ -16,10 +16,10 @@ final class MainCoordinator: Coordinator {
         self.navController = navigationController
     }
 
-    // MARK: - Cemetery
     func start() {
         if let viewController = R.storyboard.main.questionListViewController() {
             viewController.coordinator = self
+
             navController.pushViewController(viewController, animated: false)
         } else {
             fatalError("Unable to instantiate main ViewController")
@@ -30,7 +30,15 @@ final class MainCoordinator: Coordinator {
         if let viewController = R.storyboard.main.questionDetailsViewController() {
             viewController.questionID = questionID
 
-            print("mc")
+            viewController.coordinator = self
+            navController.pushViewController(viewController, animated: true)
+        }
+    }
+
+    func showUserProfile(userID: Int) {
+        if let viewController = R.storyboard.main.userProfileViewController() {
+            viewController.userID = userID
+
             viewController.coordinator = self
             navController.pushViewController(viewController, animated: true)
         }

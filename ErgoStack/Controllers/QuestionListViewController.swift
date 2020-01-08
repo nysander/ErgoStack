@@ -9,7 +9,7 @@
 import Combine
 import UIKit
 
-class QuestionListViewController: UIViewController {
+class QuestionListViewController: UIViewController, QuestionListProviding {
     weak var coordinator: MainCoordinator?
 
     @IBOutlet var tableView: UITableView!
@@ -68,4 +68,7 @@ class QuestionListViewController: UIViewController {
         }
     }
 }
+
+protocol QuestionListProviding {
+    var coordinator: MainCoordinator? { get set }
 }

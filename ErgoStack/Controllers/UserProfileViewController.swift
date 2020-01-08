@@ -8,7 +8,17 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController {
+class UserProfileViewController: UIViewController, QuestionListProviding {
+    var userID: Int?
+    let dataSource = AppDelegate.dataSource
+    weak var coordinator: MainCoordinator?
+
+    private let image = UIImage()
+    private let topMessage = "top message"
+    private let bottomMessage = "bottom message"
+
+    @IBOutlet var dataProvider: QuestionTableViewDataProvider!
+
     @IBOutlet var displayName: UILabel!
     @IBOutlet var creationDate: UILabel!
     @IBOutlet var profileImage: UIImageView!
@@ -20,22 +30,52 @@ class UserProfileViewController: UIViewController {
     @IBOutlet var badgesStackView: UIStackView!
     @IBOutlet var mainStackView: UIStackView!
 
-    @IBOutlet var userQuestionsTableView: UITableView!
+    @IBOutlet var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        guard let userID = self.userID else {
+            preconditionFailure("User ID missing")
+        }
+        dataSource.getUser(userID: userID)
+
+        registerNotificationObservers()
+
+        tableView.dataSource = dataProvider
+        tableView.delegate = dataProvider
+        tableView.rowHeight = UITableView.automaticDimension
+
+        dataProvider.rootVC = self
+
+        dataProvider.emptyViewData = (image, topMessage, bottomMessage)
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
-    */
 
+    func registerNotificationObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showUserProfile), name: NSNotification.Name("UserProfileLoaded"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(showImage), name: NSNotification.Name("ImageLoaded"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(showQuestionList), name: NSNotification.Name("UserQuestionListLoaded"), object: nil)
+
+    }
+
+    @objc
+    func showUserProfile() {
+
+    }
+
+    @objc
+    func showImage() {
+
+    }
+
+    @objc
+    func showQuestionList() {
+
+    }
 }

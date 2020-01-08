@@ -10,7 +10,7 @@ import UIKit
 
 final class QuestionTableViewDataProvider: NSObject {
     var dataSource = AppDelegate.dataSource
-    var rootVC: QuestionListViewController?
+    var rootVC: QuestionListProviding?
     var emptyViewData: (UIImage, String, String)?
 
     func numberOfSections(in tableView: UITableView) -> Int {
