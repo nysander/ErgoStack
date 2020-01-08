@@ -33,7 +33,7 @@ class QuestionListViewController: UIViewController {
         dataProvider.emptyViewData = (image, topMessage, bottomMessage)
 
         #warning("TODO: set navigation title etc")
-        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name("QuestionsLoaded"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name("QuestionListLoaded"), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -60,6 +60,7 @@ struct Question: Decodable {
     var answers: [Answer]?
 }
 
-struct QuestionsResponse: Decodable {
+struct QuestionListResponse: Decodable {
     let items: [Question]
 }
+

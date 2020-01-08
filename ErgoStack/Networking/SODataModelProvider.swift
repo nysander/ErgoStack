@@ -17,13 +17,14 @@ class SODataModelProvider: ObservableObject {
     @Published var questions = [Question]() {
         didSet {
             didChange.send(self)
-            NotificationCenter.default.post(name: NSNotification.Name("QuestionsLoaded"), object: self, userInfo: [:])
+            NotificationCenter.default.post(name: NSNotification.Name("QuestionListLoaded"), object: self, userInfo: [:])
         }
     }
 
     @Published var question: Question? {
         didSet {
             didChange.send(self)
+            NotificationCenter.default.post(name: NSNotification.Name("QuestionDetailsLoaded"), object: self, userInfo: [:])
         }
     }
 
@@ -60,7 +61,8 @@ class SODataModelProvider: ObservableObject {
         service.getQuestion(questionID: questionID) { result in
             DispatchQueue.main.async {
                 do {
-                    self.question = try result.get()
+                    let results = try result.get()
+                    self.question = results.items.first
                 } catch {
                     print(error)
                 }

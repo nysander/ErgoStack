@@ -35,10 +35,10 @@ struct Answer: Decodable {
     let answerId: Int
     let questionId: Int
     let creationDate: Date
-    let body: String
+    let body: String?
     let isAccepted: Bool
     let score: Int
     let lastActivityDate: Date
-    let lastEditDate: Date
+    let lastEditDate: Date?
     let owner: User
 }

@@ -74,4 +74,8 @@ struct User: Decodable {
     let reputationChangeMonth: Int?
     let reputationChangeDay: Int?
     let websiteUrl: String?
+    let badgeCount: [String: Int]?
+    let questionCount: Int?
+    let answerCount: Int?
+    let aboutMe: String?
 }

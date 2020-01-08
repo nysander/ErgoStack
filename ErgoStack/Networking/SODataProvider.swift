@@ -19,18 +19,18 @@ class SOService: SODataProvider {
 protocol SODataProvider {
     var network: Networking { get }
 
-    func getQuestions(_ completion: @escaping (Result<QuestionsResponse, Error>) -> Void)
-    func getQuestion(questionID: Int, _ completion: @escaping (Result<Question, Error>) -> Void)
+    func getQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
+    func getQuestion(questionID: Int, _ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
     func getUser(userID: Int, _ completion: @escaping (Result<User, Error>) -> Void)
     func getImage(url: String, _ completion: @escaping (Result<Data, Error>) -> Void)
 }
 
 extension SODataProvider {
-    func getQuestions(_ completion: @escaping (Result<QuestionsResponse, Error>) -> Void) {
+    func getQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
         network.execute(SOEndpoint.getQuestions, completion: completion)
     }
 
-    func getQuestion(questionID: Int, _ completion: @escaping (Result<Question, Error>) -> Void) {
+    func getQuestion(questionID: Int, _ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
         network.execute(SOEndpoint.getQuestion(questionID: questionID), completion: completion)
     }
 
