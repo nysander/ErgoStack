@@ -58,6 +58,13 @@ class QuestionDetailsViewController: UIViewController {
         if let questionBody = question.body {
             body.attributedText = decodeHTML(string: questionBody)
             body.backgroundColor = .systemGray2
+
+            body.isScrollEnabled = false
+            body.translatesAutoresizingMaskIntoConstraints = false
+
+            body.delegate = self
+
+            textViewDidChange(body)
         }
 
         spinner.removeFromSuperview()
@@ -110,6 +117,19 @@ class QuestionDetailsViewController: UIViewController {
             return attributedString
         } catch {
             return NSAttributedString(string: "")
+        }
+    }
+}
+
+extension QuestionDetailsViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        let size = CGSize(width: mainStackView.frame.width, height: .infinity)
+        let estimatedSize = textView.sizeThatFits(size)
+
+        textView.constraints.forEach { constraint in
+            if constraint.firstAttribute == .height {
+                constraint.constant = estimatedSize.height
+            }
         }
     }
 }
