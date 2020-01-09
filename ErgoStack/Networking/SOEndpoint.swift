@@ -25,7 +25,7 @@ extension SOEndpoint: RequestProviding {
             return request
 
         case let .getQuestion(questionID):
-            let url = prepareURL(endpoint: "/questions/\(questionID)")
+            let url = prepareURL(endpoint: "/questions/\(questionID)?filter=!b1MMEAHGb2X2p*")
             let request = prepareURLRequest(for: url)
             return request
 

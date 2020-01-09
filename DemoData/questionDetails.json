@@ -5,7 +5,60 @@
         "apache-spark",
         "apache-kafka"
       ],
+      "answers": [
+        {
+          "owner": {
+            "badge_counts": {
+              "bronze": 58,
+              "silver": 36,
+              "gold": 3
+            },
+            "reputation": 3972,
+            "user_id": 1467926,
+            "user_type": "registered",
+            "accept_rate": 76,
+            "profile_image": "https://www.gravatar.com/avatar/e0148d321d2f35a32f9c93d1d5dac478?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Fermat&#39;s Little Student",
+            "link": "https://stackoverflow.com/users/1467926/fermats-little-student"
+          },
+          "is_accepted": false,
+          "score": 0,
+          "last_activity_date": 1578511862,
+          "last_edit_date": 1578511862,
+          "creation_date": 1578085147,
+          "answer_id": 59585266,
+          "question_id": 44263095,
+          "body": "<p>Try to tune the <code>batchDuration</code> parameter (when initializing <code>StreamingContext</code> ) to a number larger than the processing time of each rdd. This solved my problem. </p>\n"
+        },
+        {
+          "owner": {
+            "badge_counts": {
+              "bronze": 14,
+              "silver": 4,
+              "gold": 0
+            },
+            "reputation": 532,
+            "user_id": 8860764,
+            "user_type": "registered",
+            "profile_image": "https://www.gravatar.com/avatar/200f6aae2f4c00e977284b8a6758114e?s=128&d=identicon&r=PG&f=1",
+            "display_name": "Adrian Negru",
+            "link": "https://stackoverflow.com/users/8860764/adrian-negru"
+          },
+          "is_accepted": false,
+          "score": 0,
+          "last_activity_date": 1578512774,
+          "creation_date": 1578512774,
+          "answer_id": 59652841,
+          "question_id": 44263095,
+          "body": "<p>Because you don't want to lose any messages, you might want to choose the 'exactly once' delivery semantics, which provides no data loss. In order to configure the exactly once delivery semantics you have to use acks='all', which you did. </p>\n\n<p>According to this resource[1], acks='all' property must be used in conjunction with min.insync.replicas property.</p>\n\n<p>[1] <a href=\"https://www.linkedin.com/pulse/kafka-producer-delivery-semantics-sylvester-daniel/\" rel=\"nofollow noreferrer\">https://www.linkedin.com/pulse/kafka-producer-delivery-semantics-sylvester-daniel/</a></p>\n"
+        }
+      ],
       "owner": {
+        "badge_counts": {
+          "bronze": 19,
+          "silver": 5,
+          "gold": 0
+        },
         "reputation": 426,
         "user_id": 1758378,
         "user_type": "registered",
@@ -15,7 +68,7 @@
         "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
       },
       "is_answered": false,
-      "view_count": 374,
+      "view_count": 377,
       "answer_count": 2,
       "score": 6,
       "last_activity_date": 1578512774,
@@ -29,5 +82,5 @@
   ],
   "has_more": false,
   "quota_max": 10000,
-  "quota_remaining": 9675
+  "quota_remaining": 9851
 }

@@ -55,4 +55,25 @@ extension Networking {
             }
         }.resume()
     }
+
+    func execute(_ requestProvider: RequestProviding, completion: @escaping (Result<Data, Error>) -> Void) {
+        let urlRequest = requestProvider.urlRequest
+
+        session.dataTask(with: urlRequest) { data, _, error in
+            do {
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+
+                guard let data = data else {
+                    preconditionFailure("No error was received but we also don't have data...")
+                }
+
+                completion(.success(data))
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
 }
