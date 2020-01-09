@@ -56,7 +56,7 @@ final class QuestionCell: UITableViewCell {
     }
 
     func decodeHTML(string: String, fontStyle: FontType = .body) -> NSAttributedString {
-        let modifiedFont = NSString(format:"<span style=\"font: -apple-system\(fontStyle.suffix); font-size: \(UIFont.systemFontSize)\">%@</span>" as NSString, string)
+        let modifiedFont = NSString(format: "<span style=\"font: -apple-system\(fontStyle.suffix); font-size: \(UIFont.systemFontSize)\">%@</span>" as NSString, string)
 
         guard let data = modifiedFont.data(using: String.Encoding.unicode.rawValue, allowLossyConversion: true) else {
             return NSAttributedString(string: "")

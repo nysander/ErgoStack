@@ -26,7 +26,6 @@ class QuestionDetailsViewController: UIViewController {
     @IBOutlet var profileStackView: UIStackView!
     @IBOutlet var userDisplayName: UIButton!
 
-
     let spinner = UIActivityIndicatorView(style: .large)
 
     override func viewDidLoad() {
@@ -36,7 +35,6 @@ class QuestionDetailsViewController: UIViewController {
             dataSource.getQuestion(questionID: questionID)
         }
 
-        #warning("TODO: set navigation title etc")
         NotificationCenter.default.addObserver(self, selector: #selector(showView), name: NSNotification.Name("QuestionDetailsLoaded"), object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(prepareImage), name: NSNotification.Name("ImageLoaded"), object: nil)
@@ -52,7 +50,6 @@ class QuestionDetailsViewController: UIViewController {
 
         coordinator?.showUserProfile(userID: question.owner.userId)
     }
-
 
     // MARK: - Notification Center Selectors
     @objc
@@ -118,7 +115,7 @@ class QuestionDetailsViewController: UIViewController {
     func createTagLabels(tags: [String]) {
         tagStackView.translatesAutoresizingMaskIntoConstraints = false
 
-        for (index,tag) in tags.enumerated() {
+        for (index, tag) in tags.enumerated() {
             let label = UIButton()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.setTitle(tag, for: .normal)
@@ -168,7 +165,6 @@ class QuestionDetailsViewController: UIViewController {
         }
     }
 
-
     func prepareAnswerViews(_ question: Question) {
         if let answers = question.answers {
             for answer in answers {
@@ -201,7 +197,7 @@ class QuestionDetailsViewController: UIViewController {
     }
 
     func decodeHTML(string: String, fontStyle: FontType = .body) -> NSAttributedString {
-        let modifiedFont = NSString(format:"<span style=\"font: -apple-system\(fontStyle.suffix); font-size: \(UIFont.systemFontSize)\">%@</span>" as NSString, string)
+        let modifiedFont = NSString(format: "<span style=\"font: -apple-system\(fontStyle.suffix); font-size: \(UIFont.systemFontSize)\">%@</span>" as NSString, string)
 
         guard let data = modifiedFont.data(using: String.Encoding.unicode.rawValue, allowLossyConversion: true) else {
             return NSAttributedString(string: "")
@@ -210,8 +206,8 @@ class QuestionDetailsViewController: UIViewController {
 
         do {
             let attributedString = try NSAttributedString(data: data,
-                                                       options: options,
-                                                       documentAttributes: nil)
+                                                          options: options,
+                                                          documentAttributes: nil)
             return attributedString
         } catch {
             return NSAttributedString(string: "")

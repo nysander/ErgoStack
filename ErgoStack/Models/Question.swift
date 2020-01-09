@@ -63,4 +63,3 @@ struct Question: Decodable {
 struct QuestionListResponse: Decodable {
     let items: [Question]
 }
-

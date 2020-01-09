@@ -1,5 +1,5 @@
 //
-//  UserDefaultConfig.swift
+//  UserDefaultsConfig.swift
 //  ErgoStack
 //
 //  Created by Pawel Madej on 08/01/2020.

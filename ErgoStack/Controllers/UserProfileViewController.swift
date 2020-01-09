@@ -64,7 +64,6 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         NotificationCenter.default.addObserver(self, selector: #selector(showImage), name: NSNotification.Name("ImageLoaded"), object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(showQuestionList), name: NSNotification.Name("UserQuestionListLoaded"), object: nil)
-
     }
 
     @objc

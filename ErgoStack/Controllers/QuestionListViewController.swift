@@ -32,7 +32,6 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
 
         dataProvider.emptyViewData = (image, topMessage, bottomMessage)
 
-        #warning("TODO: set navigation title etc")
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name("QuestionListLoaded"), object: nil)
 
         if UserDefaultsConfig.demo {

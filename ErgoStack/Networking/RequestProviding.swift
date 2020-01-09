@@ -8,25 +8,13 @@
 
 import Foundation
 
-enum API {
-    static let version = "2.2"
-    static let domain = "https://api.stackexchange.com/"
-
-    static let clientSecret = "Gkg1hDptbXD5LC6fzSQosQ(("
-    static let key = "3efzRR38AAlKNUDkSNF0nA(("
-}
-
 protocol RequestProviding {
   var urlRequest: URLRequest { get }
 }
 
-/* example query
-    api.stackexchange.com/2.2/questions/59129540?order=desc&sort=creation&site=stackoverflow&filter=!-*jbN-o8P3E5
- */
 extension RequestProviding {
     func prepareURL(endpoint: String) -> URL {
-        let urlString = "\(API.domain)/\(API.version)\(endpoint)&pagesize=10&order=desc&sort=creation&site=stackoverflow&client_secret=\(API.clientSecret)&key=\(API.key)"
-        print(urlString)
+        let urlString = "\(APIConfig.domain)/\(APIConfig.version)\(endpoint)&pagesize=10&order=desc&sort=creation&site=stackoverflow&client_secret=\(APIConfig.clientSecret)&key=\(APIConfig.key)"
         guard let url = URL(string: urlString) else {
             preconditionFailure("Invalid URL used to create URL instance")
         }

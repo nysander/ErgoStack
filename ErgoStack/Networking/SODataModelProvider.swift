@@ -170,11 +170,9 @@ class SODataModelProvider {
     }
 }
 
-
 // FIXME: --- MOVE TO OTHER FILES ---
 class DemoService: DemoDataProvider {
     var demoData = DemoData()
-
 }
 
 protocol DemoDataProvider {
@@ -184,7 +182,6 @@ protocol DemoDataProvider {
     func getQuestion(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
     func getUser(_ completion: @escaping (Result<UserListResponse, Error>) -> Void)
     func getUserQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
-
 }
 
 extension DemoDataProvider {
@@ -207,13 +204,12 @@ extension DemoDataProvider {
 
 class DemoData: DemoDataSource { }
 
-
 protocol DemoDataSource {
-    func loadDemoData<T: Decodable>(from fileName: String, completion: @escaping (Result<T,Error>) -> Void)
+    func loadDemoData<T: Decodable>(from fileName: String, completion: @escaping (Result<T, Error>) -> Void)
 }
 
 extension DemoDataSource {
-    func loadDemoData<T: Decodable>(from fileName: String, completion: @escaping (Result<T,Error>) -> Void) {
+    func loadDemoData<T: Decodable>(from fileName: String, completion: @escaping (Result<T, Error>) -> Void) {
         if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
