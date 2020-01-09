@@ -39,6 +39,8 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
         } else {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Enable demo", style: .plain, target: self, action: #selector(toggleDemo))
         }
+
+        self.navigationItem.title = "Question List"
     }
 
     override func viewWillAppear(_ animated: Bool) {

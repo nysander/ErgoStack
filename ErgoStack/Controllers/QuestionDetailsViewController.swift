@@ -41,6 +41,8 @@ class QuestionDetailsViewController: UIViewController {
 
         showSpinner()
         mainStackView.isHidden = true
+
+        self.navigationItem.title = "Question Details"
     }
 
     @IBAction func showUserProfile(_ sender: Any) {
@@ -167,10 +169,33 @@ class QuestionDetailsViewController: UIViewController {
 
     func prepareAnswerViews(_ question: Question) {
         if let answers = question.answers {
-            for answer in answers {
+            for (index, answer) in answers.enumerated() {
                 guard let answerBody = answer.body else {
                     preconditionFailure("Answer body is empty")
                 }
+                let answerHeader = UIStackView()
+                answerHeader.axis = .horizontal
+                answerHeader.distribution = .fill
+                answerHeader.spacing = 20
+
+                mainStackView.addArrangedSubview(answerHeader)
+
+                let answerLabel = UILabel()
+                answerLabel.text = "Answer \(index+1)"
+
+                answerHeader.addArrangedSubview(answerLabel)
+
+                let answerOwnerButton = UIButton()
+                answerOwnerButton.setTitle(answer.owner.displayName, for: .normal)
+
+                // pass userId via tag to action method
+                answerOwnerButton.tag = answer.owner.userId
+                answerOwnerButton.addTarget(self, action: #selector(showUser), for: .touchUpInside)
+                answerOwnerButton.setTitleColor(.systemBlue, for: .normal)
+                answerOwnerButton.contentHorizontalAlignment = .trailing
+
+                answerHeader.addArrangedSubview(answerOwnerButton)
+
                 let answerTextView = UITextView()
 
                 answerTextView.attributedText = decodeHTML(string: answerBody)
@@ -186,6 +211,10 @@ class QuestionDetailsViewController: UIViewController {
         }
     }
 
+    @objc
+    func showUser(sender: UIButton) {
+        coordinator?.showUserProfile(userID: sender.tag)
+    }
 
     func showSpinner() {
         spinner.translatesAutoresizingMaskIntoConstraints = false

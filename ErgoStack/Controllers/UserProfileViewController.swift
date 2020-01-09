@@ -50,6 +50,8 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         }
         dataSource.getUser(userID: userID)
         dataSource.getUserQuestions(userID: userID)
+        
+        self.navigationItem.title = "User Profile"
     }
 
     @IBAction func openWebsite(_ sender: Any) {
@@ -84,10 +86,10 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
             creationDateLabel.text = "Joined: \(formatter.string(from: creationDate))"
         }
 
-        if user.websiteUrl == nil {
-            websiteButton.isHidden = true
-        } else {
+        if let url = user.websiteUrl, !url.isEmpty {
             websiteButton.isHidden = false
+        } else {
+            websiteButton.isHidden = true
         }
     }
 
