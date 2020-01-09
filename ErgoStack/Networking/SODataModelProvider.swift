@@ -100,25 +100,52 @@ class SODataModelProvider {
     }
 
     func getUser(userID: Int) {
-        service.getUser(userID: userID) { result in
-            DispatchQueue.main.async {
-                do {
-                    self.user = try result.get()
-                } catch {
-                    print(error)
+        if UserDefaultsConfig.demo {
+            demoService.getUser { result in
+                DispatchQueue.main.async {
+                    do {
+                        let results = try result.get()
+                        self.user = results.items.first
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+        } else {
+            service.getUser(userID: userID) { result in
+                DispatchQueue.main.async {
+                    do {
+                        let results = try result.get()
+                        self.user = results.items.first
+                    } catch {
+                        print(error)
+                    }
                 }
             }
         }
     }
 
     func getUserQuestions(userID: Int) {
-        service.getUserQuestions(userID: userID) { result in
-            DispatchQueue.main.async {
-                do {
-                    let results = try result.get()
-                    self.questions = results.items
-                } catch {
-                    print(error)
+        if UserDefaultsConfig.demo {
+            demoService.getUserQuestions { result in
+                DispatchQueue.main.async {
+                    do {
+                        let results = try result.get()
+                        self.userQuestions = results.items
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+        } else {
+            service.getUserQuestions(userID: userID) { result in
+                DispatchQueue.main.async {
+                    do {
+                        let results = try result.get()
+                        self.userQuestions = results.items
+                    } catch {
+                        print(error)
+                    }
                 }
             }
         }
@@ -155,6 +182,8 @@ protocol DemoDataProvider {
 
     func getQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
     func getQuestion(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
+    func getUser(_ completion: @escaping (Result<UserListResponse, Error>) -> Void)
+    func getUserQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
 
 }
 
@@ -165,6 +194,14 @@ extension DemoDataProvider {
 
     func getQuestion(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
         demoData.loadDemoData(from: "questionDetails", completion: completion)
+    }
+
+    func getUser(_ completion: @escaping (Result<UserListResponse, Error>) -> Void) {
+        demoData.loadDemoData(from: "userProfile", completion: completion)
+    }
+
+    func getUserQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
+        demoData.loadDemoData(from: "userQuestions", completion: completion)
     }
 }
 

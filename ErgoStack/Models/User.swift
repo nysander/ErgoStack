@@ -80,36 +80,6 @@ struct User: Decodable {
     let aboutMe: String?
 }
 
-/*
-"items": [
-  {
-    "badge_counts": {
-      "bronze": 33,
-      "silver": 14,
-      "gold": 0
-    },
-    "answer_count": 14,
-    "question_count": 34,
-    "account_id": 1345039,
-    "is_employee": false,
-    "last_modified_date": 1573682649,
-    "last_access_date": 1578501265,
-    "reputation_change_year": 0,
-    "reputation_change_quarter": 0,
-    "reputation_change_month": 0,
-    "reputation_change_week": 0,
-    "reputation_change_day": 0,
-    "reputation": 701,
-    "creation_date": 1332421095,
-    "user_type": "registered",
-    "user_id": 1285959,
-    "accept_rate": 75,
-    "about_me": "",
-    "location": "Polska",
-    "website_url": "https://www.pawelmadej.com",
-    "link": "https://stackoverflow.com/users/1285959/pawe%c5%82-madej",
-    "profile_image": "https://i.stack.imgur.com/vWIwN.jpg?s=128&g=1",
-    "display_name": "Paweł Madej"
-  }
-],
- */
+struct UserListResponse: Decodable {
+    let items: [User]
+}

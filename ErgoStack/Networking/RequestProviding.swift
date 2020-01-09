@@ -12,7 +12,8 @@ enum API {
     static let version = "2.2"
     static let domain = "https://api.stackexchange.com/"
 
-    static let questionFilter = ""
+    static let clientSecret = "Gkg1hDptbXD5LC6fzSQosQ(("
+    static let key = "3efzRR38AAlKNUDkSNF0nA(("
 }
 
 protocol RequestProviding {
@@ -24,7 +25,8 @@ protocol RequestProviding {
  */
 extension RequestProviding {
     func prepareURL(endpoint: String) -> URL {
-        let urlString = "\(API.domain)/\(API.version)\(endpoint)?order=desc&sort=creation&site=stackoverflow&filter=\(API.questionFilter)"
+        let urlString = "\(API.domain)/\(API.version)\(endpoint)&pagesize=10&order=desc&sort=creation&site=stackoverflow&client_secret=\(API.clientSecret)&key=\(API.key)"
+        print(urlString)
         guard let url = URL(string: urlString) else {
             preconditionFailure("Invalid URL used to create URL instance")
         }

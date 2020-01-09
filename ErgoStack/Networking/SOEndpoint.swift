@@ -20,7 +20,7 @@ extension SOEndpoint: RequestProviding {
     var urlRequest: URLRequest {
         switch self {
         case .getQuestions:
-            let url = prepareURL(endpoint: "/questions")
+            let url = prepareURL(endpoint: "/questions?filter=")
             let request = prepareURLRequest(for: url)
             return request
 
@@ -30,12 +30,12 @@ extension SOEndpoint: RequestProviding {
             return request
 
         case let .getUser(userID):
-            let url = prepareURL(endpoint: "/users/\(userID)")
+            let url = prepareURL(endpoint: "/users/\(userID)?filter=!-*jbN*CqbrZu")
             let request = prepareURLRequest(for: url)
             return request
 
         case let .getUserQuestions(userID):
-            let url = prepareURL(endpoint: "/users/\(userID)/questions")
+            let url = prepareURL(endpoint: "/users/\(userID)/questions?filter=")
             let request = prepareURLRequest(for: url)
             return request
 

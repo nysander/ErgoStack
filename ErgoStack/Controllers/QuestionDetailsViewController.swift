@@ -32,11 +32,11 @@ class QuestionDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let questionID = questionID else {
-            preconditionFailure("Unable to initialise View Controller without Question ID")
+        if let questionID = questionID {
+            dataSource.getQuestion(questionID: questionID)
         }
-        dataSource.getQuestion(questionID: questionID)
 
+        #warning("TODO: set navigation title etc")
         NotificationCenter.default.addObserver(self, selector: #selector(showView), name: NSNotification.Name("QuestionDetailsLoaded"), object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(prepareImage), name: NSNotification.Name("ImageLoaded"), object: nil)
@@ -62,8 +62,6 @@ class QuestionDetailsViewController: UIViewController {
         }
 
         dataSource.getImage(url: question.owner.profileImage)
-        createTagLabels(tags: question.tags)
-        prepareAnswerViews(question)
 
         questionTitle.text = decodeHTML(string: question.title, fontStyle: .title).string
         viewCount.text = "Views: \(question.viewCount)"
@@ -83,17 +81,24 @@ class QuestionDetailsViewController: UIViewController {
             textViewDidChange(body)
         }
 
-        let badgeStack = UIStackView()
-        badgeStack.axis = .horizontal
-        badgeStack.distribution = .equalSpacing
-        badgeStack.spacing = 20
+        if profileStackView.viewWithTag(1) != nil {
+            // required to remove duplicate view adding when back to first question details view
+        } else {
+            let badgeStack = UIStackView()
+            badgeStack.axis = .horizontal
+            badgeStack.distribution = .equalSpacing
+            badgeStack.spacing = 20
+            badgeStack.tag = 1
 
-        profileStackView.addArrangedSubview(badgeStack)
+            profileStackView.addArrangedSubview(badgeStack)
 
-        prepareBadge(color: "bronze", question, badgeStack)
-        prepareBadge(color: "silver", question, badgeStack)
-        prepareBadge(color: "gold", question, badgeStack)
+            prepareBadge(color: "bronze", question, badgeStack)
+            prepareBadge(color: "silver", question, badgeStack)
+            prepareBadge(color: "gold", question, badgeStack)
 
+            createTagLabels(tags: question.tags)
+            prepareAnswerViews(question)
+        }
         spinner.removeFromSuperview()
         mainStackView.isHidden = false
     }
@@ -135,7 +140,6 @@ class QuestionDetailsViewController: UIViewController {
 
     func prepareBadge(color: String, _ question: Question, _ badgeStack: UIStackView) {
         if let badges = question.owner.badgeCounts, let count = badges[color], count > 0 {
-            print("in")
             let label = UIButton()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.setTitle("\(count)", for: .normal)

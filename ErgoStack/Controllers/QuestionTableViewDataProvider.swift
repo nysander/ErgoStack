@@ -6,12 +6,18 @@
 //  Copyright © 2020 Pawel Madej. All rights reserved.
 //
 
+enum ParentView {
+    case list
+    case userList
+}
+
 import UIKit
 
 final class QuestionTableViewDataProvider: NSObject {
     var dataSource = AppDelegate.dataSource
     var rootVC: QuestionListProviding?
     var emptyViewData: (UIImage, String, String)?
+    var parent: ParentView?
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -19,9 +25,17 @@ final class QuestionTableViewDataProvider: NSObject {
 
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
+        guard let parent = self.parent else {
+            preconditionFailure("parent view not set")
+        }
         let numberOfRows: Int
-        numberOfRows = dataSource.questions.count
-
+        switch parent {
+        case .list:
+            numberOfRows = dataSource.questions.count
+        case .userList:
+            numberOfRows = dataSource.userQuestions.count
+        }
+        
         if numberOfRows == 0 {
             tableView.separatorStyle = .none
             tableView.backgroundView?.isHidden = false
@@ -38,7 +52,16 @@ final class QuestionTableViewDataProvider: NSObject {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.questionCell.identifier, for: indexPath) as! QuestionCell
 
-        let question = dataSource.questions[indexPath.row]
+        guard let parent = self.parent else {
+            preconditionFailure("parent view not set")
+        }
+        let question: Question
+        switch parent {
+        case .list:
+            question = dataSource.questions[indexPath.row]
+        case .userList:
+            question = dataSource.userQuestions[indexPath.row]
+        }
 
         cell.configCell(with: question)
 
@@ -47,7 +70,16 @@ final class QuestionTableViewDataProvider: NSObject {
 
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
-        let questionID = dataSource.questions[indexPath.item].questionId
+        guard let parent = self.parent else {
+            preconditionFailure("parent view not set")
+        }
+        let questionID: Int
+        switch parent {
+        case .list:
+            questionID = dataSource.questions[indexPath.row].questionId
+        case .userList:
+            questionID = dataSource.userQuestions[indexPath.row].questionId
+        }
 
         rootVC?.coordinator?.showQuestionDetails(questionID: questionID)
     }

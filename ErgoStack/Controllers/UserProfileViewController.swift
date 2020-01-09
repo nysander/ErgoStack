@@ -18,9 +18,8 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     private let bottomMessage = "bottom message"
 
     @IBOutlet var dataProvider: QuestionTableViewDataProvider!
-
     @IBOutlet var displayName: UILabel!
-    @IBOutlet var creationDate: UILabel!
+    @IBOutlet var creationDateLabel: UILabel!
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var location: UILabel!
     @IBOutlet var websiteButton: UIButton!
@@ -35,11 +34,6 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let userID = self.userID else {
-            preconditionFailure("User ID missing")
-        }
-        dataSource.getUser(userID: userID)
-
         registerNotificationObservers()
 
         tableView.dataSource = dataProvider
@@ -47,12 +41,21 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         tableView.rowHeight = UITableView.automaticDimension
 
         dataProvider.rootVC = self
+        dataProvider.parent = .userList
 
         dataProvider.emptyViewData = (image, topMessage, bottomMessage)
+
+        guard let userID = self.userID else {
+            preconditionFailure("User ID missing")
+        }
+        dataSource.getUser(userID: userID)
+        dataSource.getUserQuestions(userID: userID)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    @IBAction func openWebsite(_ sender: Any) {
+        if let websiteUrl = dataSource.user?.websiteUrl, let url = URL(string: websiteUrl) {
+            UIApplication.shared.open(url)
+        }
     }
 
     func registerNotificationObservers() {
@@ -66,16 +69,39 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
 
     @objc
     func showUserProfile() {
+        guard let user = self.dataSource.user else {
+            preconditionFailure("Unable to initialize view with nonexistent question")
+        }
+        dataSource.getImage(url: user.profileImage)
+        displayName.text = user.displayName
+        location.text = user.location
+        questionCountLabel.text = "Questions: \(user.questionCount ?? 0)"
+        answerCountLabel.text = "Answers: \(user.answerCount ?? 0)"
 
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        if let creationDate = user.creationDate {
+            creationDateLabel.text = "Joined: \(formatter.string(from: creationDate))"
+        }
+
+        if user.websiteUrl == nil {
+            websiteButton.isHidden = true
+        } else {
+            websiteButton.isHidden = false
+        }
     }
 
     @objc
     func showImage() {
-
+        profileImage.image = UIImage(data: dataSource.imageData)
+        profileImage.contentMode = .scaleToFill
+        profileImage.layer.cornerRadius = view.frame.size.width / 32
+        profileImage.clipsToBounds = true
     }
 
     @objc
     func showQuestionList() {
-
+        tableView.reloadData()
     }
 }

@@ -38,7 +38,7 @@ final class MainCoordinator: Coordinator {
     func showUserProfile(userID: Int) {
         if let viewController = R.storyboard.main.userProfileViewController() {
             viewController.userID = userID
-
+            print(userID)
             viewController.coordinator = self
             navController.pushViewController(viewController, animated: true)
         }

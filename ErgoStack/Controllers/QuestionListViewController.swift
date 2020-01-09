@@ -6,7 +6,6 @@
 //  Copyright © 2020 Pawel Madej. All rights reserved.
 //
 
-import Combine
 import UIKit
 
 class QuestionListViewController: UIViewController, QuestionListProviding {
@@ -29,6 +28,7 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
         tableView.rowHeight = UITableView.automaticDimension
 
         dataProvider.rootVC = self
+        dataProvider.parent = .list
 
         dataProvider.emptyViewData = (image, topMessage, bottomMessage)
 
