@@ -21,17 +21,9 @@ final class MainCoordinator: Coordinator, UISplitViewControllerDelegate {
             viewController.coordinator = self
 
             navController.viewControllers = [viewController]
-
             splitViewController.viewControllers = [navController, detailViewController]
 
-            if #available(iOS 13, *) {
-                if splitViewController.traitCollection.userInterfaceIdiom == .phone {
-                    // Without this workaround, there's a nasty color behind pushed view controllers, only in dark mode on iOS 13.
-                    splitViewController.view.backgroundColor = .systemBackground
-                }
-            }
-
-            // make this split view controller behave sensibly on iPad
+            // for iPad
             splitViewController.preferredDisplayMode = .allVisible
             splitViewController.delegate = SplitViewControllerDelegate.shared
         } else {
@@ -43,6 +35,7 @@ final class MainCoordinator: Coordinator, UISplitViewControllerDelegate {
         if let viewController = R.storyboard.main.questionDetailsViewController() {
             viewController.questionID = questionID
             viewController.coordinator = self
+            viewController.view.backgroundColor = .systemBackground
 
             let navigatedVC = UINavigationController(rootViewController: viewController)
             splitViewController.showDetailViewController(navigatedVC, sender: self)
@@ -53,6 +46,7 @@ final class MainCoordinator: Coordinator, UISplitViewControllerDelegate {
         if let viewController = R.storyboard.main.userProfileViewController() {
             viewController.userID = userID
             viewController.coordinator = self
+            viewController.view.backgroundColor = .systemBackground
 
             let navigatedVC = UINavigationController(rootViewController: viewController)
             navigatedVC.navigationController?.navigationItem.hidesBackButton = false

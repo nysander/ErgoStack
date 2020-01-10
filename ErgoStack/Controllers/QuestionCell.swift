@@ -40,7 +40,7 @@ final class QuestionCell: UITableViewCell {
         if parentView == .list {
             userDisplayName.isHidden = false
             userReputation.isHidden = false
-            userDisplayName.attributedText = decodeHTML(string: question.owner.displayName, fontStyle: .caption)
+            userDisplayName.text = decodeHTML(string: question.owner.displayName, fontStyle: .caption).string
             userReputation.text = "User reputation: \(question.owner.reputation)"
         } else {
             userDisplayName.isHidden = true
@@ -57,7 +57,7 @@ final class QuestionCell: UITableViewCell {
         formatter.dateTimeStyle = .named
         creationDateLabel.text = formatter.string(for: question.creationDate)
         
-        titleLabel.attributedText = decodeHTML(string: question.title, fontStyle: .headline)
+        titleLabel.text = decodeHTML(string: question.title, fontStyle: .headline).string
         scoreLabel.text = "Score: \(question.score)"
         answerCount.text = "\(question.answerCount)"
     }
