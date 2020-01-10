@@ -47,6 +47,7 @@ class QuestionDetailsViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
 
+    // MARK: - Actions
     @IBAction func showUserProfile(_ sender: Any) {
         guard let question = self.dataSource.question else {
             preconditionFailure("Unable to initialize view with notexistent question")
@@ -75,7 +76,6 @@ class QuestionDetailsViewController: UIViewController {
             self.present(activityVC, animated: true)
         }
     }
-
 
     // MARK: - Notification Center Selectors
     @objc
@@ -139,6 +139,11 @@ class QuestionDetailsViewController: UIViewController {
         userPhoto.contentMode = .scaleToFill
         userPhoto.layer.cornerRadius = view.frame.size.width / 32
         userPhoto.clipsToBounds = true
+    }
+
+    @objc
+    func showUser(sender: UIButton) {
+        coordinator?.showUserProfile(userID: sender.tag)
     }
 
     // MARK: - View Builder Methods
@@ -254,11 +259,6 @@ class QuestionDetailsViewController: UIViewController {
                 textViewDidChange(answerTextView)
             }
         }
-    }
-
-    @objc
-    func showUser(sender: UIButton) {
-        coordinator?.showUserProfile(userID: sender.tag)
     }
 
     func showSpinner() {

@@ -65,29 +65,14 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         showSpinner()
     }
 
-    func showSpinner() {
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        spinner.startAnimating()
-        view.addSubview(spinner)
-
-        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    }
-
+    // MARK: - Actions
     @IBAction func openWebsite(_ sender: Any) {
         if let websiteUrl = dataSource.user?.websiteUrl, let url = URL(string: websiteUrl) {
             UIApplication.shared.open(url)
         }
     }
 
-    func registerNotificationObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(showUserProfile), name: NSNotification.Name("UserProfileLoaded"), object: nil)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(showImage), name: NSNotification.Name("ImageLoaded"), object: nil)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(showQuestionList), name: NSNotification.Name("UserQuestionListLoaded"), object: nil)
-    }
-
+    // MARK: - Notification Center Selectors
     @objc
     func showUserProfile() {
         guard let user = self.dataSource.user else {
@@ -162,6 +147,25 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     func showQuestionList() {
         tableView.reloadData()
         tableView.isHidden = false
+    }
+
+    // MARK: -
+    func registerNotificationObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showUserProfile), name: NSNotification.Name("UserProfileLoaded"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(showImage), name: NSNotification.Name("ImageLoaded"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(showQuestionList), name: NSNotification.Name("UserQuestionListLoaded"), object: nil)
+    }
+
+    //MARK: - View Builder Methods
+    func showSpinner() {
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        view.addSubview(spinner)
+
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
     func prepareBadge(color: String, _ user: User, _ badgeStack: UIStackView) {
