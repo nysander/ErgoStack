@@ -36,22 +36,30 @@ final class QuestionCell: UITableViewCell {
     @IBOutlet var answerCount: UILabel!
     @IBOutlet var userReputation: UILabel!
 
-    func configCell(with question: Question) {
-        titleLabel.attributedText = decodeHTML(string: question.title, fontStyle: .headline)
+    func configCell(with question: Question, for parentView: ParentView) {
+        if parentView == .list {
+            userDisplayName.isHidden = false
+            userReputation.isHidden = false
+            userDisplayName.attributedText = decodeHTML(string: question.owner.displayName, fontStyle: .caption)
+            userReputation.text = "User reputation: \(question.owner.reputation)"
+        } else {
+            userDisplayName.isHidden = true
+            userReputation.isHidden = true
+        }
 
-        scoreLabel.text = "Score: \(question.score)"
-        userDisplayName.attributedText = decodeHTML(string: question.owner.displayName, fontStyle: .caption)
-        answerCount.text = "\(question.answerCount)"
         if question.answerCount > 0 {
             answerCount.backgroundColor = .systemGreen
         } else {
             answerCount.backgroundColor = .systemGray5
         }
-        userReputation.text = "User reputation: \(question.owner.reputation)"
 
         let formatter = RelativeDateTimeFormatter()
         formatter.dateTimeStyle = .named
         creationDateLabel.text = formatter.string(for: question.creationDate)
+        
+        titleLabel.attributedText = decodeHTML(string: question.title, fontStyle: .headline)
+        scoreLabel.text = "Score: \(question.score)"
+        answerCount.text = "\(question.answerCount)"
     }
 
     func decodeHTML(string: String, fontStyle: FontType = .body) -> NSAttributedString {

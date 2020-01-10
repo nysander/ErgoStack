@@ -98,7 +98,8 @@ final class EmptyBackgroundView: UIView {
             if image != nil {
                 imageView.autoPinEdge(.top, to: .bottom, of: topSpace)
                 imageView.autoAlignAxis(toSuperviewAxis: .vertical)
-                imageView.autoSetDimension(.height, toSize: imageViewHeight, relation: .lessThanOrEqual)
+                imageView.autoSetDimension(.height, toSize: imageViewHeight, relation: .equal)
+                imageView.autoSetDimension(.width, toSize: imageViewHeight, relation: .lessThanOrEqual)
                 
                 topLabel.autoPinEdge(.top, to: .bottom, of: imageView, withOffset: spacing)
             } else {

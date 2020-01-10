@@ -159,7 +159,7 @@ class QuestionDetailsViewController: UIViewController {
                 label.backgroundColor = .gray
             case "gold":
                 label.backgroundColor = .yellow
-                label.titleLabel?.textColor = .black
+                label.setTitleColor(UIColor.black, for: .normal)
             default:
                 label.backgroundColor = .white
             }

@@ -63,7 +63,7 @@ final class QuestionTableViewDataProvider: NSObject {
             question = dataSource.userQuestions[indexPath.row]
         }
 
-        cell.configCell(with: question)
+        cell.configCell(with: question, for: parent)
 
         return cell
     }
@@ -82,6 +82,15 @@ final class QuestionTableViewDataProvider: NSObject {
         }
 
         rootVC?.coordinator?.showQuestionDetails(questionID: questionID)
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch parent {
+        case .userList:
+            return "User questions:"
+        default:
+            return nil
+        }
     }
 
     private func setupEmptyBackgroundView() -> EmptyBackgroundView? {

@@ -14,9 +14,9 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var dataProvider: QuestionTableViewDataProvider!
 
-    private let image = UIImage()
-    private let topMessage = "top message"
-    private let bottomMessage = "bottom message"
+    private var image = UIImage()
+    private let topMessage = "Loading ..."
+    private let bottomMessage = "Please wait"
 
     var dataSource = AppDelegate.dataSource
 
@@ -30,6 +30,10 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
         dataProvider.rootVC = self
         dataProvider.parent = .list
 
+        guard let imageUnwrapped = UIImage(named: "SOIcon") else {
+            preconditionFailure("missing image")
+        }
+        image = imageUnwrapped
         dataProvider.emptyViewData = (image, topMessage, bottomMessage)
 
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name("QuestionListLoaded"), object: nil)

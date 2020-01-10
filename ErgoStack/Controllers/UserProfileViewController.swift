@@ -15,9 +15,9 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
 
     private let spinner = UIActivityIndicatorView(style: .large)
 
-    private let image = UIImage()
-    private let topMessage = "top message"
-    private let bottomMessage = "bottom message"
+    private var image = UIImage()
+    private var topMessage = "Loading ..."
+    private var bottomMessage = "Please wait."
 
     @IBOutlet var dataProvider: QuestionTableViewDataProvider!
     @IBOutlet var displayName: UILabel!
@@ -28,6 +28,7 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     @IBOutlet var questionCountLabel: UILabel!
     @IBOutlet var answerCountLabel: UILabel!
     @IBOutlet var aboutMeTextView: UITextView!
+    @IBOutlet var aboutMeLabel: UILabel!
     @IBOutlet var badgesStackView: UIStackView!
     @IBOutlet var mainStackView: UIStackView!
 
@@ -45,6 +46,10 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         dataProvider.rootVC = self
         dataProvider.parent = .userList
 
+        guard let imageUnwrapped = UIImage(named: "SOIcon") else {
+            preconditionFailure("missing image")
+        }
+        image = imageUnwrapped
         dataProvider.emptyViewData = (image, topMessage, bottomMessage)
 
         guard let userID = self.userID else {
@@ -100,11 +105,47 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
             creationDateLabel.text = "Joined: \(creationDate)"
         }
 
+        websiteButton.layer.cornerRadius = view.frame.size.width / 64
+        websiteButton.clipsToBounds = true
+
+        if let aboutMe = user.aboutMe, !aboutMe.isEmpty {
+            aboutMeTextView.isHidden = false
+            aboutMeLabel.isHidden = false
+            aboutMeTextView.text = decodeHTML(string: aboutMe).string
+            aboutMeTextView.delegate = self
+            textViewDidChange(aboutMeTextView)
+        } else {
+            aboutMeTextView.isHidden = true
+            aboutMeLabel.isHidden = true
+        }
+
         if let url = user.websiteUrl, !url.isEmpty {
             websiteButton.isHidden = false
         } else {
             websiteButton.isHidden = true
         }
+
+        if badgesStackView.viewWithTag(1) != nil {
+            // required to remove duplicate view adding when back to first question details view
+        } else {
+            let badgeStack = UIStackView()
+            badgeStack.axis = .horizontal
+            badgeStack.distribution = .equalSpacing
+            badgeStack.spacing = 20
+            badgeStack.tag = 1
+
+            badgesStackView.addArrangedSubview(badgeStack)
+
+            prepareBadge(color: "bronze", user, badgeStack)
+            prepareBadge(color: "silver", user, badgeStack)
+            prepareBadge(color: "gold", user, badgeStack)
+        }
+        if let count = user.questionCount, count == 0 {
+            topMessage = "No Questions"
+            bottomMessage = "User not posted any question yet"
+        }
+        dataProvider.emptyViewData = (image, topMessage, bottomMessage)
+
         mainStackView.isHidden = false
         spinner.removeFromSuperview()
     }
@@ -121,5 +162,74 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     func showQuestionList() {
         tableView.reloadData()
         tableView.isHidden = false
+    }
+
+    func prepareBadge(color: String, _ user: User, _ badgeStack: UIStackView) {
+        if let badges = user.badgeCounts, let count = badges[color], count > 0 {
+            let label = UIButton()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.setTitle("\(count)", for: .normal)
+            label.titleLabel?.numberOfLines = 0
+            label.titleLabel?.adjustsFontForContentSizeCategory = true
+            label.titleLabel?.font = UIFont.preferredFont(forTextStyle: .caption1)
+            label.titleLabel?.textColor = .white
+            label.isUserInteractionEnabled = false
+            label.layer.cornerRadius = view.frame.size.width / 128
+            switch color {
+            case "bronze":
+                label.backgroundColor = .brown
+            case "silver":
+                label.backgroundColor = .gray
+            case "gold":
+                label.backgroundColor = .yellow
+                label.setTitleColor(UIColor.black, for: .normal)
+            default:
+                label.backgroundColor = .white
+            }
+
+            label.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+            label.isUserInteractionEnabled = false
+
+            badgeStack.addArrangedSubview(label)
+        }
+    }
+
+    func decodeHTML(string: String, fontStyle: FontType = .body) -> NSAttributedString {
+        let modifiedFont = NSString(format: "<span style=\"font: -apple-system\(fontStyle.suffix); font-size: \(UIFont.systemFontSize)\">%@</span>" as NSString, string)
+
+        guard let data = modifiedFont.data(using: String.Encoding.unicode.rawValue, allowLossyConversion: true) else {
+            return NSAttributedString(string: "")
+        }
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+
+        do {
+            let attributedString = try NSAttributedString(data: data,
+                                                          options: options,
+                                                          documentAttributes: nil)
+            return attributedString
+        } catch {
+            return NSAttributedString(string: "")
+        }
+    }
+}
+
+extension UserProfileViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        textView.isUserInteractionEnabled = false
+        textView.isScrollEnabled = false
+        textView.translatesAutoresizingMaskIntoConstraints = false
+
+        let size = CGSize(width: mainStackView.frame.width, height: .infinity)
+        var estimatedSize = textView.sizeThatFits(size)
+
+        textView.constraints.forEach { constraint in
+            if constraint.firstAttribute == .height {
+                if estimatedSize.height > 100 {
+                    estimatedSize.height = 100
+                    textView.isScrollEnabled = true
+                }
+                constraint.constant = estimatedSize.height
+            }
+        }
     }
 }
