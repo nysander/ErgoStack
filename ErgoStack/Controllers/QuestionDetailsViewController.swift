@@ -25,8 +25,9 @@ class QuestionDetailsViewController: UIViewController {
     @IBOutlet var tagStackView: UIStackView!
     @IBOutlet var profileStackView: UIStackView!
     @IBOutlet var userDisplayName: UIButton!
+    @IBOutlet var questionDateLabel: UILabel!
 
-    let spinner = UIActivityIndicatorView(style: .large)
+    private let spinner = UIActivityIndicatorView(style: .large)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,8 +67,11 @@ class QuestionDetailsViewController: UIViewController {
         viewCount.text = "Views: \(question.viewCount)"
         answerCount.text = "Answers: \(question.answerCount)"
         userDisplayName.setTitle(decodeHTML(string: question.owner.displayName).string, for: .normal)
-        userRating.text = "\(question.owner.reputation)"
+        userRating.text = "Reputation: \(question.owner.reputation)"
         score.text = "Score: \(question.score)"
+        let formatter = RelativeDateTimeFormatter()
+        formatter.dateTimeStyle = .named
+        questionDateLabel.text = formatter.string(for: question.creationDate)
 
         if let questionBody = question.body {
             body.attributedText = decodeHTML(string: questionBody)
@@ -176,14 +180,31 @@ class QuestionDetailsViewController: UIViewController {
                 let answerHeader = UIStackView()
                 answerHeader.axis = .horizontal
                 answerHeader.distribution = .fill
+                answerHeader.alignment = .top
                 answerHeader.spacing = 20
 
                 mainStackView.addArrangedSubview(answerHeader)
 
+                let answerLabelandDateStack = UIStackView()
+                answerLabelandDateStack.axis = .vertical
+                answerLabelandDateStack.alignment = .leading
+                answerLabelandDateStack.distribution = .fill
+                answerLabelandDateStack.spacing = 0
+
+                answerHeader.addArrangedSubview(answerLabelandDateStack)
+
                 let answerLabel = UILabel()
                 answerLabel.text = "Answer \(index+1)"
 
-                answerHeader.addArrangedSubview(answerLabel)
+                let answerDateLabel = UILabel()
+                answerDateLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
+
+                let formatter = RelativeDateTimeFormatter()
+                formatter.dateTimeStyle = .named
+                answerDateLabel.text = formatter.string(for: answer.creationDate)
+
+                answerLabelandDateStack.addArrangedSubview(answerLabel)
+                answerLabelandDateStack.addArrangedSubview(answerDateLabel)
 
                 let answerOwnerButton = UIButton()
                 answerOwnerButton.setTitle(answer.owner.displayName, for: .normal)

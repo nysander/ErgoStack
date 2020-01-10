@@ -49,10 +49,9 @@ final class QuestionCell: UITableViewCell {
         }
         userReputation.text = "User reputation: \(question.owner.reputation)"
 
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        creationDateLabel.text = formatter.string(from: question.creationDate)
+        let formatter = RelativeDateTimeFormatter()
+        formatter.dateTimeStyle = .named
+        creationDateLabel.text = formatter.string(for: question.creationDate)
     }
 
     func decodeHTML(string: String, fontStyle: FontType = .body) -> NSAttributedString {

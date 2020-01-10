@@ -13,6 +13,8 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     let dataSource = AppDelegate.dataSource
     weak var coordinator: MainCoordinator?
 
+    private let spinner = UIActivityIndicatorView(style: .large)
+
     private let image = UIImage()
     private let topMessage = "top message"
     private let bottomMessage = "bottom message"
@@ -52,6 +54,19 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         dataSource.getUserQuestions(userID: userID)
         
         self.navigationItem.title = "User Profile"
+
+        mainStackView.isHidden = true
+        tableView.isHidden = true
+        showSpinner()
+    }
+
+    func showSpinner() {
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        view.addSubview(spinner)
+
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
     @IBAction func openWebsite(_ sender: Any) {
@@ -79,11 +94,10 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         questionCountLabel.text = "Questions: \(user.questionCount ?? 0)"
         answerCountLabel.text = "Answers: \(user.answerCount ?? 0)"
 
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        if let creationDate = user.creationDate {
-            creationDateLabel.text = "Joined: \(formatter.string(from: creationDate))"
+        let formatter = RelativeDateTimeFormatter()
+        formatter.dateTimeStyle = .named
+        if let creationDate = formatter.string(for: user.creationDate) {
+            creationDateLabel.text = "Joined: \(creationDate)"
         }
 
         if let url = user.websiteUrl, !url.isEmpty {
@@ -91,6 +105,8 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         } else {
             websiteButton.isHidden = true
         }
+        mainStackView.isHidden = false
+        spinner.removeFromSuperview()
     }
 
     @objc
@@ -104,5 +120,6 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     @objc
     func showQuestionList() {
         tableView.reloadData()
+        tableView.isHidden = false
     }
 }
