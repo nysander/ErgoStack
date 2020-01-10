@@ -44,6 +44,7 @@ class QuestionDetailsViewController: UIViewController {
         mainStackView.isHidden = true
 
         self.navigationItem.title = "Question Details"
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
 
     @IBAction func showUserProfile(_ sender: Any) {
@@ -54,23 +55,24 @@ class QuestionDetailsViewController: UIViewController {
         coordinator?.showUserProfile(userID: question.owner.userId)
     }
 
-    @IBAction func shareQuestion(_ sender: Any) {
+    @IBAction func shareQuestion(_ sender: UIBarButtonItem) {
         guard let question = self.dataSource.question else {
             return
         }
         let textToShare = question.title
         let link = question.link
 
-        #warning("Hardcoded Apple Maps URL")
         if let url = URL(string: link) {
             let objectsToShare: [Any] = [textToShare, url]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
 
-            activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.message]
+            activityVC.excludedActivityTypes = []
 
-            // for ipad but may break for now
-            // activityVC.popoverPresentationController?.sourceView = sender
-            coordinator?.navController.present(activityVC, animated: true)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                activityVC.popoverPresentationController?.barButtonItem = sender
+            }
+
+            self.present(activityVC, animated: true)
         }
     }
 
@@ -81,6 +83,7 @@ class QuestionDetailsViewController: UIViewController {
         guard let question = self.dataSource.question else {
             preconditionFailure("Unable to initialize view with notexistent question")
         }
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
 
         dataSource.getImage(url: question.owner.profileImage)
 

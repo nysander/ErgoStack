@@ -17,7 +17,7 @@ final class MainCoordinator: Coordinator, UISplitViewControllerDelegate {
         navController.coordinator = self
 
         if let viewController = R.storyboard.main.questionListViewController(),
-            let detailViewController = R.storyboard.main.pleaseSelectViewController() {
+            let detailViewController = R.storyboard.main.selectFirstQuestionViewController() {
             viewController.coordinator = self
 
             navController.viewControllers = [viewController]
