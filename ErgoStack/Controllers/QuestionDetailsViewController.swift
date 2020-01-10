@@ -54,6 +54,27 @@ class QuestionDetailsViewController: UIViewController {
         coordinator?.showUserProfile(userID: question.owner.userId)
     }
 
+    @IBAction func shareQuestion(_ sender: Any) {
+        guard let question = self.dataSource.question else {
+            return
+        }
+        let textToShare = question.title
+        let link = question.link
+
+        #warning("Hardcoded Apple Maps URL")
+        if let url = URL(string: link) {
+            let objectsToShare: [Any] = [textToShare, url]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+            activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.message]
+
+            // for ipad but may break for now
+            // activityVC.popoverPresentationController?.sourceView = sender
+            coordinator?.navController.present(activityVC, animated: true)
+        }
+    }
+
+
     // MARK: - Notification Center Selectors
     @objc
     func showView() {
