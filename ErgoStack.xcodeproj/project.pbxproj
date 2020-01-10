@@ -23,6 +23,7 @@
 		1945EC1C23C8CEAA00F064BA /* CoordinatedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945EC1B23C8CEAA00F064BA /* CoordinatedNavigationController.swift */; };
 		198918A323C7D74B00DE9C47 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198918A223C7D74B00DE9C47 /* APIConfig.swift */; };
 		19945D8F23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */; };
+		19945D9423C5220100BE9134 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19945D9323C5220100BE9134 /* Localizable.strings */; };
 		19945D9623C522AF00BE9134 /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D9523C522AF00BE9134 /* EmptyBackgroundView.swift */; };
 		19B707AE23C4CDD300B32BBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707AD23C4CDD300B32BBA /* AppDelegate.swift */; };
 		19B707B023C4CDD300B32BBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */; };
@@ -145,6 +146,7 @@
 				19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */,
 				19B707B623C4CDD400B32BBA /* Assets.xcassets */,
 				19B707BB23C4CDD400B32BBA /* Info.plist */,
+				19945D9323C5220100BE9134 /* Localizable.strings */,
 				193A9C4223C659D400850DBC /* UserDefault.swift */,
 				193A9C4423C659F100850DBC /* UserDefaultsConfig.swift */,
 				1945EC1723C8CD5F00F064BA /* SplitViewControllerDelegate.swift */,
@@ -239,8 +241,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19B707D423C4CDD500B32BBA /* Build configuration list for PBXNativeTarget "ErgoStack" */;
 			buildPhases = (
-				5A574148AE5CC70F02A005D3 /* [CP] Check Pods Manifest.lock */,
 				19945D9023C51F0B00BE9134 /* R.Swift */,
+				5A574148AE5CC70F02A005D3 /* [CP] Check Pods Manifest.lock */,
 				19B707A623C4CDD300B32BBA /* Sources */,
 				19B707A723C4CDD300B32BBA /* Frameworks */,
 				19B707A823C4CDD300B32BBA /* Resources */,
@@ -295,6 +297,7 @@
 			files = (
 				19B707FB23C5088800B32BBA /* Podfile in Resources */,
 				193A9C4A23C65DAC00850DBC /* questionDetails.json in Resources */,
+				19945D9423C5220100BE9134 /* Localizable.strings in Resources */,
 				19B707BA23C4CDD400B32BBA /* LaunchScreen.storyboard in Resources */,
 				19B707B723C4CDD400B32BBA /* Assets.xcassets in Resources */,
 				19B707B523C4CDD300B32BBA /* Main.storyboard in Resources */,
@@ -325,7 +328,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/ErgoStack/R.generated.swift\"\nswiftlint\n";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/ErgoStack/R.generated.swift\"\n";
 		};
 		22476F00FD086C04734EFEF0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

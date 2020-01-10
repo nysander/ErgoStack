@@ -15,8 +15,8 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
     @IBOutlet var dataProvider: QuestionTableViewDataProvider!
 
     private var image = UIImage()
-    private let topMessage = "Loading ..."
-    private let bottomMessage = "Please wait"
+    private let topMessage = R.string.localizable.loading()
+    private let bottomMessage = R.string.localizable.pleaseWait()
 
     var dataSource = AppDelegate.dataSource
 
@@ -39,12 +39,12 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name("QuestionListLoaded"), object: nil)
 
         if UserDefaultsConfig.demo {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Disable demo", style: .plain, target: self, action: #selector(toggleDemo))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.localizable.disableDemo(), style: .plain, target: self, action: #selector(toggleDemo))
         } else {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Enable demo", style: .plain, target: self, action: #selector(toggleDemo))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.localizable.enableDemo(), style: .plain, target: self, action: #selector(toggleDemo))
         }
 
-        self.navigationItem.title = "Question List"
+        self.navigationItem.title = R.string.localizable.questionList()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -62,12 +62,12 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
     func toggleDemo() {
         if UserDefaultsConfig.demo {
             UserDefaultsConfig.demo = false
-            self.navigationItem.rightBarButtonItem?.title = "Enable demo"
+            self.navigationItem.rightBarButtonItem?.title = R.string.localizable.enableDemo()
             dataSource.questions.removeAll()
             dataSource.getQuestions()
         } else {
             UserDefaultsConfig.demo = true
-            self.navigationItem.rightBarButtonItem?.title = "Disable demo"
+            self.navigationItem.rightBarButtonItem?.title = R.string.localizable.disableDemo()
             dataSource.questions.removeAll()
             dataSource.getQuestions()
         }

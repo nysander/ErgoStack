@@ -16,8 +16,8 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     private let spinner = UIActivityIndicatorView(style: .large)
 
     private var image = UIImage()
-    private var topMessage = "Loading ..."
-    private var bottomMessage = "Please wait."
+    private var topMessage = R.string.localizable.loading()
+    private var bottomMessage = R.string.localizable.pleaseWait()
 
     @IBOutlet var dataProvider: QuestionTableViewDataProvider!
     @IBOutlet var displayName: UILabel!
@@ -58,7 +58,7 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         dataSource.getUser(userID: userID)
         dataSource.getUserQuestions(userID: userID)
         
-        self.navigationItem.title = "User Profile"
+        self.navigationItem.title = R.string.localizable.userProfile()
 
         mainStackView.isHidden = true
         tableView.isHidden = true
@@ -81,13 +81,13 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         dataSource.getImage(url: user.profileImage)
         displayName.text = user.displayName
         location.text = user.location
-        questionCountLabel.text = "Questions: \(user.questionCount ?? 0)"
-        answerCountLabel.text = "Answers: \(user.answerCount ?? 0)"
+        questionCountLabel.text = R.string.localizable.questions("\(user.questionCount ?? 0)")
+        answerCountLabel.text = R.string.localizable.answers("\(user.answerCount ?? 0)")
 
         let formatter = RelativeDateTimeFormatter()
         formatter.dateTimeStyle = .named
         if let creationDate = formatter.string(for: user.creationDate) {
-            creationDateLabel.text = "Joined: \(creationDate)"
+            creationDateLabel.text = R.string.localizable.joined(creationDate)
         }
 
         websiteButton.layer.cornerRadius = view.frame.size.width / 64
@@ -126,8 +126,8 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
             prepareBadge(color: "gold", user, badgeStack)
         }
         if let count = user.questionCount, count == 0 {
-            topMessage = "No Questions"
-            bottomMessage = "User not posted any question yet"
+            topMessage = R.string.localizable.noQuestions()
+            bottomMessage = R.string.localizable.userNotPosted()
         }
         dataProvider.emptyViewData = (image, topMessage, bottomMessage)
 

@@ -41,7 +41,7 @@ final class QuestionCell: UITableViewCell {
             userDisplayName.isHidden = false
             userReputation.isHidden = false
             userDisplayName.text = decodeHTML(string: question.owner.displayName, fontStyle: .caption).string
-            userReputation.text = "User reputation: \(question.owner.reputation)"
+            userReputation.text = R.string.localizable.userReputation("\(question.owner.reputation)")
         } else {
             userDisplayName.isHidden = true
             userReputation.isHidden = true

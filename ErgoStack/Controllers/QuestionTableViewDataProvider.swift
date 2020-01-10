@@ -87,7 +87,7 @@ final class QuestionTableViewDataProvider: NSObject {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch parent {
         case .userList:
-            return "User questions:"
+            return R.string.localizable.userQuestions()
         default:
             return nil
         }

@@ -43,7 +43,7 @@ class QuestionDetailsViewController: UIViewController {
         showSpinner()
         mainStackView.isHidden = true
 
-        self.navigationItem.title = "Question Details"
+        self.navigationItem.title = R.string.localizable.questionDetails()
         self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
 
@@ -60,7 +60,7 @@ class QuestionDetailsViewController: UIViewController {
         guard let question = self.dataSource.question else {
             return
         }
-        let textToShare = question.title
+        let textToShare = decodeHTML(string: question.title).string
         let link = question.link
 
         if let url = URL(string: link) {
@@ -88,11 +88,11 @@ class QuestionDetailsViewController: UIViewController {
         dataSource.getImage(url: question.owner.profileImage)
 
         questionTitle.text = decodeHTML(string: question.title, fontStyle: .title).string
-        viewCount.text = "Views: \(question.viewCount)"
-        answerCount.text = "Answers: \(question.answerCount)"
+        viewCount.text = R.string.localizable.views("\(question.viewCount)")
+        answerCount.text = R.string.localizable.answers("\(question.answerCount)")
         userDisplayName.setTitle(decodeHTML(string: question.owner.displayName).string, for: .normal)
-        userRating.text = "Reputation: \(question.owner.reputation)"
-        score.text = "Score: \(question.score)"
+        userRating.text = R.string.localizable.reputation("\(question.owner.reputation)")
+        score.text = R.string.localizable.score("\(question.score)")
         let formatter = RelativeDateTimeFormatter()
         formatter.dateTimeStyle = .named
         questionDateLabel.text = formatter.string(for: question.creationDate)
@@ -223,7 +223,7 @@ class QuestionDetailsViewController: UIViewController {
                 answerHeader.addArrangedSubview(answerLabelandDateStack)
 
                 let answerLabel = UILabel()
-                answerLabel.text = "Answer \(index+1)"
+                answerLabel.text = R.string.localizable.answer("\(index+1)")
 
                 let answerDateLabel = UILabel()
                 answerDateLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
