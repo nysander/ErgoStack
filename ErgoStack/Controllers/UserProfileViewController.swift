@@ -23,7 +23,7 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     @IBOutlet var displayName: UILabel!
     @IBOutlet var creationDateLabel: UILabel!
     @IBOutlet var profileImage: UIImageView!
-    @IBOutlet var location: UILabel!
+    @IBOutlet var locationLabel: UILabel!
     @IBOutlet var websiteButton: UIButton!
     @IBOutlet var questionCountLabel: UILabel!
     @IBOutlet var answerCountLabel: UILabel!
@@ -79,8 +79,10 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
             preconditionFailure("Unable to initialize view with nonexistent question")
         }
         dataSource.getImage(url: user.profileImage)
-        displayName.text = user.displayName
-        location.text = user.location
+        displayName.text = decodeHTML(string: user.displayName).string
+        if let location = user.location {
+            locationLabel.text = decodeHTML(string: location).string
+        }
         questionCountLabel.text = R.string.localizable.questions("\(user.questionCount ?? 0)")
         answerCountLabel.text = R.string.localizable.answers("\(user.answerCount ?? 0)")
 

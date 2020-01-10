@@ -556,7 +556,7 @@
                         <outlet property="creationDateLabel" destination="0d4-i6-LRZ" id="Z6s-37-KbD"/>
                         <outlet property="dataProvider" destination="5jK-31-zUk" id="XHM-as-OEn"/>
                         <outlet property="displayName" destination="Yta-Gz-uIO" id="qKQ-lf-s23"/>
-                        <outlet property="location" destination="sVr-eH-X7J" id="48O-JL-2Yd"/>
+                        <outlet property="locationLabel" destination="sVr-eH-X7J" id="48O-JL-2Yd"/>
                         <outlet property="mainStackView" destination="418-Ke-Mk9" id="gQW-JP-Gko"/>
                         <outlet property="profileImage" destination="OgD-BB-K82" id="4zV-Oo-PIB"/>
                         <outlet property="questionCountLabel" destination="Keb-jy-Lxt" id="Dy9-Ft-JZm"/>
