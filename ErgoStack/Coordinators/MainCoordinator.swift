@@ -8,19 +8,32 @@
 
 import UIKit
 
-final class MainCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
-    var navController: UINavigationController
+final class MainCoordinator: Coordinator, UISplitViewControllerDelegate {
+    var splitViewController = UISplitViewController()
+    var navController = CoordinatedNavigationController()
 
-    init(navigationController: UINavigationController) {
-        self.navController = navigationController
-    }
+    init() {
+        navController.navigationBar.prefersLargeTitles = true
+        navController.coordinator = self
 
-    func start() {
-        if let viewController = R.storyboard.main.questionListViewController() {
+        if let viewController = R.storyboard.main.questionListViewController(),
+            let detailViewController = R.storyboard.main.pleaseSelectViewController() {
             viewController.coordinator = self
 
-            navController.pushViewController(viewController, animated: false)
+            navController.viewControllers = [viewController]
+
+            splitViewController.viewControllers = [navController, detailViewController]
+
+            if #available(iOS 13, *) {
+                if splitViewController.traitCollection.userInterfaceIdiom == .phone {
+                    // Without this workaround, there's a nasty color behind pushed view controllers, only in dark mode on iOS 13.
+                    splitViewController.view.backgroundColor = .systemBackground
+                }
+            }
+
+            // make this split view controller behave sensibly on iPad
+            splitViewController.preferredDisplayMode = .allVisible
+            splitViewController.delegate = SplitViewControllerDelegate.shared
         } else {
             fatalError("Unable to instantiate main ViewController")
         }
@@ -29,18 +42,21 @@ final class MainCoordinator: Coordinator {
     func showQuestionDetails(questionID: Int) {
         if let viewController = R.storyboard.main.questionDetailsViewController() {
             viewController.questionID = questionID
-
             viewController.coordinator = self
-            navController.pushViewController(viewController, animated: true)
+
+            let navigatedVC = UINavigationController(rootViewController: viewController)
+            splitViewController.showDetailViewController(navigatedVC, sender: self)
         }
     }
 
     func showUserProfile(userID: Int) {
         if let viewController = R.storyboard.main.userProfileViewController() {
             viewController.userID = userID
-            print(userID)
             viewController.coordinator = self
-            navController.pushViewController(viewController, animated: true)
+
+            let navigatedVC = UINavigationController(rootViewController: viewController)
+            navigatedVC.navigationController?.navigationItem.hidesBackButton = false
+            splitViewController.showDetailViewController(navigatedVC, sender: self)
         }
     }
 }

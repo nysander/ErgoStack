@@ -8,9 +8,6 @@
 
 import UIKit
 
-protocol Coordinator {
-    var childCoordinators: [Coordinator] { get set }
-    var navController: UINavigationController { get set }
-
-    func start()
+protocol Coordinator: AnyObject {
+    var splitViewController: UISplitViewController { get set }
 }

@@ -20,11 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
 
-        let navController = UINavigationController()
-        coordinator = MainCoordinator(navigationController: navController)
-        coordinator?.start()
+        coordinator = MainCoordinator()
 
-        window?.rootViewController = navController
+        window?.rootViewController = coordinator?.splitViewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
