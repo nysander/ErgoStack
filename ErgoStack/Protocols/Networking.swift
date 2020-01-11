@@ -8,19 +8,6 @@
 
 import Foundation
 
-class DefaultNetworkingAgent: Networking {
-    var sessionConfig: URLSessionConfiguration
-    var session: URLSession
-
-    init() {
-        self.sessionConfig = URLSessionConfiguration.default
-        self.sessionConfig.waitsForConnectivity = true
-        self.sessionConfig.timeoutIntervalForResource = 60 * 60 // 1 hour
-
-        self.session = URLSession(configuration: self.sessionConfig)
-    }
-}
-
 protocol Networking {
     var sessionConfig: URLSessionConfiguration { get set }
     var session: URLSession { get set }
@@ -71,8 +58,6 @@ extension Networking {
                 }
 
                 completion(.success(data))
-            } catch {
-                completion(.failure(error))
             }
         }.resume()
     }

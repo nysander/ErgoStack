@@ -132,7 +132,3 @@ extension QuestionListViewController: UISearchBarDelegate {
         }
     }
 }
-
-protocol QuestionListProviding {
-    var coordinator: MainCoordinator? { get set }
-}

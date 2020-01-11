@@ -1,5 +1,5 @@
 //
-//  SODataProvider.swift
+//  APIDataProvider.swift
 //  ErgoStack
 //
 //  Created by Pawel Madej on 07/01/2020.
@@ -8,15 +8,7 @@
 
 import Foundation
 
-class SOService: SODataProvider {
-    var network: Networking
-
-    init() {
-        self.network = DefaultNetworkingAgent()
-    }
-}
-
-protocol SODataProvider {
+protocol APIDataProvider {
     var network: Networking { get }
 
     func getQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
@@ -27,28 +19,28 @@ protocol SODataProvider {
     func search(query: String, _ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
 }
 
-extension SODataProvider {
+extension APIDataProvider {
     func getQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
-        network.execute(SOEndpoint.getQuestions, completion: completion)
+        network.execute(APIEndpoint.getQuestions, completion: completion)
     }
 
     func getQuestion(questionID: Int, _ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
-        network.execute(SOEndpoint.getQuestion(questionID: questionID), completion: completion)
+        network.execute(APIEndpoint.getQuestion(questionID: questionID), completion: completion)
     }
 
     func getUser(userID: Int, _ completion: @escaping (Result<UserListResponse, Error>) -> Void) {
-        network.execute(SOEndpoint.getUser(userID: userID), completion: completion)
+        network.execute(APIEndpoint.getUser(userID: userID), completion: completion)
     }
 
     func getUserQuestions(userID: Int, _ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
-        network.execute(SOEndpoint.getUserQuestions(userID: userID), completion: completion)
+        network.execute(APIEndpoint.getUserQuestions(userID: userID), completion: completion)
     }
 
     func getImage(url: String, _ completion: @escaping (Result<Data, Error>) -> Void) {
-        network.execute(SOEndpoint.getImage(url: url), completion: completion)
+        network.execute(APIEndpoint.getImage(url: url), completion: completion)
     }
 
     func search(query: String, _ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
-        network.execute(SOEndpoint.search(query: query), completion: completion)
+        network.execute(APIEndpoint.search(query: query), completion: completion)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SOEndpoint.swift
+//  APIEndpoint.swift
 //  ErgoStack
 //
 //  Created by Pawel Madej on 07/01/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum SOEndpoint {
+enum APIEndpoint {
     case getQuestions
     case getQuestion(questionID: Int)
     case getUser(userID: Int)
@@ -19,7 +19,7 @@ enum SOEndpoint {
     case getImage(url: String)
 }
 
-extension SOEndpoint: RequestProviding {
+extension APIEndpoint: RequestProviding {
     var urlRequest: URLRequest {
         switch self {
         case .getQuestions:

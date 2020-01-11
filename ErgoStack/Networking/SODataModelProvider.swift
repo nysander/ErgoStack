@@ -9,8 +9,8 @@
 import Foundation
 
 class SODataModelProvider {
-    let service: SODataProvider
-    let demoService: DemoDataProvider
+    let apiService: APIDataProvider
+    let localService: LocalDataProvider
 
     var questions = [Question]() {
         didSet {
@@ -43,13 +43,13 @@ class SODataModelProvider {
     }
 
     init() {
-        self.service = SOService()
-        self.demoService = DemoService()
+        self.apiService = APIService()
+        self.localService = LocalService()
     }
 
     func getQuestions() {
         if UserDefaultsConfig.demo {
-            demoService.getQuestions { result in
+            localService.getQuestions { result in
                 DispatchQueue.main.async {
                     do {
                         let results = try result.get()
@@ -60,7 +60,7 @@ class SODataModelProvider {
                 }
             }
         } else {
-            service.getQuestions { result in
+            apiService.getQuestions { result in
                 DispatchQueue.main.async {
                     do {
                         let results = try result.get()
@@ -75,7 +75,7 @@ class SODataModelProvider {
 
     func getQuestion(questionID: Int) {
         if UserDefaultsConfig.demo {
-            demoService.getQuestion { result in
+            localService.getQuestion { result in
                 DispatchQueue.main.async {
                     do {
                         let results = try result.get()
@@ -86,7 +86,7 @@ class SODataModelProvider {
                 }
             }
         } else {
-            service.getQuestion(questionID: questionID) { result in
+            apiService.getQuestion(questionID: questionID) { result in
                 DispatchQueue.main.async {
                     do {
                         let results = try result.get()
@@ -101,7 +101,7 @@ class SODataModelProvider {
 
     func getUser(userID: Int) {
         if UserDefaultsConfig.demo {
-            demoService.getUser { result in
+            localService.getUser { result in
                 DispatchQueue.main.async {
                     do {
                         let results = try result.get()
@@ -112,7 +112,7 @@ class SODataModelProvider {
                 }
             }
         } else {
-            service.getUser(userID: userID) { result in
+            apiService.getUser(userID: userID) { result in
                 DispatchQueue.main.async {
                     do {
                         let results = try result.get()
@@ -127,7 +127,7 @@ class SODataModelProvider {
 
     func getUserQuestions(userID: Int) {
         if UserDefaultsConfig.demo {
-            demoService.getUserQuestions { result in
+            localService.getUserQuestions { result in
                 DispatchQueue.main.async {
                     do {
                         let results = try result.get()
@@ -138,7 +138,7 @@ class SODataModelProvider {
                 }
             }
         } else {
-            service.getUserQuestions(userID: userID) { result in
+            apiService.getUserQuestions(userID: userID) { result in
                 DispatchQueue.main.async {
                     do {
                         let results = try result.get()
@@ -152,7 +152,7 @@ class SODataModelProvider {
     }
 
     func getImage(url: String) {
-        service.getImage(url: url) { result in
+        apiService.getImage(url: url) { result in
             DispatchQueue.main.async {
                 do {
                     self.imageData = try result.get()
@@ -164,7 +164,7 @@ class SODataModelProvider {
     }
 
     func search(query: String) {
-        service.search(query: query) { result in
+        apiService.search(query: query) { result in
             DispatchQueue.main.async {
                 do {
                     let results = try result.get()
@@ -180,62 +180,5 @@ class SODataModelProvider {
         NotificationCenter.default.post(name: NSNotification.Name(notificationName),
                                         object: self,
                                         userInfo: [:])
-    }
-}
-
-// FIXME: --- MOVE TO OTHER FILES ---
-class DemoService: DemoDataProvider {
-    var demoData = DemoData()
-}
-
-protocol DemoDataProvider {
-    var demoData: DemoData { get }
-
-    func getQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
-    func getQuestion(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
-    func getUser(_ completion: @escaping (Result<UserListResponse, Error>) -> Void)
-    func getUserQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
-}
-
-extension DemoDataProvider {
-    func getQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
-        demoData.loadDemoData(from: "questions", completion: completion)
-    }
-
-    func getQuestion(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
-        demoData.loadDemoData(from: "questionDetails", completion: completion)
-    }
-
-    func getUser(_ completion: @escaping (Result<UserListResponse, Error>) -> Void) {
-        demoData.loadDemoData(from: "userProfile", completion: completion)
-    }
-
-    func getUserQuestions(_ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
-        demoData.loadDemoData(from: "userQuestions", completion: completion)
-    }
-}
-
-class DemoData: DemoDataSource { }
-
-protocol DemoDataSource {
-    func loadDemoData<T: Decodable>(from fileName: String, completion: @escaping (Result<T, Error>) -> Void)
-}
-
-extension DemoDataSource {
-    func loadDemoData<T: Decodable>(from fileName: String, completion: @escaping (Result<T, Error>) -> Void) {
-        if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .secondsSince1970
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-
-                let decodedObject = try decoder.decode(T.self, from: data)
-                return completion(.success(decodedObject))
-            } catch {
-                return completion(.failure(error))
-            }
-        }
     }
 }

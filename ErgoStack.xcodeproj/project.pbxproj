@@ -22,6 +22,13 @@
 		1945EC1A23C8CE4200F064BA /* SelectFirstQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945EC1923C8CE4200F064BA /* SelectFirstQuestionViewController.swift */; };
 		1945EC1C23C8CEAA00F064BA /* CoordinatedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945EC1B23C8CEAA00F064BA /* CoordinatedNavigationController.swift */; };
 		1949BA4123CA4A2900B95687 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4023CA4A2900B95687 /* String.swift */; };
+		1949BA4423CA688F00B95687 /* QuestionListProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4323CA688F00B95687 /* QuestionListProviding.swift */; };
+		1949BA4623CA68EE00B95687 /* DefaultNetworkingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4523CA68EE00B95687 /* DefaultNetworkingAgent.swift */; };
+		1949BA4823CA696400B95687 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4723CA696400B95687 /* APIService.swift */; };
+		1949BA4A23CA6B0E00B95687 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4923CA6B0E00B95687 /* LocalStore.swift */; };
+		1949BA4C23CA6BD500B95687 /* LocalDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4B23CA6BD500B95687 /* LocalDataProvider.swift */; };
+		1949BA4E23CA6CD700B95687 /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4D23CA6CD700B95687 /* LocalService.swift */; };
+		1949BA5023CA6DD000B95687 /* DefaultLocalStoreAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4F23CA6DD000B95687 /* DefaultLocalStoreAgent.swift */; };
 		198918A323C7D74B00DE9C47 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198918A223C7D74B00DE9C47 /* APIConfig.swift */; };
 		19945D8F23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */; };
 		19945D9423C5220100BE9134 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19945D9323C5220100BE9134 /* Localizable.strings */; };
@@ -35,9 +42,9 @@
 		19B707E423C4E0FB00B32BBA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707E323C4E0FB00B32BBA /* Question.swift */; };
 		19B707E623C4E10800B32BBA /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707E523C4E10800B32BBA /* Answer.swift */; };
 		19B707E823C4E10F00B32BBA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707E723C4E10F00B32BBA /* User.swift */; };
-		19B707ED23C4F01300B32BBA /* SOEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707EC23C4F01300B32BBA /* SOEndpoint.swift */; };
+		19B707ED23C4F01300B32BBA /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707EC23C4F01300B32BBA /* APIEndpoint.swift */; };
 		19B707EF23C4F07700B32BBA /* RequestProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707EE23C4F07700B32BBA /* RequestProviding.swift */; };
-		19B707F123C4F3E600B32BBA /* SODataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F023C4F3E600B32BBA /* SODataProvider.swift */; };
+		19B707F123C4F3E600B32BBA /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F023C4F3E600B32BBA /* APIDataProvider.swift */; };
 		19B707F323C4F42500B32BBA /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F223C4F42500B32BBA /* Networking.swift */; };
 		19B707F523C4F64400B32BBA /* SODataModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F423C4F64400B32BBA /* SODataModelProvider.swift */; };
 		19B707F723C5053E00B32BBA /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F623C5053E00B32BBA /* QuestionCell.swift */; };
@@ -61,6 +68,13 @@
 		1945EC1923C8CE4200F064BA /* SelectFirstQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFirstQuestionViewController.swift; sourceTree = "<group>"; };
 		1945EC1B23C8CEAA00F064BA /* CoordinatedNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedNavigationController.swift; sourceTree = "<group>"; };
 		1949BA4023CA4A2900B95687 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		1949BA4323CA688F00B95687 /* QuestionListProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListProviding.swift; sourceTree = "<group>"; };
+		1949BA4523CA68EE00B95687 /* DefaultNetworkingAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkingAgent.swift; sourceTree = "<group>"; };
+		1949BA4723CA696400B95687 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		1949BA4923CA6B0E00B95687 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
+		1949BA4B23CA6BD500B95687 /* LocalDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataProvider.swift; sourceTree = "<group>"; };
+		1949BA4D23CA6CD700B95687 /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
+		1949BA4F23CA6DD000B95687 /* DefaultLocalStoreAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocalStoreAgent.swift; sourceTree = "<group>"; };
 		198918A223C7D74B00DE9C47 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewDataProvider.swift; sourceTree = "<group>"; };
 		19945D9323C5220100BE9134 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -78,9 +92,9 @@
 		19B707E323C4E0FB00B32BBA /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		19B707E523C4E10800B32BBA /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		19B707E723C4E10F00B32BBA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		19B707EC23C4F01300B32BBA /* SOEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOEndpoint.swift; sourceTree = "<group>"; };
+		19B707EC23C4F01300B32BBA /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		19B707EE23C4F07700B32BBA /* RequestProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProviding.swift; sourceTree = "<group>"; };
-		19B707F023C4F3E600B32BBA /* SODataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataProvider.swift; sourceTree = "<group>"; };
+		19B707F023C4F3E600B32BBA /* APIDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataProvider.swift; sourceTree = "<group>"; };
 		19B707F223C4F42500B32BBA /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		19B707F423C4F64400B32BBA /* SODataModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataModelProvider.swift; sourceTree = "<group>"; };
 		19B707F623C5053E00B32BBA /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
@@ -113,6 +127,19 @@
 			path = DemoData;
 			sourceTree = "<group>";
 		};
+		1949BA4223CA687D00B95687 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1949BA4323CA688F00B95687 /* QuestionListProviding.swift */,
+				19B707F223C4F42500B32BBA /* Networking.swift */,
+				19B707EE23C4F07700B32BBA /* RequestProviding.swift */,
+				19B707F023C4F3E600B32BBA /* APIDataProvider.swift */,
+				1949BA4B23CA6BD500B95687 /* LocalDataProvider.swift */,
+				1949BA4923CA6B0E00B95687 /* LocalStore.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		19B707A123C4CDD300B32BBA = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +164,7 @@
 		19B707AC23C4CDD300B32BBA /* ErgoStack */ = {
 			isa = PBXGroup;
 			children = (
+				1949BA4223CA687D00B95687 /* Protocols */,
 				193A9C4023C643CA00850DBC /* R.generated.swift */,
 				19B707EB23C4E90700B32BBA /* Networking */,
 				19B707E223C4E0E500B32BBA /* Extensions */,
@@ -210,12 +238,13 @@
 		19B707EB23C4E90700B32BBA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				19B707EC23C4F01300B32BBA /* SOEndpoint.swift */,
-				19B707F023C4F3E600B32BBA /* SODataProvider.swift */,
+				19B707EC23C4F01300B32BBA /* APIEndpoint.swift */,
+				1949BA4723CA696400B95687 /* APIService.swift */,
 				19B707F423C4F64400B32BBA /* SODataModelProvider.swift */,
-				19B707EE23C4F07700B32BBA /* RequestProviding.swift */,
-				19B707F223C4F42500B32BBA /* Networking.swift */,
+				1949BA4D23CA6CD700B95687 /* LocalService.swift */,
 				198918A223C7D74B00DE9C47 /* APIConfig.swift */,
+				1949BA4523CA68EE00B95687 /* DefaultNetworkingAgent.swift */,
+				1949BA4F23CA6DD000B95687 /* DefaultLocalStoreAgent.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -381,6 +410,7 @@
 			files = (
 				19B707B223C4CDD300B32BBA /* QuestionListViewController.swift in Sources */,
 				193A9C3F23C63DD700850DBC /* UserProfileViewController.swift in Sources */,
+				1949BA4E23CA6CD700B95687 /* LocalService.swift in Sources */,
 				198918A323C7D74B00DE9C47 /* APIConfig.swift in Sources */,
 				1949BA4123CA4A2900B95687 /* String.swift in Sources */,
 				19B707F323C4F42500B32BBA /* Networking.swift in Sources */,
@@ -388,23 +418,29 @@
 				193A9C4523C659F100850DBC /* UserDefaultsConfig.swift in Sources */,
 				19B707E423C4E0FB00B32BBA /* Question.swift in Sources */,
 				19B707E823C4E10F00B32BBA /* User.swift in Sources */,
-				19B707ED23C4F01300B32BBA /* SOEndpoint.swift in Sources */,
+				19B707ED23C4F01300B32BBA /* APIEndpoint.swift in Sources */,
 				193A9C4123C643CA00850DBC /* R.generated.swift in Sources */,
 				19B707EF23C4F07700B32BBA /* RequestProviding.swift in Sources */,
 				19B707E623C4E10800B32BBA /* Answer.swift in Sources */,
 				19B707AE23C4CDD300B32BBA /* AppDelegate.swift in Sources */,
 				193A9C3923C5E90400850DBC /* MainCoordinator.swift in Sources */,
+				1949BA5023CA6DD000B95687 /* DefaultLocalStoreAgent.swift in Sources */,
 				193A9C3B23C5E95500850DBC /* Coordinator.swift in Sources */,
+				1949BA4423CA688F00B95687 /* QuestionListProviding.swift in Sources */,
 				193A9C4323C659D400850DBC /* UserDefault.swift in Sources */,
 				1945EC1A23C8CE4200F064BA /* SelectFirstQuestionViewController.swift in Sources */,
 				19B707B023C4CDD300B32BBA /* SceneDelegate.swift in Sources */,
 				19B707F723C5053E00B32BBA /* QuestionCell.swift in Sources */,
 				19945D9623C522AF00BE9134 /* EmptyBackgroundView.swift in Sources */,
 				19945D8F23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift in Sources */,
-				19B707F123C4F3E600B32BBA /* SODataProvider.swift in Sources */,
+				1949BA4A23CA6B0E00B95687 /* LocalStore.swift in Sources */,
+				19B707F123C4F3E600B32BBA /* APIDataProvider.swift in Sources */,
 				19B707F523C4F64400B32BBA /* SODataModelProvider.swift in Sources */,
+				1949BA4823CA696400B95687 /* APIService.swift in Sources */,
 				1945EC1C23C8CEAA00F064BA /* CoordinatedNavigationController.swift in Sources */,
+				1949BA4C23CA6BD500B95687 /* LocalDataProvider.swift in Sources */,
 				193A9C3D23C5EA4C00850DBC /* QuestionDetailsViewController.swift in Sources */,
+				1949BA4623CA68EE00B95687 /* DefaultNetworkingAgent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
