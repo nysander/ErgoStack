@@ -13,6 +13,17 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
 
     var searchController: UISearchController?
 
+    var isFiltering: Bool {
+        if let searchController = searchController {
+            return searchController.isActive || !isSearchBarEmpty
+        }
+        return false
+    }
+
+    var isSearchBarEmpty: Bool {
+        return searchController?.searchBar.text?.isEmpty ?? true
+    }
+
     @IBOutlet var tableView: UITableView!
     @IBOutlet var dataProvider: QuestionTableViewDataProvider!
 
@@ -53,11 +64,19 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
             self.searchController = UISearchController(searchResultsController: nil)
             self.searchController?.searchResultsUpdater = self
             self.searchController?.obscuresBackgroundDuringPresentation = false
-            self.searchController?.searchBar.placeholder = "Search Stack Overflow"
+
+            if UserDefaultsConfig.demo {
+                self.searchController?.searchBar.placeholder = R.string.localizable.searchDisabled()
+                self.searchController?.searchBar.isUserInteractionEnabled = false
+            } else {
+                self.searchController?.searchBar.placeholder = R.string.localizable.search()
+                self.searchController?.searchBar.isUserInteractionEnabled = true
+            }
             self.definesPresentationContext = true
 
             self.navigationItem.hidesSearchBarWhenScrolling = false
             self.navigationItem.searchController = self.searchController
+            self.searchController?.searchBar.delegate = self
         }
     }
 
@@ -75,12 +94,12 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
     @objc
     func toggleDemo() {
         if UserDefaultsConfig.demo {
-            self.searchController?.searchBar.placeholder = "Search Stack Overflow"
+            self.searchController?.searchBar.placeholder = R.string.localizable.search()
             self.searchController?.searchBar.isUserInteractionEnabled = true
             UserDefaultsConfig.demo = false
             self.navigationItem.rightBarButtonItem?.title = R.string.localizable.enableDemo()
         } else {
-            self.searchController?.searchBar.placeholder = "Search Disabled in Demo Mode"
+            self.searchController?.searchBar.placeholder = R.string.localizable.searchDisabled()
             self.searchController?.searchBar.isUserInteractionEnabled = false
             UserDefaultsConfig.demo = true
             self.navigationItem.rightBarButtonItem?.title = R.string.localizable.disableDemo()
@@ -91,11 +110,27 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
 }
 
 extension QuestionListViewController: UISearchResultsUpdating {
-  func updateSearchResults(for searchController: UISearchController) {
-    if let query = searchController.searchBar.text, query.count > 3 {
-        dataSource.search(query: query)
+    func updateSearchResults(for searchController: UISearchController) {
+        // Get all questions when search is cancelled
+        if !isFiltering {
+            dataSource.getQuestions()
+        }
     }
-  }
+}
+
+extension QuestionListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Trigger updating search results after given delay - debouncing
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(getSearchResults), object: nil)
+        self.perform(#selector(getSearchResults), with: nil, afterDelay: 0.25)
+    }
+
+    @objc
+    func getSearchResults() {
+        if let query = searchController?.searchBar.text, query.count > 2 && isFiltering {
+            dataSource.search(query: query)
+        }
+    }
 }
 
 protocol QuestionListProviding {

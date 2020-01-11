@@ -24,3 +24,5 @@
 "no questions" = "No Questions";
 "user not posted" = "User not posted any questions yet";
 "user questions" = "User questions:";
+"search disabled" = "Demo Mode - searching disabled";
+"search" = "Search ...";
