@@ -163,6 +163,19 @@ class SODataModelProvider {
         }
     }
 
+    func search(query: String) {
+        service.search(query: query) { result in
+            DispatchQueue.main.async {
+                do {
+                    let results = try result.get()
+                    self.questions = results.items
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    }
+
     func notify(notificationName: String) {
         NotificationCenter.default.post(name: NSNotification.Name(notificationName),
                                         object: self,

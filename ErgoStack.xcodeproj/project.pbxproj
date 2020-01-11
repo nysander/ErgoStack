@@ -21,6 +21,7 @@
 		1945EC1823C8CD5F00F064BA /* SplitViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945EC1723C8CD5F00F064BA /* SplitViewControllerDelegate.swift */; };
 		1945EC1A23C8CE4200F064BA /* SelectFirstQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945EC1923C8CE4200F064BA /* SelectFirstQuestionViewController.swift */; };
 		1945EC1C23C8CEAA00F064BA /* CoordinatedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945EC1B23C8CEAA00F064BA /* CoordinatedNavigationController.swift */; };
+		1949BA4123CA4A2900B95687 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4023CA4A2900B95687 /* String.swift */; };
 		198918A323C7D74B00DE9C47 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198918A223C7D74B00DE9C47 /* APIConfig.swift */; };
 		19945D8F23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */; };
 		19945D9423C5220100BE9134 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19945D9323C5220100BE9134 /* Localizable.strings */; };
@@ -59,6 +60,7 @@
 		1945EC1723C8CD5F00F064BA /* SplitViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewControllerDelegate.swift; sourceTree = "<group>"; };
 		1945EC1923C8CE4200F064BA /* SelectFirstQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFirstQuestionViewController.swift; sourceTree = "<group>"; };
 		1945EC1B23C8CEAA00F064BA /* CoordinatedNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedNavigationController.swift; sourceTree = "<group>"; };
+		1949BA4023CA4A2900B95687 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		198918A223C7D74B00DE9C47 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewDataProvider.swift; sourceTree = "<group>"; };
 		19945D9323C5220100BE9134 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		19B707E223C4E0E500B32BBA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1949BA4023CA4A2900B95687 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				19B707B223C4CDD300B32BBA /* QuestionListViewController.swift in Sources */,
 				193A9C3F23C63DD700850DBC /* UserProfileViewController.swift in Sources */,
 				198918A323C7D74B00DE9C47 /* APIConfig.swift in Sources */,
+				1949BA4123CA4A2900B95687 /* String.swift in Sources */,
 				19B707F323C4F42500B32BBA /* Networking.swift in Sources */,
 				1945EC1823C8CD5F00F064BA /* SplitViewControllerDelegate.swift in Sources */,
 				193A9C4523C659F100850DBC /* UserDefaultsConfig.swift in Sources */,

@@ -11,6 +11,8 @@ import UIKit
 class QuestionListViewController: UIViewController, QuestionListProviding {
     weak var coordinator: MainCoordinator?
 
+    var searchController: UISearchController?
+
     @IBOutlet var tableView: UITableView!
     @IBOutlet var dataProvider: QuestionTableViewDataProvider!
 
@@ -45,6 +47,18 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
         }
 
         self.navigationItem.title = R.string.localizable.questionList()
+
+        // Load search controller asynchronous for faster app start
+        DispatchQueue.main.async {
+            self.searchController = UISearchController(searchResultsController: nil)
+            self.searchController?.searchResultsUpdater = self
+            self.searchController?.obscuresBackgroundDuringPresentation = false
+            self.searchController?.searchBar.placeholder = "Search Stack Overflow"
+            self.definesPresentationContext = true
+
+            self.navigationItem.hidesSearchBarWhenScrolling = false
+            self.navigationItem.searchController = self.searchController
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -61,17 +75,27 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
     @objc
     func toggleDemo() {
         if UserDefaultsConfig.demo {
+            self.searchController?.searchBar.placeholder = "Search Stack Overflow"
+            self.searchController?.searchBar.isUserInteractionEnabled = true
             UserDefaultsConfig.demo = false
             self.navigationItem.rightBarButtonItem?.title = R.string.localizable.enableDemo()
-            dataSource.questions.removeAll()
-            dataSource.getQuestions()
         } else {
+            self.searchController?.searchBar.placeholder = "Search Disabled in Demo Mode"
+            self.searchController?.searchBar.isUserInteractionEnabled = false
             UserDefaultsConfig.demo = true
             self.navigationItem.rightBarButtonItem?.title = R.string.localizable.disableDemo()
-            dataSource.questions.removeAll()
-            dataSource.getQuestions()
         }
+        self.dataSource.questions.removeAll()
+        self.dataSource.getQuestions()
     }
+}
+
+extension QuestionListViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    if let query = searchController.searchBar.text, query.count > 3 {
+        dataSource.search(query: query)
+    }
+  }
 }
 
 protocol QuestionListProviding {

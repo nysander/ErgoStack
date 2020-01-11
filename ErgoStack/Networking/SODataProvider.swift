@@ -24,6 +24,7 @@ protocol SODataProvider {
     func getUser(userID: Int, _ completion: @escaping (Result<UserListResponse, Error>) -> Void)
     func getUserQuestions(userID: Int, _ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
     func getImage(url: String, _ completion: @escaping (Result<Data, Error>) -> Void)
+    func search(query: String, _ completion: @escaping (Result<QuestionListResponse, Error>) -> Void)
 }
 
 extension SODataProvider {
@@ -45,5 +46,9 @@ extension SODataProvider {
 
     func getImage(url: String, _ completion: @escaping (Result<Data, Error>) -> Void) {
         network.execute(SOEndpoint.getImage(url: url), completion: completion)
+    }
+
+    func search(query: String, _ completion: @escaping (Result<QuestionListResponse, Error>) -> Void) {
+        network.execute(SOEndpoint.search(query: query), completion: completion)
     }
 }

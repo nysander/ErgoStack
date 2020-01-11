@@ -45,6 +45,7 @@ class QuestionDetailsViewController: UIViewController {
 
         self.navigationItem.title = R.string.localizable.questionDetails()
         self.navigationItem.rightBarButtonItem?.isEnabled = false
+        self.navigationItem.largeTitleDisplayMode = .never
     }
 
     // MARK: - Actions

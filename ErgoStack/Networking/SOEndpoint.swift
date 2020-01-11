@@ -13,6 +13,9 @@ enum SOEndpoint {
     case getQuestion(questionID: Int)
     case getUser(userID: Int)
     case getUserQuestions(userID: Int)
+
+    case search(query: String)
+
     case getImage(url: String)
 }
 
@@ -36,6 +39,14 @@ extension SOEndpoint: RequestProviding {
 
         case let .getUserQuestions(userID):
             let url = prepareURL(endpoint: "/users/\(userID)/questions?filter=")
+            let request = prepareURLRequest(for: url)
+            return request
+
+        case let .search(query):
+            guard let queryEncoded = query.stringByAddingPercentEncodingForRFC3986() else {
+                preconditionFailure("unable to create encoded string")
+            }
+            let url = prepareURL(endpoint: "/search/advanced?q=\(queryEncoded)&filter=")
             let request = prepareURLRequest(for: url)
             return request
 
