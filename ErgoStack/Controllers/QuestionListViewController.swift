@@ -76,6 +76,9 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
             self.navigationItem.hidesSearchBarWhenScrolling = false
             self.navigationItem.searchController = self.searchController
             self.searchController?.searchBar.delegate = self
+
+            let refreshButton = UIBarButtonItem(title: R.string.localizable.refresh(), style: .plain, target: self, action: #selector(self.loadNewQuestions))
+            self.navigationItem.leftBarButtonItem = refreshButton
         }
     }
 
@@ -88,6 +91,11 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
     @objc
     func refreshTableView() {
         tableView.reloadData()
+    }
+
+    @objc
+    func loadNewQuestions() {
+        dataSource.getQuestions()
     }
 
     @objc

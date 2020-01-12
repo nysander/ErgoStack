@@ -21,6 +21,8 @@
 
 "questions" = "Questions: %@";
 
+"refresh" = "Refresh";
+
 "reputation" = "Reputation %@";
 
 "score" = "Score: %@";
