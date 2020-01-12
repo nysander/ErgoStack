@@ -373,6 +373,9 @@
                                         <state key="normal" title="website">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openWebsite:" destination="tjF-6D-mVQ" eventType="touchUpInside" id="8VI-2j-06b"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
