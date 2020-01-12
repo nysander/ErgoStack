@@ -30,9 +30,11 @@
 		1949BA4E23CA6CD700B95687 /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4D23CA6CD700B95687 /* LocalService.swift */; };
 		1949BA5023CA6DD000B95687 /* DefaultLocalStoreAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4F23CA6DD000B95687 /* DefaultLocalStoreAgent.swift */; };
 		1951C78423CB04DB006825DA /* FontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1951C78323CB04DB006825DA /* FontType.swift */; };
+		1951C78923CB09D8006825DA /* BartyCrouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1951C78823CB09D8006825DA /* BartyCrouch.swift */; };
+		1951C78D23CB0AF1006825DA /* .bartycrouch.toml in Resources */ = {isa = PBXBuildFile; fileRef = 1951C78C23CB0AF1006825DA /* .bartycrouch.toml */; };
+		1951C78E23CB0B76006825DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1951C79023CB0B76006825DA /* Localizable.strings */; };
 		198918A323C7D74B00DE9C47 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198918A223C7D74B00DE9C47 /* APIConfig.swift */; };
 		19945D8F23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */; };
-		19945D9423C5220100BE9134 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19945D9323C5220100BE9134 /* Localizable.strings */; };
 		19945D9623C522AF00BE9134 /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D9523C522AF00BE9134 /* EmptyBackgroundView.swift */; };
 		19B707AE23C4CDD300B32BBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707AD23C4CDD300B32BBA /* AppDelegate.swift */; };
 		19B707B023C4CDD300B32BBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */; };
@@ -77,9 +79,14 @@
 		1949BA4D23CA6CD700B95687 /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
 		1949BA4F23CA6DD000B95687 /* DefaultLocalStoreAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocalStoreAgent.swift; sourceTree = "<group>"; };
 		1951C78323CB04DB006825DA /* FontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontType.swift; sourceTree = "<group>"; };
+		1951C78823CB09D8006825DA /* BartyCrouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartyCrouch.swift; sourceTree = "<group>"; };
+		1951C78A23CB0A16006825DA /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Main.strings"; sourceTree = "<group>"; };
+		1951C78B23CB0A16006825DA /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1951C78C23CB0AF1006825DA /* .bartycrouch.toml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .bartycrouch.toml; sourceTree = "<group>"; };
+		1951C78F23CB0B76006825DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1951C79123CB0B7D006825DA /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		198918A223C7D74B00DE9C47 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewDataProvider.swift; sourceTree = "<group>"; };
-		19945D9323C5220100BE9134 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		19945D9523C522AF00BE9134 /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
 		19945D9923C530D300BE9134 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		19B707AA23C4CDD300B32BBA /* ErgoStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErgoStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				193A9C4623C65D6500850DBC /* DemoData */,
+				1951C78C23CB0AF1006825DA /* .bartycrouch.toml */,
 				19B707FA23C5088800B32BBA /* Podfile */,
 				19B707DD23C4D20500B32BBA /* README.md */,
 				19B707AC23C4CDD300B32BBA /* ErgoStack */,
@@ -168,12 +176,13 @@
 			children = (
 				19B707AD23C4CDD300B32BBA /* AppDelegate.swift */,
 				19B707B623C4CDD400B32BBA /* Assets.xcassets */,
+				1951C78823CB09D8006825DA /* BartyCrouch.swift */,
 				19B707E023C4E0BF00B32BBA /* Controllers */,
 				19B707E123C4E0D000B32BBA /* Coordinators */,
 				19B707E223C4E0E500B32BBA /* Extensions */,
 				1951C78323CB04DB006825DA /* FontType.swift */,
 				19B707BB23C4CDD400B32BBA /* Info.plist */,
-				19945D9323C5220100BE9134 /* Localizable.strings */,
+				1951C79023CB0B76006825DA /* Localizable.strings */,
 				19B707DE23C4E09B00B32BBA /* Models */,
 				19B707EB23C4E90700B32BBA /* Networking */,
 				1949BA4223CA687D00B95687 /* Protocols */,
@@ -277,6 +286,7 @@
 			buildConfigurationList = 19B707D423C4CDD500B32BBA /* Build configuration list for PBXNativeTarget "ErgoStack" */;
 			buildPhases = (
 				19945D9023C51F0B00BE9134 /* R.Swift */,
+				1951C78723CB0919006825DA /* Bartycrouch */,
 				5A574148AE5CC70F02A005D3 /* [CP] Check Pods Manifest.lock */,
 				19B707A623C4CDD300B32BBA /* Sources */,
 				19B707A723C4CDD300B32BBA /* Frameworks */,
@@ -314,6 +324,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pl-PL",
 			);
 			mainGroup = 19B707A123C4CDD300B32BBA;
 			productRefGroup = 19B707AB23C4CDD300B32BBA /* Products */;
@@ -332,7 +343,8 @@
 			files = (
 				19B707FB23C5088800B32BBA /* Podfile in Resources */,
 				193A9C4A23C65DAC00850DBC /* questionDetails.json in Resources */,
-				19945D9423C5220100BE9134 /* Localizable.strings in Resources */,
+				1951C78D23CB0AF1006825DA /* .bartycrouch.toml in Resources */,
+				1951C78E23CB0B76006825DA /* Localizable.strings in Resources */,
 				19B707BA23C4CDD400B32BBA /* LaunchScreen.storyboard in Resources */,
 				19B707B723C4CDD400B32BBA /* Assets.xcassets in Resources */,
 				19B707B523C4CDD300B32BBA /* Main.storyboard in Resources */,
@@ -345,6 +357,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1951C78723CB0919006825DA /* Bartycrouch */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Bartycrouch;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ] && which bartycrouch > /dev/null; then\nbartycrouch update -x\nbartycrouch lint -x\nfi\n";
+		};
 		19945D9023C51F0B00BE9134 /* R.Swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,6 +452,7 @@
 				19B707E423C4E0FB00B32BBA /* Question.swift in Sources */,
 				19B707E823C4E10F00B32BBA /* User.swift in Sources */,
 				19B707ED23C4F01300B32BBA /* APIEndpoint.swift in Sources */,
+				1951C78923CB09D8006825DA /* BartyCrouch.swift in Sources */,
 				193A9C4123C643CA00850DBC /* R.generated.swift in Sources */,
 				19B707EF23C4F07700B32BBA /* RequestProviding.swift in Sources */,
 				19B707E623C4E10800B32BBA /* Answer.swift in Sources */,
@@ -451,10 +482,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1951C79023CB0B76006825DA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1951C78F23CB0B76006825DA /* en */,
+				1951C79123CB0B7D006825DA /* pl-PL */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		19B707B323C4CDD300B32BBA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				19B707B423C4CDD300B32BBA /* Base */,
+				1951C78A23CB0A16006825DA /* pl-PL */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -463,6 +504,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				19B707B923C4CDD400B32BBA /* Base */,
+				1951C78B23CB0A16006825DA /* pl-PL */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -474,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -534,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

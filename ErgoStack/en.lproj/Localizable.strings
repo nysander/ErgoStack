@@ -1,0 +1,40 @@
+
+"answer" = "Answer %@";
+
+"answers" = "Answers: %@";
+
+"disable demo" = "Disable demo";
+
+"enable demo" = "Enable demo";
+
+"joined" = "Joined: %@";
+
+"loading" = "Loading ...";
+
+"no questions" = "No Questions";
+
+"please wait" = "Please wait";
+
+"question details" = "Question Details";
+
+"question list" = "Question List";
+
+"questions" = "Questions: %@";
+
+"reputation" = "Reputation %@";
+
+"score" = "Score: %@";
+
+"search" = "Search ...";
+
+"search disabled" = "Demo Mode - searching disabled";
+
+"user not posted" = "User not posted any questions yet";
+
+"user profile" = "User Profile";
+
+"user questions" = "User questions:";
+
+"user reputation" = "User reputation: %@";
+
+"views" = "Views: %@";

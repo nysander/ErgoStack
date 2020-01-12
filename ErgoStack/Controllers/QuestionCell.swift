@@ -38,7 +38,7 @@ final class QuestionCell: UITableViewCell {
         creationDateLabel.text = formatter.string(for: question.creationDate)
         
         titleLabel.text = question.title.decodeHTML().string
-        scoreLabel.text = "Score: \(question.score)"
+        scoreLabel.text = R.string.localizable.score("\(question.score)")
         answerCount.text = "\(question.answerCount)"
     }
 }
