@@ -1,5 +1,9 @@
 #  ErgoStack App
 
+## Disclaimer
+
+Due to API throttle limitations application has hardcoded limit of requested questions to 50 in APIConfig
+
 ## Features used in app
 
 * RelativeDateTimeFormatter
@@ -9,7 +13,7 @@
 * Coordinator pattern
 * Network layer abstracted with use of protocols
 * Demo Mode with static JSON files containing example API responses
-* Translation ready with all strings inside Localizable.strings file
+* Translation ready with all strings inside Localizable.strings file (Base app language is English, app also translated to Polish)
 * Model layer mirroring api response objects
 * decoding of response HTML and when relevant displaying as parsed HTML or as plaintext
 * one question list data provider is used for 2 different sets of data 
@@ -17,6 +21,7 @@
 * user images are loaded remotely, EmptyTableView image is loaded from Assets
 * demo mode state is stored in userdefaults. Access to userdefauts is made via property wrappers.
 * UISearchController - search with debouncing to send search request only when user stopped typing, not after every key
+* Refresh on demand
 
 ### External libraries
 

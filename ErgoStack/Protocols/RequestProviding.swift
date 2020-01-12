@@ -14,7 +14,7 @@ protocol RequestProviding {
 
 extension RequestProviding {
     func prepareURL(endpoint: String) -> URL {
-        let urlString = "\(APIConfig.domain)/\(APIConfig.version)\(endpoint)&pagesize=10&order=desc&sort=creation&site=stackoverflow&client_secret=\(APIConfig.clientSecret)&key=\(APIConfig.key)"
+        let urlString = "\(APIConfig.domain)/\(APIConfig.version)\(endpoint)&pagesize=\(APIConfig.limit)&order=desc&sort=creation&site=stackoverflow&client_secret=\(APIConfig.clientSecret)&key=\(APIConfig.key)"
         guard let url = URL(string: urlString) else {
             preconditionFailure("Invalid URL used to create URL instance")
         }

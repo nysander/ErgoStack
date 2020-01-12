@@ -16,4 +16,6 @@ enum APIConfig {
     // done only for presentation purpose
     static let clientSecret = "Gkg1hDptbXD5LC6fzSQosQ(("
     static let key = "3efzRR38AAlKNUDkSNF0nA(("
+
+    static let limit = 50
 }
