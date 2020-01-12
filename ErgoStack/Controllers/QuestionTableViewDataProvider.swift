@@ -6,12 +6,12 @@
 //  Copyright © 2020 Pawel Madej. All rights reserved.
 //
 
+import UIKit
+
 enum ParentView {
     case list
     case userList
 }
-
-import UIKit
 
 final class QuestionTableViewDataProvider: NSObject {
     var dataSource = AppDelegate.dataSource

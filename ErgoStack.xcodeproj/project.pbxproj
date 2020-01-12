@@ -19,7 +19,7 @@
 		193A9C4C23C6628900850DBC /* userProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = 193A9C4B23C6628900850DBC /* userProfile.json */; };
 		193A9C4E23C662A600850DBC /* userQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = 193A9C4D23C662A600850DBC /* userQuestions.json */; };
 		1945EC1823C8CD5F00F064BA /* SplitViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945EC1723C8CD5F00F064BA /* SplitViewControllerDelegate.swift */; };
-		1945EC1A23C8CE4200F064BA /* SelectFirstQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945EC1923C8CE4200F064BA /* SelectFirstQuestionViewController.swift */; };
+		1945EC1A23C8CE4200F064BA /* EmptyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945EC1923C8CE4200F064BA /* EmptyDetailViewController.swift */; };
 		1945EC1C23C8CEAA00F064BA /* CoordinatedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945EC1B23C8CEAA00F064BA /* CoordinatedNavigationController.swift */; };
 		1949BA4123CA4A2900B95687 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4023CA4A2900B95687 /* String.swift */; };
 		1949BA4423CA688F00B95687 /* QuestionListProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4323CA688F00B95687 /* QuestionListProviding.swift */; };
@@ -29,6 +29,7 @@
 		1949BA4C23CA6BD500B95687 /* LocalDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4B23CA6BD500B95687 /* LocalDataProvider.swift */; };
 		1949BA4E23CA6CD700B95687 /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4D23CA6CD700B95687 /* LocalService.swift */; };
 		1949BA5023CA6DD000B95687 /* DefaultLocalStoreAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BA4F23CA6DD000B95687 /* DefaultLocalStoreAgent.swift */; };
+		1951C78423CB04DB006825DA /* FontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1951C78323CB04DB006825DA /* FontType.swift */; };
 		198918A323C7D74B00DE9C47 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198918A223C7D74B00DE9C47 /* APIConfig.swift */; };
 		19945D8F23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */; };
 		19945D9423C5220100BE9134 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19945D9323C5220100BE9134 /* Localizable.strings */; };
@@ -46,7 +47,7 @@
 		19B707EF23C4F07700B32BBA /* RequestProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707EE23C4F07700B32BBA /* RequestProviding.swift */; };
 		19B707F123C4F3E600B32BBA /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F023C4F3E600B32BBA /* APIDataProvider.swift */; };
 		19B707F323C4F42500B32BBA /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F223C4F42500B32BBA /* Networking.swift */; };
-		19B707F523C4F64400B32BBA /* SODataModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F423C4F64400B32BBA /* SODataModelProvider.swift */; };
+		19B707F523C4F64400B32BBA /* DataModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F423C4F64400B32BBA /* DataModelProvider.swift */; };
 		19B707F723C5053E00B32BBA /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F623C5053E00B32BBA /* QuestionCell.swift */; };
 		19B707FB23C5088800B32BBA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 19B707FA23C5088800B32BBA /* Podfile */; };
 		527DC0DA4FBEBF4B2BB9C661 /* Pods_ErgoStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F079D5F57FB358CA578AFAA /* Pods_ErgoStack.framework */; };
@@ -65,7 +66,7 @@
 		193A9C4B23C6628900850DBC /* userProfile.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userProfile.json; sourceTree = "<group>"; };
 		193A9C4D23C662A600850DBC /* userQuestions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userQuestions.json; sourceTree = "<group>"; };
 		1945EC1723C8CD5F00F064BA /* SplitViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewControllerDelegate.swift; sourceTree = "<group>"; };
-		1945EC1923C8CE4200F064BA /* SelectFirstQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFirstQuestionViewController.swift; sourceTree = "<group>"; };
+		1945EC1923C8CE4200F064BA /* EmptyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDetailViewController.swift; sourceTree = "<group>"; };
 		1945EC1B23C8CEAA00F064BA /* CoordinatedNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedNavigationController.swift; sourceTree = "<group>"; };
 		1949BA4023CA4A2900B95687 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		1949BA4323CA688F00B95687 /* QuestionListProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListProviding.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		1949BA4B23CA6BD500B95687 /* LocalDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataProvider.swift; sourceTree = "<group>"; };
 		1949BA4D23CA6CD700B95687 /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
 		1949BA4F23CA6DD000B95687 /* DefaultLocalStoreAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocalStoreAgent.swift; sourceTree = "<group>"; };
+		1951C78323CB04DB006825DA /* FontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontType.swift; sourceTree = "<group>"; };
 		198918A223C7D74B00DE9C47 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewDataProvider.swift; sourceTree = "<group>"; };
 		19945D9323C5220100BE9134 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -96,7 +98,7 @@
 		19B707EE23C4F07700B32BBA /* RequestProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProviding.swift; sourceTree = "<group>"; };
 		19B707F023C4F3E600B32BBA /* APIDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataProvider.swift; sourceTree = "<group>"; };
 		19B707F223C4F42500B32BBA /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		19B707F423C4F64400B32BBA /* SODataModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataModelProvider.swift; sourceTree = "<group>"; };
+		19B707F423C4F64400B32BBA /* DataModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelProvider.swift; sourceTree = "<group>"; };
 		19B707F623C5053E00B32BBA /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		19B707FA23C5088800B32BBA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		809AFE596EC6758EA15CA3AE /* Pods-ErgoStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErgoStack.release.xcconfig"; path = "Target Support Files/Pods-ErgoStack/Pods-ErgoStack.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,12 +132,12 @@
 		1949BA4223CA687D00B95687 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				1949BA4323CA688F00B95687 /* QuestionListProviding.swift */,
-				19B707F223C4F42500B32BBA /* Networking.swift */,
-				19B707EE23C4F07700B32BBA /* RequestProviding.swift */,
 				19B707F023C4F3E600B32BBA /* APIDataProvider.swift */,
 				1949BA4B23CA6BD500B95687 /* LocalDataProvider.swift */,
 				1949BA4923CA6B0E00B95687 /* LocalStore.swift */,
+				19B707F223C4F42500B32BBA /* Networking.swift */,
+				1949BA4323CA688F00B95687 /* QuestionListProviding.swift */,
+				19B707EE23C4F07700B32BBA /* RequestProviding.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -164,22 +166,23 @@
 		19B707AC23C4CDD300B32BBA /* ErgoStack */ = {
 			isa = PBXGroup;
 			children = (
-				1949BA4223CA687D00B95687 /* Protocols */,
-				193A9C4023C643CA00850DBC /* R.generated.swift */,
-				19B707EB23C4E90700B32BBA /* Networking */,
-				19B707E223C4E0E500B32BBA /* Extensions */,
-				19B707E123C4E0D000B32BBA /* Coordinators */,
-				19B707E023C4E0BF00B32BBA /* Controllers */,
-				19B707DF23C4E0B100B32BBA /* Views */,
-				19B707DE23C4E09B00B32BBA /* Models */,
 				19B707AD23C4CDD300B32BBA /* AppDelegate.swift */,
-				19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */,
 				19B707B623C4CDD400B32BBA /* Assets.xcassets */,
+				19B707E023C4E0BF00B32BBA /* Controllers */,
+				19B707E123C4E0D000B32BBA /* Coordinators */,
+				19B707E223C4E0E500B32BBA /* Extensions */,
+				1951C78323CB04DB006825DA /* FontType.swift */,
 				19B707BB23C4CDD400B32BBA /* Info.plist */,
 				19945D9323C5220100BE9134 /* Localizable.strings */,
+				19B707DE23C4E09B00B32BBA /* Models */,
+				19B707EB23C4E90700B32BBA /* Networking */,
+				1949BA4223CA687D00B95687 /* Protocols */,
+				193A9C4023C643CA00850DBC /* R.generated.swift */,
+				19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */,
+				1945EC1723C8CD5F00F064BA /* SplitViewControllerDelegate.swift */,
 				193A9C4223C659D400850DBC /* UserDefault.swift */,
 				193A9C4423C659F100850DBC /* UserDefaultsConfig.swift */,
-				1945EC1723C8CD5F00F064BA /* SplitViewControllerDelegate.swift */,
+				19B707DF23C4E0B100B32BBA /* Views */,
 			);
 			path = ErgoStack;
 			sourceTree = "<group>";
@@ -212,7 +215,7 @@
 				19B707F623C5053E00B32BBA /* QuestionCell.swift */,
 				19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */,
 				193A9C3E23C63DD600850DBC /* UserProfileViewController.swift */,
-				1945EC1923C8CE4200F064BA /* SelectFirstQuestionViewController.swift */,
+				1945EC1923C8CE4200F064BA /* EmptyDetailViewController.swift */,
 				1945EC1B23C8CEAA00F064BA /* CoordinatedNavigationController.swift */,
 			);
 			path = Controllers;
@@ -238,13 +241,13 @@
 		19B707EB23C4E90700B32BBA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				198918A223C7D74B00DE9C47 /* APIConfig.swift */,
 				19B707EC23C4F01300B32BBA /* APIEndpoint.swift */,
 				1949BA4723CA696400B95687 /* APIService.swift */,
-				19B707F423C4F64400B32BBA /* SODataModelProvider.swift */,
-				1949BA4D23CA6CD700B95687 /* LocalService.swift */,
-				198918A223C7D74B00DE9C47 /* APIConfig.swift */,
-				1949BA4523CA68EE00B95687 /* DefaultNetworkingAgent.swift */,
 				1949BA4F23CA6DD000B95687 /* DefaultLocalStoreAgent.swift */,
+				1949BA4523CA68EE00B95687 /* DefaultNetworkingAgent.swift */,
+				1949BA4D23CA6CD700B95687 /* LocalService.swift */,
+				19B707F423C4F64400B32BBA /* DataModelProvider.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -428,18 +431,19 @@
 				193A9C3B23C5E95500850DBC /* Coordinator.swift in Sources */,
 				1949BA4423CA688F00B95687 /* QuestionListProviding.swift in Sources */,
 				193A9C4323C659D400850DBC /* UserDefault.swift in Sources */,
-				1945EC1A23C8CE4200F064BA /* SelectFirstQuestionViewController.swift in Sources */,
+				1945EC1A23C8CE4200F064BA /* EmptyDetailViewController.swift in Sources */,
 				19B707B023C4CDD300B32BBA /* SceneDelegate.swift in Sources */,
 				19B707F723C5053E00B32BBA /* QuestionCell.swift in Sources */,
 				19945D9623C522AF00BE9134 /* EmptyBackgroundView.swift in Sources */,
 				19945D8F23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift in Sources */,
 				1949BA4A23CA6B0E00B95687 /* LocalStore.swift in Sources */,
 				19B707F123C4F3E600B32BBA /* APIDataProvider.swift in Sources */,
-				19B707F523C4F64400B32BBA /* SODataModelProvider.swift in Sources */,
+				19B707F523C4F64400B32BBA /* DataModelProvider.swift in Sources */,
 				1949BA4823CA696400B95687 /* APIService.swift in Sources */,
 				1945EC1C23C8CEAA00F064BA /* CoordinatedNavigationController.swift in Sources */,
 				1949BA4C23CA6BD500B95687 /* LocalDataProvider.swift in Sources */,
 				193A9C3D23C5EA4C00850DBC /* QuestionDetailsViewController.swift in Sources */,
+				1951C78423CB04DB006825DA /* FontType.swift in Sources */,
 				1949BA4623CA68EE00B95687 /* DefaultNetworkingAgent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

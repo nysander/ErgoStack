@@ -14,6 +14,8 @@ class QuestionDetailsViewController: UIViewController {
     
     var dataSource = AppDelegate.dataSource
 
+    private let spinner = UIActivityIndicatorView(style: .large)
+
     @IBOutlet var mainStackView: UIStackView!
     @IBOutlet var questionTitle: UILabel!
     @IBOutlet var userPhoto: UIImageView!
@@ -26,8 +28,6 @@ class QuestionDetailsViewController: UIViewController {
     @IBOutlet var profileStackView: UIStackView!
     @IBOutlet var userDisplayName: UIButton!
     @IBOutlet var questionDateLabel: UILabel!
-
-    private let spinner = UIActivityIndicatorView(style: .large)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ class QuestionDetailsViewController: UIViewController {
         guard let question = self.dataSource.question else {
             return
         }
-        let textToShare = decodeHTML(string: question.title).string
+        let textToShare = question.title.decodeHTML().string
         let link = question.link
 
         if let url = URL(string: link) {
@@ -88,10 +88,10 @@ class QuestionDetailsViewController: UIViewController {
 
         dataSource.getImage(url: question.owner.profileImage)
 
-        questionTitle.text = decodeHTML(string: question.title, fontStyle: .title).string
+        questionTitle.text = question.title.decodeHTML().string
         viewCount.text = R.string.localizable.views("\(question.viewCount)")
         answerCount.text = R.string.localizable.answers("\(question.answerCount)")
-        userDisplayName.setTitle(decodeHTML(string: question.owner.displayName).string, for: .normal)
+        userDisplayName.setTitle(question.owner.displayName.decodeHTML().string, for: .normal)
         userRating.text = R.string.localizable.reputation("\(question.owner.reputation)")
         score.text = R.string.localizable.score("\(question.score)")
         let formatter = RelativeDateTimeFormatter()
@@ -99,7 +99,7 @@ class QuestionDetailsViewController: UIViewController {
         questionDateLabel.text = formatter.string(for: question.creationDate)
 
         if let questionBody = question.body {
-            body.attributedText = decodeHTML(string: questionBody)
+            body.attributedText = questionBody.decodeHTML()
             body.backgroundColor = .systemGray2
             body.isScrollEnabled = false
             body.translatesAutoresizingMaskIntoConstraints = false
@@ -249,7 +249,7 @@ class QuestionDetailsViewController: UIViewController {
 
                 let answerTextView = UITextView()
 
-                answerTextView.attributedText = decodeHTML(string: answerBody)
+                answerTextView.attributedText = answerBody.decodeHTML()
                 answerTextView.backgroundColor = .systemGray4
                 answerTextView.isScrollEnabled = false
                 answerTextView.translatesAutoresizingMaskIntoConstraints = false
@@ -269,24 +269,6 @@ class QuestionDetailsViewController: UIViewController {
 
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    }
-
-    func decodeHTML(string: String, fontStyle: FontType = .body) -> NSAttributedString {
-        let modifiedFont = NSString(format: "<span style=\"font: -apple-system\(fontStyle.suffix); font-size: \(UIFont.systemFontSize)\">%@</span>" as NSString, string)
-
-        guard let data = modifiedFont.data(using: String.Encoding.unicode.rawValue, allowLossyConversion: true) else {
-            return NSAttributedString(string: "")
-        }
-        let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
-
-        do {
-            let attributedString = try NSAttributedString(data: data,
-                                                          options: options,
-                                                          documentAttributes: nil)
-            return attributedString
-        } catch {
-            return NSAttributedString(string: "")
-        }
     }
 }
 

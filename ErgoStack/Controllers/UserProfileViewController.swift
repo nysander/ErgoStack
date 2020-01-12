@@ -79,9 +79,9 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
             preconditionFailure("Unable to initialize view with nonexistent question")
         }
         dataSource.getImage(url: user.profileImage)
-        displayName.text = decodeHTML(string: user.displayName).string
+        displayName.text = user.displayName.decodeHTML().string
         if let location = user.location {
-            locationLabel.text = decodeHTML(string: location).string
+            locationLabel.text = location.decodeHTML().string
         }
         questionCountLabel.text = R.string.localizable.questions("\(user.questionCount ?? 0)")
         answerCountLabel.text = R.string.localizable.answers("\(user.answerCount ?? 0)")
@@ -98,7 +98,7 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         if let aboutMe = user.aboutMe, !aboutMe.isEmpty {
             aboutMeTextView.isHidden = false
             aboutMeLabel.isHidden = false
-            aboutMeTextView.text = decodeHTML(string: aboutMe).string
+            aboutMeTextView.text = aboutMe.decodeHTML().string
             aboutMeTextView.delegate = self
             textViewDidChange(aboutMeTextView)
         } else {
@@ -160,7 +160,7 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         NotificationCenter.default.addObserver(self, selector: #selector(showQuestionList), name: NSNotification.Name("UserQuestionListLoaded"), object: nil)
     }
 
-    //MARK: - View Builder Methods
+    // MARK: - View Builder Methods
     func showSpinner() {
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.startAnimating()
@@ -197,24 +197,6 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
             label.isUserInteractionEnabled = false
 
             badgeStack.addArrangedSubview(label)
-        }
-    }
-
-    func decodeHTML(string: String, fontStyle: FontType = .body) -> NSAttributedString {
-        let modifiedFont = NSString(format: "<span style=\"font: -apple-system\(fontStyle.suffix); font-size: \(UIFont.systemFontSize)\">%@</span>" as NSString, string)
-
-        guard let data = modifiedFont.data(using: String.Encoding.unicode.rawValue, allowLossyConversion: true) else {
-            return NSAttributedString(string: "")
-        }
-        let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
-
-        do {
-            let attributedString = try NSAttributedString(data: data,
-                                                          options: options,
-                                                          documentAttributes: nil)
-            return attributedString
-        } catch {
-            return NSAttributedString(string: "")
         }
     }
 }

@@ -14,7 +14,7 @@ class SplitViewControllerDelegate: UISplitViewControllerDelegate {
     private init() { }
 
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        if secondaryViewController is SelectFirstQuestionViewController {
+        if secondaryViewController is EmptyDetailViewController {
             return true
         } else {
             return false

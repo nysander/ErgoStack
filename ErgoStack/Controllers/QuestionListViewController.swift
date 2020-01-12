@@ -11,7 +11,12 @@ import UIKit
 class QuestionListViewController: UIViewController, QuestionListProviding {
     weak var coordinator: MainCoordinator?
 
-    var searchController: UISearchController?
+    var dataSource = AppDelegate.dataSource
+
+    private var searchController: UISearchController?
+    private var image = UIImage()
+    private let topMessage = R.string.localizable.loading()
+    private let bottomMessage = R.string.localizable.pleaseWait()
 
     var isFiltering: Bool {
         if let searchController = searchController {
@@ -26,12 +31,6 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var dataProvider: QuestionTableViewDataProvider!
-
-    private var image = UIImage()
-    private let topMessage = R.string.localizable.loading()
-    private let bottomMessage = R.string.localizable.pleaseWait()
-
-    var dataSource = AppDelegate.dataSource
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +48,7 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
         image = imageUnwrapped
         dataProvider.emptyViewData = (image, topMessage, bottomMessage)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name("QuestionListLoaded"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: NSNotification.Name("QuestionListLoaded"), object: nil)
 
         if UserDefaultsConfig.demo {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: R.string.localizable.disableDemo(), style: .plain, target: self, action: #selector(toggleDemo))
@@ -87,7 +86,7 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
     }
 
     @objc
-    func refresh() {
+    func refreshTableView() {
         tableView.reloadData()
     }
 

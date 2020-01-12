@@ -1,5 +1,5 @@
 //
-//  SODataModelProvider.swift
+//  DataModelProvider.swift
 //  ErgoStack
 //
 //  Created by Pawel Madej on 07/01/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SODataModelProvider {
+class DataModelProvider {
     let apiService: APIDataProvider
     let localService: LocalDataProvider
 
