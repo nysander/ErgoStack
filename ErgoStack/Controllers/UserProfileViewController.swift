@@ -30,7 +30,8 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     @IBOutlet var aboutMeTextView: UITextView!
     @IBOutlet var aboutMeLabel: UILabel!
     @IBOutlet var badgesStackView: UIStackView!
-    @IBOutlet var mainStackView: UIStackView!
+    @IBOutlet var labelStackView: UIStackView!
+    @IBOutlet var questionStackView: UIStackView!
 
     @IBOutlet var tableView: UITableView!
 
@@ -60,7 +61,7 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         
         self.navigationItem.title = R.string.localizable.userProfile()
 
-        mainStackView.isHidden = true
+        _ = view.subviews.map { $0.isHidden = true }
         tableView.isHidden = true
         showSpinner()
     }
@@ -78,25 +79,29 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         guard let user = self.dataSource.user else {
             preconditionFailure("Unable to initialize view with nonexistent question")
         }
+        profileImage.isHidden = false
+        labelStackView.isHidden = false
+        questionStackView.isHidden = false
+        badgesStackView.isHidden = false
+
         dataSource.getImage(url: user.profileImage)
         displayName.text = user.displayName.decodeHTML().string
+        displayName.isHidden = false
         if let location = user.location {
             locationLabel.text = location.decodeHTML().string
             locationLabel.isHidden = false
-        } else {
-            locationLabel.isHidden = true
         }
         questionCountLabel.text = R.string.localizable.questions("\(user.questionCount ?? 0)")
         answerCountLabel.text = R.string.localizable.answers("\(user.answerCount ?? 0)")
+        questionCountLabel.isHidden = false
+        answerCountLabel.isHidden = false
 
         let formatter = RelativeDateTimeFormatter()
         formatter.dateTimeStyle = .named
         if let creationDate = formatter.string(for: user.creationDate) {
             creationDateLabel.text = R.string.localizable.joined(creationDate)
+            creationDateLabel.isHidden = false
         }
-
-        websiteButton.layer.cornerRadius = view.frame.size.width / 64
-        websiteButton.clipsToBounds = true
 
         if let aboutMe = user.aboutMe, !aboutMe.isEmpty {
             aboutMeTextView.isHidden = false
@@ -105,11 +110,13 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
             aboutMeTextView.delegate = self
             textViewDidChange(aboutMeTextView)
         } else {
-            aboutMeTextView.isHidden = true
-            aboutMeLabel.isHidden = true
+            tableView.translatesAutoresizingMaskIntoConstraints = false
+            tableView.topAnchor.constraint(equalToSystemSpacingBelow: badgesStackView.bottomAnchor, multiplier: 1).isActive = true
         }
 
         if let url = user.websiteUrl, !url.isEmpty {
+            websiteButton.layer.cornerRadius = view.frame.size.width / 64
+            websiteButton.clipsToBounds = true
             websiteButton.isHidden = false
         } else {
             websiteButton.isHidden = true
@@ -135,9 +142,6 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
             bottomMessage = R.string.localizable.userNotPosted()
         }
         dataProvider.emptyViewData = (image, topMessage, bottomMessage)
-
-        mainStackView.isHidden = false
-        spinner.removeFromSuperview()
     }
 
     @objc
@@ -152,6 +156,7 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     func showQuestionList() {
         tableView.reloadData()
         tableView.isHidden = false
+        spinner.removeFromSuperview()
     }
 
     // MARK: -
@@ -167,10 +172,13 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
     func showSpinner() {
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.startAnimating()
+        spinner.backgroundColor = UIColor.systemBackground
         view.addSubview(spinner)
 
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        spinner.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        spinner.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1).isActive = true
     }
 
     func prepareBadge(color: String, _ user: User, _ badgeStack: UIStackView) {
@@ -210,7 +218,7 @@ extension UserProfileViewController: UITextViewDelegate {
         textView.isScrollEnabled = false
         textView.translatesAutoresizingMaskIntoConstraints = false
 
-        let size = CGSize(width: mainStackView.frame.width, height: .infinity)
+        let size = CGSize(width: textView.frame.width, height: .infinity)
         var estimatedSize = textView.sizeThatFits(size)
 
         textView.constraints.forEach { constraint in
