@@ -36,6 +36,7 @@
 		198918A323C7D74B00DE9C47 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198918A223C7D74B00DE9C47 /* APIConfig.swift */; };
 		19945D8F23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */; };
 		19945D9623C522AF00BE9134 /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19945D9523C522AF00BE9134 /* EmptyBackgroundView.swift */; };
+		19945D9A23C530D400BE9134 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 19945D9923C530D300BE9134 /* .swiftlint.yml */; };
 		19B707AE23C4CDD300B32BBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707AD23C4CDD300B32BBA /* AppDelegate.swift */; };
 		19B707B023C4CDD300B32BBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */; };
 		19B707B223C4CDD300B32BBA /* QuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707B123C4CDD300B32BBA /* QuestionListViewController.swift */; };
@@ -153,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				193A9C4623C65D6500850DBC /* DemoData */,
+				19945D9923C530D300BE9134 /* .swiftlint.yml */,
 				1951C78C23CB0AF1006825DA /* .bartycrouch.toml */,
 				19B707FA23C5088800B32BBA /* Podfile */,
 				19B707DD23C4D20500B32BBA /* README.md */,
@@ -287,6 +289,7 @@
 			buildPhases = (
 				19945D9023C51F0B00BE9134 /* R.Swift */,
 				1951C78723CB0919006825DA /* Bartycrouch */,
+				1951C7A023CB3767006825DA /* Swiftlint */,
 				5A574148AE5CC70F02A005D3 /* [CP] Check Pods Manifest.lock */,
 				19B707A623C4CDD300B32BBA /* Sources */,
 				19B707A723C4CDD300B32BBA /* Frameworks */,
@@ -341,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19945D9A23C530D400BE9134 /* .swiftlint.yml in Resources */,
 				19B707FB23C5088800B32BBA /* Podfile in Resources */,
 				193A9C4A23C65DAC00850DBC /* questionDetails.json in Resources */,
 				1951C78D23CB0AF1006825DA /* .bartycrouch.toml in Resources */,
@@ -374,6 +378,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ] && which bartycrouch > /dev/null; then\nbartycrouch update -x\nbartycrouch lint -x\nfi\n";
+		};
+		1951C7A023CB3767006825DA /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    swiftlint\nfi\n";
 		};
 		19945D9023C51F0B00BE9134 /* R.Swift */ = {
 			isa = PBXShellScriptBuildPhase;
