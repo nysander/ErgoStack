@@ -1,0 +1,87 @@
+
+/* Class = "UILabel"; text = "1 Jan 2020"; ObjectID = "0d4-i6-LRZ"; */
+"0d4-i6-LRZ.text" = "1 Jan 2020";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2Q8-uU-XJL"; */
+"2Q8-uU-XJL.text" = "Label";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "; ObjectID = "6OC-pI-czG"; */
+"6OC-pI-czG.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
+
+/* Class = "UILabel"; text = "About me"; ObjectID = "B2Y-ur-qP3"; */
+"B2Y-ur-qP3.text" = "O mnie";
+
+/* Class = "UILabel"; text = "Answers: X"; ObjectID = "Ewx-Rb-cJm"; */
+"Ewx-Rb-cJm.text" = "Answers: X";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "GkK-R9-AzT"; */
+"GkK-R9-AzT.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Website"; ObjectID = "JWA-1e-EsY"; */
+"JWA-1e-EsY.normalTitle" = "Website";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "K8k-00-9zg"; */
+"K8k-00-9zg.text" = "Label";
+
+/* Class = "UILabel"; text = "Questions: X"; ObjectID = "Keb-jy-Lxt"; */
+"Keb-jy-Lxt.text" = "Questions: X";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LQ7-hs-If1"; */
+"LQ7-hs-If1.text" = "Label";
+
+/* Class = "UILabel"; text = "Choose question"; ObjectID = "Lvz-wc-Kx4"; */
+"Lvz-wc-Kx4.text" = "Choose question";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "R7X-TG-ix3"; */
+"R7X-TG-ix3.text" = "1";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Sbf-rd-Bhu"; */
+"Sbf-rd-Bhu.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VUc-TT-Y6p"; */
+"VUc-TT-Y6p.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "X01-Ma-OmD"; */
+"X01-Ma-OmD.text" = "Title";
+
+/* Class = "UILabel"; text = "Name Surname"; ObjectID = "Yta-Gz-uIO"; */
+"Yta-Gz-uIO.text" = "Name Surname";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cXB-fo-h5R"; */
+"cXB-fo-h5R.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "User Name"; ObjectID = "csG-pp-fys"; */
+"csG-pp-fys.normalTitle" = "User Name";
+
+/* Class = "UITextView"; text = "Question Body"; ObjectID = "dtG-R2-0oy"; */
+"dtG-R2-0oy.text" = "Question Body";
+
+/* Class = "UILabel"; text = "Rating"; ObjectID = "eq5-Rl-ZG4"; */
+"eq5-Rl-ZG4.text" = "Rating";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "g6f-ej-aey"; */
+"g6f-ej-aey.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "h4V-Jw-eYx"; */
+"h4V-Jw-eYx.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lff-qj-RGs"; */
+"lff-qj-RGs.text" = "Label";
+
+/* Class = "UILabel"; text = "Answer Count"; ObjectID = "mqN-JK-1wB"; */
+"mqN-JK-1wB.text" = "Answer Count";
+
+/* Class = "UILabel"; text = "Score"; ObjectID = "nWB-Vi-gAl"; */
+"nWB-Vi-gAl.text" = "Score";
+
+/* Class = "UILabel"; text = "View Count"; ObjectID = "qac-OX-d6r"; */
+"qac-OX-d6r.text" = "View Count";
+
+/* Class = "UILabel"; text = "Poland"; ObjectID = "sVr-eH-X7J"; */
+"sVr-eH-X7J.text" = "Poland";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tXh-3E-KqY"; */
+"tXh-3E-KqY.text" = "Label";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "x1X-yZ-WPV"; */
+"x1X-yZ-WPV.text" = "1";

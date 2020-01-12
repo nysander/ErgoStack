@@ -1,0 +1,6 @@
+framework module Pods_ErgoStack {
+  umbrella header "Pods-ErgoStack-umbrella.h"
+
+  export *
+  module * { export * }
+}

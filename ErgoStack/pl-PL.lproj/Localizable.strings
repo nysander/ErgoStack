@@ -1,0 +1,42 @@
+
+"answer" = "Odpowiedź %@";
+
+"answers" = "Odpowiedzi: %@";
+
+"disable demo" = "Wyłącz demo";
+
+"enable demo" = "Włącz demo";
+
+"joined" = "Dołączył: %@";
+
+"loading" = "Ładowanie ...";
+
+"no questions" = "Brak Pytań";
+
+"please wait" = "Proszę czekać";
+
+"question details" = "Szczegóły";
+
+"question list" = "Lista pytań";
+
+"questions" = "Pytania: %@";
+
+"refresh" = "Odśwież";
+
+"reputation" = "Reputacja %@";
+
+"score" = "Ocena: %@";
+
+"search" = "Szukaj ...";
+
+"search disabled" = "Tryb Demo - wyszukiwanie wyłączone";
+
+"user not posted" = "Użytkownik nie zadał jeszcze żadnego pytania";
+
+"user profile" = "Profil Użytkownika";
+
+"user questions" = "Pytania użytkownika:";
+
+"user reputation" = "Reputacja: %@";
+
+"views" = "Odsłony: %@";

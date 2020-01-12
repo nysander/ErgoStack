@@ -1,0 +1,618 @@
+{
+  "items": [
+    {
+      "tags": [
+        "django",
+        "django-migrations"
+      ],
+      "owner": {
+        "reputation": 120,
+        "user_id": 9716385,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/10215308970894773/picture?type=large",
+        "display_name": "Faulander",
+        "link": "https://stackoverflow.com/users/9716385/faulander"
+      },
+      "is_answered": false,
+      "view_count": 6,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1578512777,
+      "creation_date": 1578512160,
+      "question_id": 59652724,
+      "link": "https://stackoverflow.com/questions/59652724/django-manage-py-makemigrations-django-db-utils-operationalerror-no-such-t",
+      "title": "Django: manage.py makemigrations --&gt; django.db.utils.OperationalError: no such table"
+    },
+    {
+      "tags": [
+        "apache-spark",
+        "apache-kafka"
+      ],
+      "owner": {
+        "reputation": 426,
+        "user_id": 1758378,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Sze8T.jpg?s=128&g=1",
+        "display_name": "Vikash Pareek",
+        "link": "https://stackoverflow.com/users/1758378/vikash-pareek"
+      },
+      "is_answered": false,
+      "view_count": 372,
+      "answer_count": 2,
+      "score": 6,
+      "last_activity_date": 1578512774,
+      "creation_date": 1496149488,
+      "last_edit_date": 1543415505,
+      "question_id": 44263095,
+      "link": "https://stackoverflow.com/questions/44263095/message-getting-lost-in-kafka-spark-streaming",
+      "title": "Message getting lost in Kafka + Spark Streaming"
+    },
+    {
+      "tags": [
+        "c#",
+        ".net",
+        "winforms"
+      ],
+      "owner": {
+        "reputation": 57,
+        "user_id": 5730828,
+        "user_type": "registered",
+        "accept_rate": 67,
+        "profile_image": "https://www.gravatar.com/avatar/75bb82b860b1f87ba0a924d39a0a107d?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Haim Shabort",
+        "link": "https://stackoverflow.com/users/5730828/haim-shabort"
+      },
+      "is_answered": false,
+      "view_count": 1049,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1578512773,
+      "creation_date": 1452772970,
+      "question_id": 34789172,
+      "link": "https://stackoverflow.com/questions/34789172/how-can-i-scan-and-list-all-connected-devices-to-my-network-wireless-im-gettin",
+      "title": "How can i scan and list all connected devices to my network wireless, i&#39;m getting exception?"
+    },
+    {
+      "tags": [
+        "javascript",
+        "utf-8",
+        "cjk"
+      ],
+      "owner": {
+        "reputation": 400,
+        "user_id": 1457822,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/baeef8520f3ef9fbd32b4313a68e459b?s=128&d=identicon&r=PG",
+        "display_name": "R OMS",
+        "link": "https://stackoverflow.com/users/1457822/r-oms"
+      },
+      "is_answered": false,
+      "view_count": 2,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1578512771,
+      "creation_date": 1578512771,
+      "question_id": 59652839,
+      "link": "https://stackoverflow.com/questions/59652839/how-to-interpret-bytes-for-utf-8-encoded-hiragana",
+      "title": "How to interpret bytes for UTF-8 encoded Hiragana?"
+    },
+    {
+      "tags": [
+        "react-native",
+        "styled-components"
+      ],
+      "owner": {
+        "reputation": 57,
+        "user_id": 11133473,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/c8bbf2692b809b107d9231fd0543960d?s=128&d=identicon&r=PG&f=1",
+        "display_name": "yazmnh87",
+        "link": "https://stackoverflow.com/users/11133473/yazmnh87"
+      },
+      "is_answered": false,
+      "view_count": 2,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1578512763,
+      "creation_date": 1578512763,
+      "question_id": 59652838,
+      "link": "https://stackoverflow.com/questions/59652838/unable-to-apply-flex-to-imported-styled-component",
+      "title": "unable to apply flex to imported styled component"
+    },
+    {
+      "tags": [
+        "swift",
+        "macos",
+        "cocoa",
+        "appkit"
+      ],
+      "owner": {
+        "reputation": 45,
+        "user_id": 12670765,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/b8ba6284e296291d57432602bc46f950?s=128&d=identicon&r=PG&f=1",
+        "display_name": "bapafes482",
+        "link": "https://stackoverflow.com/users/12670765/bapafes482"
+      },
+      "is_answered": false,
+      "view_count": 62,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1578512762,
+      "creation_date": 1578430684,
+      "last_edit_date": 1578512762,
+      "question_id": 59635971,
+      "link": "https://stackoverflow.com/questions/59635971/show-nsmenu-only-on-nsstatusbarbutton-right-click",
+      "title": "Show NSMenu only on NSStatusBarButton right click?"
+    },
+    {
+      "tags": [
+        "c#",
+        "nuget",
+        "nunit",
+        "cakebuild"
+      ],
+      "owner": {
+        "reputation": 4677,
+        "user_id": 11019743,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/R8NmK.png?s=128&g=1",
+        "display_name": "Christine",
+        "link": "https://stackoverflow.com/users/11019743/christine"
+      },
+      "is_answered": false,
+      "view_count": 6,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1578512754,
+      "creation_date": 1578510959,
+      "question_id": 59652459,
+      "link": "https://stackoverflow.com/questions/59652459/purpose-of-the-file-packages-config-md5sum",
+      "title": "Purpose of the file packages.config.md5sum"
+    },
+    {
+      "tags": [
+        "ios",
+        "swift",
+        "ios-charts"
+      ],
+      "owner": {
+        "reputation": 1592,
+        "user_id": 5065866,
+        "user_type": "registered",
+        "accept_rate": 65,
+        "profile_image": "https://i.stack.imgur.com/VuAsr.png?s=128&g=1",
+        "display_name": "Satsuki",
+        "link": "https://stackoverflow.com/users/5065866/satsuki"
+      },
+      "is_answered": false,
+      "view_count": 3,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1578512739,
+      "creation_date": 1578512739,
+      "question_id": 59652836,
+      "link": "https://stackoverflow.com/questions/59652836/ios-charts-cannot-hide-x-axis",
+      "title": "iOS-Charts - cannot hide x axis"
+    },
+    {
+      "tags": [
+        "r",
+        "shiny",
+        "shinyapps"
+      ],
+      "owner": {
+        "reputation": 61,
+        "user_id": 5475303,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/8a76207a3c713f4dc07ecf135870876a?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Mario",
+        "link": "https://stackoverflow.com/users/5475303/mario"
+      },
+      "is_answered": false,
+      "view_count": 13,
+      "answer_count": 1,
+      "score": 1,
+      "last_activity_date": 1578512736,
+      "creation_date": 1578500984,
+      "question_id": 59650114,
+      "link": "https://stackoverflow.com/questions/59650114/get-additional-named-attributes-from-actionbutton-in-r-shiny",
+      "title": "Get additional named attributes from actionButton in r Shiny"
+    },
+    {
+      "tags": [
+        "regex",
+        "repeat"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 3880668,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/0c67dbf968b736b33ec8dd719c282531?s=128&d=identicon&r=PG&f=1",
+        "display_name": "user3880668",
+        "link": "https://stackoverflow.com/users/3880668/user3880668"
+      },
+      "is_answered": true,
+      "view_count": 29,
+      "answer_count": 3,
+      "score": 0,
+      "last_activity_date": 1578512735,
+      "creation_date": 1578442387,
+      "last_edit_date": 1578442848,
+      "question_id": 59637842,
+      "link": "https://stackoverflow.com/questions/59637842/regular-expression-is-capturing-the-beginning-word-and-not-the-group-i-want",
+      "title": "Regular Expression is capturing the beginning word and not the group I want"
+    },
+    {
+      "tags": [
+        "javascript"
+      ],
+      "owner": {
+        "reputation": 144,
+        "user_id": 1161043,
+        "user_type": "registered",
+        "accept_rate": 26,
+        "profile_image": "https://www.gravatar.com/avatar/35cae5ad0033323639ea0fe64ad25583?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Mike Hermary",
+        "link": "https://stackoverflow.com/users/1161043/mike-hermary"
+      },
+      "is_answered": false,
+      "view_count": 26,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1578512734,
+      "creation_date": 1578509124,
+      "last_edit_date": 1578512734,
+      "question_id": 59652055,
+      "link": "https://stackoverflow.com/questions/59652055/set-focus-on-text-input-using-button-and-javascript",
+      "title": "Set focus on text input using button and JavaScript"
+    },
+    {
+      "tags": [
+        "java",
+        "android",
+        "mouse-pointer"
+      ],
+      "owner": {
+        "reputation": 25930,
+        "user_id": 32834,
+        "user_type": "registered",
+        "accept_rate": 79,
+        "profile_image": "https://i.stack.imgur.com/21oX6.png?s=128&g=1",
+        "display_name": "Frank",
+        "link": "https://stackoverflow.com/users/32834/frank"
+      },
+      "is_answered": false,
+      "view_count": 31,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1578512733,
+      "creation_date": 1578503080,
+      "last_edit_date": 1578508001,
+      "question_id": 59650643,
+      "link": "https://stackoverflow.com/questions/59650643/how-to-simulate-a-mouse-pointer",
+      "title": "How to simulate a mouse pointer?"
+    },
+    {
+      "tags": [
+        "c++"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 12677044,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/174b5839909bf4699372b2218d4463a3?s=128&d=identicon&r=PG&f=1",
+        "display_name": "aldillek",
+        "link": "https://stackoverflow.com/users/12677044/aldillek"
+      },
+      "is_answered": false,
+      "view_count": 23,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1578512729,
+      "creation_date": 1578510556,
+      "question_id": 59652354,
+      "link": "https://stackoverflow.com/questions/59652354/how-can-i-take-object-from-function",
+      "title": "How can I take object from function?"
+    },
+    {
+      "tags": [
+        "laravel",
+        "api"
+      ],
+      "owner": {
+        "reputation": 119,
+        "user_id": 12508960,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/15bfd360c488c1222bef8b1024beaed2?s=128&d=identicon&r=PG&f=1",
+        "display_name": "ahmed",
+        "link": "https://stackoverflow.com/users/12508960/ahmed"
+      },
+      "is_answered": false,
+      "view_count": 12,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1578512728,
+      "creation_date": 1578512182,
+      "question_id": 59652729,
+      "link": "https://stackoverflow.com/questions/59652729/send-array-to-api-via-postman",
+      "title": "Send array to api via postman?"
+    },
+    {
+      "tags": [
+        "node.js",
+        "angular",
+        "express"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 12676390,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/2cfdba72162ad3990912098bbcf015ae?s=128&d=identicon&r=PG&f=1",
+        "display_name": "surjendu_dey",
+        "link": "https://stackoverflow.com/users/12676390/surjendu-dey"
+      },
+      "is_answered": false,
+      "view_count": 24,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1578512726,
+      "creation_date": 1578502481,
+      "last_edit_date": 1578512726,
+      "question_id": 59650497,
+      "link": "https://stackoverflow.com/questions/59650497/jwt-authenticaton-authorization-not-working",
+      "title": "JWT authenticaton authorization not working"
+    },
+    {
+      "tags": [
+        "angular",
+        "npm-install"
+      ],
+      "owner": {
+        "reputation": 560,
+        "user_id": 6686925,
+        "user_type": "registered",
+        "accept_rate": 0,
+        "profile_image": "https://www.gravatar.com/avatar/d1b72cf30f0e2e490d2dcf157c6a7bcf?s=128&d=identicon&r=PG&f=1",
+        "display_name": "SilverFish",
+        "link": "https://stackoverflow.com/users/6686925/silverfish"
+      },
+      "is_answered": true,
+      "view_count": 871,
+      "answer_count": 2,
+      "score": 9,
+      "last_activity_date": 1578512724,
+      "creation_date": 1576521578,
+      "question_id": 59362510,
+      "link": "https://stackoverflow.com/questions/59362510/angular-browserslist-caniuse-lite-is-outdated-please-run-next-command-npm-upd",
+      "title": "Angular Browserslist: caniuse-lite is outdated. Please run next command `npm update`"
+    },
+    {
+      "tags": [
+        "ruby",
+        "string",
+        "escaping",
+        "sh"
+      ],
+      "owner": {
+        "reputation": 556,
+        "user_id": 6260775,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/j37ig.png?s=128&g=1",
+        "display_name": "Matt",
+        "link": "https://stackoverflow.com/users/6260775/matt"
+      },
+      "is_answered": false,
+      "view_count": 22,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1578512724,
+      "creation_date": 1578504402,
+      "last_edit_date": 1578512211,
+      "question_id": 59650959,
+      "link": "https://stackoverflow.com/questions/59650959/execute-a-shell-script-in-ruby-with-a-complex-string-argument",
+      "title": "Execute a shell script in Ruby with a complex string argument"
+    },
+    {
+      "tags": [
+        "java",
+        "javafx"
+      ],
+      "owner": {
+        "reputation": 3,
+        "user_id": 10048122,
+        "user_type": "registered",
+        "profile_image": "https://lh5.googleusercontent.com/-fIHvqj_3TPo/AAAAAAAAAAI/AAAAAAAAAF0/-uSl-QR0kvA/photo.jpg?sz=128",
+        "display_name": "guitarguy969",
+        "link": "https://stackoverflow.com/users/10048122/guitarguy969"
+      },
+      "is_answered": false,
+      "view_count": 2,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1578512723,
+      "creation_date": 1578512723,
+      "question_id": 59652829,
+      "link": "https://stackoverflow.com/questions/59652829/javafx-multiple-controllers-at-the-same-time",
+      "title": "JavaFX Multiple Controllers at the Same Time"
+    },
+    {
+      "tags": [
+        "java",
+        "hex"
+      ],
+      "owner": {
+        "reputation": 49,
+        "user_id": 9153265,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/1757897974506702/picture?type=large",
+        "display_name": "Debashis Panda",
+        "link": "https://stackoverflow.com/users/9153265/debashis-panda"
+      },
+      "is_answered": false,
+      "view_count": 5,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1578512720,
+      "creation_date": 1578512552,
+      "question_id": 59652798,
+      "link": "https://stackoverflow.com/questions/59652798/how-to-convert-a-big-decimal-number-in-a-string-into-hexadecimal-in-java",
+      "title": "How to convert a big decimal number in a String into Hexadecimal in Java?"
+    },
+    {
+      "tags": [
+        "azure",
+        "azure-storage",
+        "fileshare"
+      ],
+      "owner": {
+        "reputation": 721,
+        "user_id": 1546990,
+        "user_type": "registered",
+        "accept_rate": 91,
+        "profile_image": "https://i.stack.imgur.com/BLO8M.jpg?s=128&g=1",
+        "display_name": "GarlicBread",
+        "link": "https://stackoverflow.com/users/1546990/garlicbread"
+      },
+      "is_answered": true,
+      "view_count": 36,
+      "accepted_answer_id": 59640160,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1578512716,
+      "creation_date": 1578444112,
+      "last_edit_date": 1578512716,
+      "question_id": 59638025,
+      "link": "https://stackoverflow.com/questions/59638025/unable-to-mount-file-share-on-linux-vm",
+      "title": "Unable to mount file share on Linux VM"
+    },
+    {
+      "tags": [
+        "python-2.7"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 12677915,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/22275667c415077e5d401787b85fa81d?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Mr.Rs",
+        "link": "https://stackoverflow.com/users/12677915/mr-rs"
+      },
+      "is_answered": false,
+      "view_count": 2,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1578512707,
+      "creation_date": 1578512707,
+      "question_id": 59652827,
+      "link": "https://stackoverflow.com/questions/59652827/how-can-create-a-argument-in-python-script",
+      "title": "HOW CAN CREATE A ARGUMENT IN PYTHON SCRIPT?"
+    },
+    {
+      "tags": [
+        "python",
+        "web-scraping",
+        "pagination"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 12677586,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/514cb5e92676d8061aea6a0d1a9083ab?s=128&d=identicon&r=PG&f=1",
+        "display_name": "olino",
+        "link": "https://stackoverflow.com/users/12677586/olino"
+      },
+      "is_answered": false,
+      "view_count": 11,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1578512706,
+      "creation_date": 1578509992,
+      "question_id": 59652242,
+      "link": "https://stackoverflow.com/questions/59652242/scraping-pagination-with-the-same-pagination-links",
+      "title": "Scraping pagination with the same pagination links"
+    },
+    {
+      "tags": [
+        "reactjs",
+        "redux",
+        "redux-saga",
+        "saga"
+      ],
+      "owner": {
+        "reputation": 269,
+        "user_id": 4863162,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/8BPdE.jpg?s=128&g=1",
+        "display_name": "jarwin",
+        "link": "https://stackoverflow.com/users/4863162/jarwin"
+      },
+      "is_answered": false,
+      "view_count": 8,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1578512704,
+      "creation_date": 1578512430,
+      "question_id": 59652776,
+      "link": "https://stackoverflow.com/questions/59652776/how-to-set-an-initial-state-with-hooks-when-data-finish-to-load",
+      "title": "How to set an initial state with hooks when data finish to load"
+    },
+    {
+      "tags": [
+        "java",
+        "hibernate",
+        "spring-boot",
+        "spring-data-jpa",
+        "hibernate-mapping"
+      ],
+      "owner": {
+        "reputation": 44,
+        "user_id": 8358646,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/e92bdae7b7bff39d17bae96b93a091f9?s=128&d=identicon&r=PG&f=1",
+        "display_name": "Joel George",
+        "link": "https://stackoverflow.com/users/8358646/joel-george"
+      },
+      "is_answered": false,
+      "view_count": 4,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1578512701,
+      "creation_date": 1578512701,
+      "question_id": 59652825,
+      "link": "https://stackoverflow.com/questions/59652825/problem-while-persisiting-the-exsting-parent-object-into-the-child-object",
+      "title": "Problem while persisiting the exsting parent object into the child object"
+    },
+    {
+      "tags": [
+        "openstack",
+        "devstack",
+        "openstack-neutron",
+        "openstack-multi-region"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 12331485,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-jKxRdQF-RKE/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rcM79INNJM_VqRlqVaeG1GBTIigAA/photo.jpg?sz=128",
+        "display_name": "Chiara S",
+        "link": "https://stackoverflow.com/users/12331485/chiara-s"
+      },
+      "is_answered": false,
+      "view_count": 2,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1578512701,
+      "creation_date": 1578512701,
+      "question_id": 59652824,
+      "link": "https://stackoverflow.com/questions/59652824/openstack-multi-region-deployment",
+      "title": "Openstack Multi-region deployment"
+    }
+  ],
+  "has_more": true,
+  "quota_max": 10000,
+  "quota_remaining": 9681
+}
