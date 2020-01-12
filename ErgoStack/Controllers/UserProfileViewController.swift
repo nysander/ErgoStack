@@ -90,6 +90,8 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         if let location = user.location {
             locationLabel.text = location.decodeHTML().string
             locationLabel.isHidden = false
+        } else {
+            locationLabel.isHidden = true
         }
         questionCountLabel.text = R.string.localizable.questions("\(user.questionCount ?? 0)")
         answerCountLabel.text = R.string.localizable.answers("\(user.answerCount ?? 0)")
