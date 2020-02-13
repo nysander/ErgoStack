@@ -53,6 +53,7 @@
 		19B707F523C4F64400B32BBA /* DataModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F423C4F64400B32BBA /* DataModelProvider.swift */; };
 		19B707F723C5053E00B32BBA /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B707F623C5053E00B32BBA /* QuestionCell.swift */; };
 		19B707FB23C5088800B32BBA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 19B707FA23C5088800B32BBA /* Podfile */; };
+		19CEDB3723F5E40B007CEAD7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 19CEDB3623F5E40B007CEAD7 /* logo.png */; };
 		527DC0DA4FBEBF4B2BB9C661 /* Pods_ErgoStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F079D5F57FB358CA578AFAA /* Pods_ErgoStack.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +91,7 @@
 		19945D8E23C51E6B00BE9134 /* QuestionTableViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewDataProvider.swift; sourceTree = "<group>"; };
 		19945D9523C522AF00BE9134 /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
 		19945D9923C530D300BE9134 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		19B707AA23C4CDD300B32BBA /* ErgoStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErgoStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19B707AA23C4CDD300B32BBA /* Ergo Stack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ergo Stack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B707AD23C4CDD300B32BBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19B707AF23C4CDD300B32BBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		19B707B123C4CDD300B32BBA /* QuestionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +110,8 @@
 		19B707F423C4F64400B32BBA /* DataModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelProvider.swift; sourceTree = "<group>"; };
 		19B707F623C5053E00B32BBA /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		19B707FA23C5088800B32BBA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		19CEDB3523F5D9B3007CEAD7 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		19CEDB3623F5E40B007CEAD7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		809AFE596EC6758EA15CA3AE /* Pods-ErgoStack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErgoStack.release.xcconfig"; path = "Target Support Files/Pods-ErgoStack/Pods-ErgoStack.release.xcconfig"; sourceTree = "<group>"; };
 		8F079D5F57FB358CA578AFAA /* Pods_ErgoStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ErgoStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE808E9C143A4D4118053B4B /* Pods-ErgoStack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErgoStack.debug.xcconfig"; path = "Target Support Files/Pods-ErgoStack/Pods-ErgoStack.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,11 +156,13 @@
 		19B707A123C4CDD300B32BBA = {
 			isa = PBXGroup;
 			children = (
+				19CEDB3623F5E40B007CEAD7 /* logo.png */,
 				193A9C4623C65D6500850DBC /* DemoData */,
 				19945D9923C530D300BE9134 /* .swiftlint.yml */,
 				1951C78C23CB0AF1006825DA /* .bartycrouch.toml */,
 				19B707FA23C5088800B32BBA /* Podfile */,
 				19B707DD23C4D20500B32BBA /* README.md */,
+				19CEDB3523F5D9B3007CEAD7 /* LICENSE.md */,
 				19B707AC23C4CDD300B32BBA /* ErgoStack */,
 				19B707AB23C4CDD300B32BBA /* Products */,
 				6BD4C7366E47592B01918283 /* Pods */,
@@ -168,7 +173,7 @@
 		19B707AB23C4CDD300B32BBA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				19B707AA23C4CDD300B32BBA /* ErgoStack.app */,
+				19B707AA23C4CDD300B32BBA /* Ergo Stack.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -302,7 +307,7 @@
 			);
 			name = ErgoStack;
 			productName = ErgoStack;
-			productReference = 19B707AA23C4CDD300B32BBA /* ErgoStack.app */;
+			productReference = 19B707AA23C4CDD300B32BBA /* Ergo Stack.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -352,6 +357,7 @@
 				19B707BA23C4CDD400B32BBA /* LaunchScreen.storyboard in Resources */,
 				19B707B723C4CDD400B32BBA /* Assets.xcassets in Resources */,
 				19B707B523C4CDD300B32BBA /* Main.storyboard in Resources */,
+				19CEDB3723F5E40B007CEAD7 /* logo.png in Resources */,
 				193A9C4C23C6628900850DBC /* userProfile.json in Resources */,
 				193A9C4E23C662A600850DBC /* userQuestions.json in Resources */,
 				193A9C4823C65D9800850DBC /* questions.json in Resources */,
@@ -665,7 +671,7 @@
 				);
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pawelmadej.ErgoStack;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ergo Stack";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -686,7 +692,7 @@
 				);
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pawelmadej.ErgoStack;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ergo Stack";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
