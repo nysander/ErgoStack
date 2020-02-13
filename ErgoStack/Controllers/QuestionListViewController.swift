@@ -26,7 +26,7 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
     }
 
     var isSearchBarEmpty: Bool {
-        return searchController?.searchBar.text?.isEmpty ?? true
+        searchController?.searchBar.text?.isEmpty ?? true
     }
 
     @IBOutlet var tableView: UITableView!

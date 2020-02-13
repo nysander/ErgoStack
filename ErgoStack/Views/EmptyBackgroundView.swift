@@ -10,12 +10,14 @@ import PureLayout
 import UIKit
 
 final class EmptyBackgroundView: UIView {
+    // swiftlint:disable implicitly_unwrapped_optional
     private var topSpace: UIView!
     private var bottomSpace: UIView!
     private var imageView: UIImageView!
     private var topLabel: UILabel!
     private var bottomLabel: UILabel!
-    
+    // swiftlint:enable implicitly_unwrapped_optional
+
     private let topColor = UIColor.darkGray
     private let topFont = UIFont.boldSystemFont(ofSize: 22)
     private let bottomColor = UIColor.gray
