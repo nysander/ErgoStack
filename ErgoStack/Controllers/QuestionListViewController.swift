@@ -88,6 +88,10 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
         dataSource.getQuestions()
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     @objc
     func refreshTableView() {
         tableView.reloadData()
