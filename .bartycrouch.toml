@@ -1,20 +1,5 @@
 [update]
-#tasks = ["interfaces", "transform", "normalize"]
 tasks = ["normalize"]
-
-[update.interfaces]
-path = "ErgoStack"
-defaultToBase = false
-ignoreEmptyStrings = false
-unstripped = false
-
-[update.transform]
-codePath = "ErgoStack"
-localizablePath = "ErgoStack"
-transformer = "foundation"
-supportedLanguageEnumPath = "."
-typeName = "BartyCrouch"
-translateMethodName = "translate"
 
 [update.normalize]
 path = "ErgoStack"

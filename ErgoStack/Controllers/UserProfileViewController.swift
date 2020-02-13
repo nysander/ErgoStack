@@ -66,6 +66,10 @@ class UserProfileViewController: UIViewController, QuestionListProviding {
         showSpinner()
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     // MARK: - Actions
     @IBAction func openWebsite(_ sender: Any) {
         if let websiteUrl = dataSource.user?.websiteUrl, let url = URL(string: websiteUrl) {

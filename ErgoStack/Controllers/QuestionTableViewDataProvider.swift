@@ -20,7 +20,7 @@ final class QuestionTableViewDataProvider: NSObject {
     var parent: ParentView?
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        1
     }
 
     func tableView(_ tableView: UITableView,

@@ -48,6 +48,10 @@ class QuestionDetailsViewController: UIViewController {
         self.navigationItem.largeTitleDisplayMode = .never
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     // MARK: - Actions
     @IBAction func showUserProfile(_ sender: Any) {
         guard let question = self.dataSource.question else {

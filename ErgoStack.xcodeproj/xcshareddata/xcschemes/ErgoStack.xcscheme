@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "19B707A923C4CDD300B32BBA"
-               BuildableName = "ErgoStack.app"
+               BuildableName = "Ergo Stack.app"
                BlueprintName = "ErgoStack"
                ReferencedContainer = "container:ErgoStack.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "19B707A923C4CDD300B32BBA"
-            BuildableName = "ErgoStack.app"
+            BuildableName = "Ergo Stack.app"
             BlueprintName = "ErgoStack"
             ReferencedContainer = "container:ErgoStack.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "19B707A923C4CDD300B32BBA"
-            BuildableName = "ErgoStack.app"
+            BuildableName = "Ergo Stack.app"
             BlueprintName = "ErgoStack"
             ReferencedContainer = "container:ErgoStack.xcodeproj">
          </BuildableReference>

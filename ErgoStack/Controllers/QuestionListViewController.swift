@@ -26,7 +26,7 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
     }
 
     var isSearchBarEmpty: Bool {
-        return searchController?.searchBar.text?.isEmpty ?? true
+        searchController?.searchBar.text?.isEmpty ?? true
     }
 
     @IBOutlet var tableView: UITableView!
@@ -86,6 +86,10 @@ class QuestionListViewController: UIViewController, QuestionListProviding {
         super.viewWillAppear(animated)
 
         dataSource.getQuestions()
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     @objc
